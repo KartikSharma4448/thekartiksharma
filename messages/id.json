@@ -466,8 +466,13 @@
         "categories": {
             "applied-ai": "Applied AI",
             "software-development": "Software Dev",
-            "about-me": "About Me",
-            "more": "More"
+            "about-me": "Tentang Saya",
+            "more": "Lainnya",
+            "free portfolio templates": "Template Gratis",
+            "free-portfolio-templates": "Template Gratis",
+            "vgu": "Kampus VGU",
+            "hackathon": "Hackathon",
+            "todo-app": "Produktivitas"
         }
     },
     "gallery": {

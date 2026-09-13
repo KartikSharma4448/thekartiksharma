@@ -44,8 +44,18 @@ function BlogContent() {
     const springX = useSpring(mouseX, springConfig);
     const springY = useSpring(mouseY, springConfig);
 
+    const getCategoryLabel = (cat: string) => {
+        if (cat === 'all') return 'All Publications';
+        try {
+            if (t.has(`categories.${cat}`)) return t(`categories.${cat}`);
+        } catch {
+            // fallback
+        }
+        return cat.split(/[-_ ]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    };
+
     const gridRef = useRef<HTMLDivElement>(null);
-    const categories = ['all', 'applied-ai', 'software-development', 'about-me', 'more'];
+    const categories = ['all', ...Array.from(new Set(portfolioData.blogs.map(b => b.category)))];
 
     const filteredPosts = portfolioData.blogs
         .filter((post) => {
@@ -187,7 +197,7 @@ function BlogContent() {
                                         )}
                                     >
                                         <span className="relative">
-                                            {cat === 'all' ? 'All Publications' : t(`categories.${cat}`)}
+                                            {getCategoryLabel(cat)}
 
                                             {/* Animated Underline Indicator */}
                                             {selectedCategory === cat && (
@@ -349,7 +359,7 @@ function BlogContent() {
                                         link: `/blog/${post.slug}`,
                                         text: post.title,
                                         image: post.image,
-                                        category: t(`categories.${post.category}`),
+                                        category: getCategoryLabel(post.category),
                                         date: new Date(post.date).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase()
                                     }))}
                                 />

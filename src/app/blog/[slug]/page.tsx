@@ -16,6 +16,15 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     const router = useRouter();
     const [copied, setCopied] = useState(false);
 
+    const getCategoryLabel = (cat: string) => {
+        try {
+            if (t.has(`categories.${cat}`)) return t(`categories.${cat}`);
+        } catch {
+            // fallback
+        }
+        return cat.split(/[-_ ]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    };
+
     const handleCopy = () => {
         navigator.clipboard.writeText(window.location.href);
         setCopied(true);
@@ -1128,7 +1137,7 @@ model.save_pretrained_gguf("model_name", tokenizer, quantization_method = "q4_k_
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                                 <div className="absolute bottom-4 left-4">
                                     <span className="px-3 py-1 bg-black/50 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-bold text-white uppercase tracking-wider">
-                                        {t(`categories.${b.category}`)}
+                                        {getCategoryLabel(b.category)}
                                     </span>
                                 </div>
                             </div>

@@ -15,6 +15,15 @@ interface BlogCardProps {
 export function BlogCard({ post, index, isHovered, isLowPowerMode }: BlogCardProps) {
     const t = useTranslations('blog');
 
+    const getCategoryLabel = (cat: string) => {
+        try {
+            if (t.has(`categories.${cat}`)) return t(`categories.${cat}`);
+        } catch {
+            // fallback
+        }
+        return cat.split(/[-_ ]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    };
+
     return (
         <Link
             href={`/blog/${post.slug}`}
@@ -69,7 +78,7 @@ export function BlogCard({ post, index, isHovered, isLowPowerMode }: BlogCardPro
                         </p>
                         <div className="flex items-center justify-between border-t border-white/10 pt-4">
                             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white bg-white/10 backdrop-blur-md px-3 py-1 rounded-none border border-white/10">
-                                {t(`categories.${post.category}`)}
+                                {getCategoryLabel(post.category)}
                             </span>
                             <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest">
                                 {new Date(post.date).toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' })}
