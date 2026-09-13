@@ -37,6 +37,8 @@ interface CertificateHeroScrollProps {
 }
 
 const CERTIFICATE_POOL = [
+    "hackathon-hackindia-spark12-jaipur.png",
+    "hackathon-hackindia-adaption-autoscientist.png",
     "hackathon-rajasthan-ai-hackathon.jpg",
     "hackathon-techno-tarang-poornima.jpg",
     "hackathon-acehack-5-uem.jpg",

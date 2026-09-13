@@ -1344,6 +1344,48 @@ export const portfolioData: PortfolioData = {
             "Strik Innovators",
             "Verified Certificate"
         ]
+    },
+    {
+        "id": "cert-hackathon-hackindia-spark12",
+        "title": "HackIndia Spark-12 Jaipur (North India Region)",
+        "issuer": "HackIndia & PIET Jaipur",
+        "date": "2026-09-18",
+        "description": "Certificate of Participation proudly presented to Kartik Sharma for actively participating in HackIndia Spark-12 Jaipur, Rajasthan (North India Region) as a member of team Falcon Force, held at PIET, Jaipur Rajasthan.",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "HI-2026-E0039-U009685-Y6TV",
+        "credentialUrl": "https://hackindia.org",
+        "image": "/certificate/hackathon-hackindia-spark12-jaipur.png",
+        "tags": [
+            "HackIndia",
+            "Falcon Force",
+            "PIET Jaipur",
+            "North India Region",
+            "Spark-12",
+            "Hackathon",
+            "Verified Certificate"
+        ]
+    },
+    {
+        "id": "cert-hackathon-hackindia-autoscientist",
+        "title": "HackIndia – Adaption AutoScientist Challenge Part 2 ($60K Prize Pool)",
+        "issuer": "HackIndia",
+        "date": "2026-06-15",
+        "description": "Certificate of Participation proudly presented to Kartik Sharma for actively participating in Adaption AutoScientist Challenge Part 2 - $60,000 Prize Pool as a member of team Falcon Force, held online by HackIndia.",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "HI-2026-E0036-U009685-KOHK",
+        "credentialUrl": "https://hackindia.org",
+        "image": "/certificate/hackathon-hackindia-adaption-autoscientist.png",
+        "tags": [
+            "HackIndia",
+            "Falcon Force",
+            "AutoScientist",
+            "AI Hackathon",
+            "$60,000 Prize Pool",
+            "Online Global Challenge",
+            "Verified Certificate"
+        ]
     }
 ],
     hardSkills: [
