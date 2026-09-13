@@ -26,6 +26,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
 
     useEffect(() => {
         const galleryImages = [
+            { src: '/gallery/hackathon-techno-tarang-team-coding.jpg', alt: 'Techno Tarang Hackathon 3.0 Live Sprint Team Akatsuki' },
             { src: '/gallery/devfest-jaipur-kartik-backdrop.jpg', alt: 'Kartik Sharma @ GDG DevFest Jaipur 2025 RIC' },
             { src: '/gallery/devfest-jaipur-auditorium-crowd.jpg', alt: 'DevFest Jaipur Crowd & Keynote' },
             { src: '/gallery/devfest-jaipur-session-hall.jpg', alt: 'DevFest Jaipur Tech Sessions' },

@@ -1904,6 +1904,15 @@ export const portfolioData: PortfolioData = {
             type: "image",
             url: "/gallery/devfest-jaipur-delegate-pass.jpg",
             category: "conferences"
+        },
+        {
+            id: "gal-13",
+            title: "Techno Tarang Hackathon 3.0 – Team Akatsuki Live Sprint",
+            description: "Kartik Sharma and Team Akatsuki in intense 24-hour live coding sprint at Techno Tarang Hackathon 3.0, Poornima College of Engineering.",
+            date: "2026-04-19",
+            type: "image",
+            url: "/gallery/hackathon-techno-tarang-team-coding.jpg",
+            category: "hackathons"
         }
     ]
 };
