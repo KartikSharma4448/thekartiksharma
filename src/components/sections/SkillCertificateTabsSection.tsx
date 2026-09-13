@@ -86,24 +86,20 @@ function getSkillIcon(name: string): string {
 
 const certFilterTabs = [
   { id: 'all', label: 'All Credentials', icon: Layers },
-  { id: 'learning', label: 'Learning & Courses', icon: BookOpen },
+  { id: 'learning', label: 'Learning & Certifications', icon: BookOpen },
   { id: 'event', label: 'Events & Workshops', icon: Sparkles },
-  { id: 'internship', label: 'Internships & Work', icon: Briefcase },
   { id: 'hackathon', label: 'Hackathons', icon: Trophy },
 ];
 
 function getCategoryBadge(type?: string, category?: string) {
   const t = (type || category || '').toLowerCase();
-  if (t.includes('internship') || t.includes('offer') || t.includes('recognition')) {
-    return { label: 'Internship', color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' };
+  if (t.includes('event') || t.includes('workshop')) {
+    return { label: 'Event / Workshop', color: 'bg-amber-500/10 text-amber-400 border-amber-500/20' };
   }
-  if (t.includes('event') || t.includes('workshop') || t.includes('program')) {
-    return { label: 'Workshop / Event', color: 'bg-amber-500/10 text-amber-400 border-amber-500/20' };
-  }
-  if (t.includes('hackathon') || t.includes('competition') || t.includes('challenge')) {
+  if (t.includes('hackathon') || t.includes('competition')) {
     return { label: 'Hackathon', color: 'bg-purple-500/10 text-purple-400 border-purple-500/20' };
   }
-  return { label: 'Learning / Cert', color: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' };
+  return { label: 'Learning / Verified', color: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' };
 }
 
 export function SkillCertificateTabsSection() {
