@@ -198,7 +198,6 @@ const jsonLd = {
 
 import { ConditionalNavigation } from '@/components/layout/ConditionalNavigation';
 import { ArcPreloaderWrapper } from '@/components/layout/ArcPreloaderWrapper';
-import { ChatBot } from '@/components/layout/ChatBot';
 import { DeveloperTerminalModal } from '@/components/ui/DeveloperTerminalModal';
 import { IntroLoader } from '@/components/layout/IntroLoader';
 
@@ -226,7 +225,6 @@ export default async function RootLayout({
                                     {children}
                                 </ConditionalNavigation>
                             </ArcPreloaderWrapper>
-                            <ChatBot headless />
                             <DeveloperTerminalModal />
                         </SmoothScrollProvider>
                     </I18nProvider>

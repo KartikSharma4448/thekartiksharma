@@ -25,7 +25,7 @@
 
 ## Executive Summary
 
-A production-grade, highly interactive portfolio application engineered to showcase technical expertise across Artificial Intelligence, Data Science, and Modern Software Engineering. Moving beyond traditional static documentation, this platform delivers an immersive, high-performance user experience powered by WebGL physics simulations, real-time data integrations, and an autonomous AI chatbot assistant.
+A production-grade, highly interactive portfolio application engineered to showcase technical expertise across Artificial Intelligence, Modern Software Engineering, and Full-Stack Development. Moving beyond traditional static documentation, this platform delivers an immersive, high-performance user experience powered by WebGL physics simulations, real-time GitHub & Kaggle telemetry, and dynamic project showcases.
 
 ---
 
@@ -48,8 +48,7 @@ The repository is built on a modern, decoupled architecture designed for maximal
 - **Lenis:** Implements smooth, premium scrolling dynamics.
 
 ### System Integrations & APIs
-- **Dual-LLM AI Chatbot Architecture:** Integrates Groq (LLaMA 3.1) as the primary provider with an automatic failover to Google Gemini (1.5 Flash), utilizing retrieval-augmented generation context mapped directly from `portfolio.ts`.
-- **GraphQL & REST Pipelines:** Consumes GitHub GraphQL for repository statistics and WakaTime API for real-time code telemetry.
+- **GraphQL & REST Pipelines:** Consumes GitHub GraphQL for repository statistics and telemetry metrics.
 - **Next-Intl:** Provides a complete bilingual experience (EN/ID) driven by client-side browser header detection.
 
 ---
@@ -60,7 +59,7 @@ The repository is built on a modern, decoupled architecture designed for maximal
 PersonalBlog/
 ├── src/
 │   ├── app/                          # Next.js 16 App Router Entry Points
-│   │   ├── api/                      # Backend API Routes (Chatbot, GitHub, WakaTime)
+│   │   ├── api/                      # Backend API Routes (GitHub, Kaggle, WakaTime)
 │   │   ├── projects/                 # Comprehensive Project Directory
 │   │   ├── experience/               # Career Timeline and Analytics
 │   │   ├── skills/                   # Technical Skill Radar
@@ -86,11 +85,8 @@ PersonalBlog/
 ### 1. Interactive 3D Environments
 Implements hardware-accelerated 3D models using `@react-three/drei` and `@react-three/fiber`. Features include a physics-simulated identification badge that responds to cursor velocity and window constraints in real time.
 
-### 2. Autonomous Portfolio Chatbot
-An intelligent conversational agent deployed via the `/api/chat` route. The system builds a dynamic context window from the static `portfolio.ts` database and processes natural language queries using a redundant Dual-LLM infrastructure.
-
-### 3. Real-Time Telemetry
-Dashboards across the platform retrieve and display real-time engineering metrics, utilizing authenticated GraphQL requests to GitHub (activity heatmaps, language breakdown) and WakaTime (coding hours, IDE preferences).
+### 2. Real-Time Telemetry & Activity Heatmaps
+Dashboards across the platform retrieve and display real-time engineering metrics, utilizing authenticated GraphQL requests to GitHub (activity heatmaps, language breakdown) and Kaggle metrics.
 
 ### 4. Interactive PDF Document Viewer
 A custom-built document rendering engine utilizing `react-pdf`, allowing users to zoom, rotate, search, and download the resume natively within the browser application without relying on external plugins.

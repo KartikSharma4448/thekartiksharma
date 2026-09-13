@@ -484,23 +484,5 @@
             "video": "Video"
         },
         "viewMedia": "Lihat Media"
-    },
-    "chatbot": {
-        "title": "Asisten AI",
-        "subtitle": "Tanya saya tentang Kartik",
-        "placeholder": "Ketik pesan...",
-        "greeting": "Halo! Saya asisten AI untuk **{name}**. 👋\n\nSaya bisa menjawab pertanyaan seputar:\n- Skill & keahlian teknis\n- Project dan karya\n- Pengalaman kerja\n- Pendidikan\n- Dan info lainnya!\n\nAda yang ingin kamu tanyakan?",
-        "suggestions": [
-            "Apa keahlian utama kamu?",
-            "Ceritakan project terbaik kamu",
-            "Apa pengalaman kerja kamu?",
-            "Skill AI apa yang kamu kuasai?"
-        ],
-        "error": "Terjadi kesalahan. Silakan coba lagi.",
-        "invalidResponse": "Respons tidak valid dari server.",
-        "unknownError": "Terjadi kesalahan yang tidak diketahui.",
-        "retry": "Coba lagi",
-        "inputHint": "Enter untuk kirim, Shift+Enter untuk baris baru",
-        "close": "Tutup chat"
     }
 }

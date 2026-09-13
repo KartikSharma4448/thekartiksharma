@@ -499,23 +499,5 @@
             "video": "Videos"
         },
         "viewMedia": "View Media"
-    },
-    "chatbot": {
-        "title": "AI Assistant",
-        "subtitle": "Ask me about Kartik",
-        "placeholder": "Type a message...",
-        "greeting": "Hi! I'm an AI assistant for **{name}**. 👋\n\nI can answer questions about:\n- Skills & technical expertise\n- Projects and work\n- Experience\n- Education\n- And more!\n\nAnything you'd like to ask?",
-        "suggestions": [
-            "What are your main skills?",
-            "Tell me about your best project",
-            "What is your work experience?",
-            "What AI skills do you have?"
-        ],
-        "error": "An error occurred. Please try again.",
-        "invalidResponse": "Invalid response from server.",
-        "unknownError": "An unknown error occurred.",
-        "retry": "Try again",
-        "inputHint": "Enter to send, Shift+Enter for newline",
-        "close": "Close chat"
     }
 }
