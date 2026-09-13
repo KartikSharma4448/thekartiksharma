@@ -1886,6 +1886,24 @@ export const portfolioData: PortfolioData = {
             type: "image",
             url: "/gallery/snapdragon-multiverse-hackathon-badge.jpg",
             category: "hackathons"
+        },
+        {
+            id: "gal-11",
+            title: "DevFest Jaipur 2025 – Event Stage & Venue @ RIC",
+            description: "Kartik Sharma at Google Developer Groups (GDG) DevFest Jaipur 2025 held at Rajasthan International Centre (RIC).",
+            date: "2025-12-20",
+            type: "image",
+            url: "/gallery/devfest-jaipur-kartik-backdrop.jpg",
+            category: "conferences"
+        },
+        {
+            id: "gal-12",
+            title: "DevFest Jaipur 2025 – Official Delegate Pass",
+            description: "Official GDG DevFest Jaipur 2025 attendee pass (Kartik Sharma, Vivekananda Global University).",
+            date: "2025-12-20",
+            type: "image",
+            url: "/gallery/devfest-jaipur-delegate-pass.jpg",
+            category: "conferences"
         }
     ]
 };
