@@ -1398,8 +1398,8 @@ export const portfolioData: PortfolioData = {
         "description": "Certificate of Participation awarded to Kartik Sharma as a part of the OpenAI Academy learning community for participating in the 2-day OpenAI Academy x NxtWave Regional Buildathon - Rajasthan, certified by Rahul Attuluri (CEO, NxtWave).",
         "category": "hackathon",
         "type": "hackathon",
-        "credentialId": "OPENAI-NXTWAVE-BUILDATHON-RAJ-2026",
-        "credentialUrl": "https://www.ccbp.in",
+        "credentialId": "B9YOJ4CL0U",
+        "credentialUrl": "https://cdn1.ccbp.in/misc/openai-rg-c/B9YOJ4CL0U.png",
         "image": "/certificate/hackathon-openai-nxtwave-buildathon-rajasthan.png",
         "tags": [
             "OpenAI Academy",
