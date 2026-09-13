@@ -200,6 +200,7 @@ import { ConditionalNavigation } from '@/components/layout/ConditionalNavigation
 import { ArcPreloaderWrapper } from '@/components/layout/ArcPreloaderWrapper';
 import { ChatBot } from '@/components/layout/ChatBot';
 import { DeveloperTerminalModal } from '@/components/ui/DeveloperTerminalModal';
+import { IntroLoader } from '@/components/layout/IntroLoader';
 
 export default async function RootLayout({
     children,
@@ -219,6 +220,7 @@ export default async function RootLayout({
                 <ThemeProvider>
                     <I18nProvider locale={locale} messages={messages}>
                         <SmoothScrollProvider>
+                            <IntroLoader />
                             <ArcPreloaderWrapper>
                                 <ConditionalNavigation>
                                     {children}

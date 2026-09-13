@@ -266,10 +266,10 @@ export function SkillCertificateTabsSection() {
           {activeTab === 'skills' && (
             <motion.div
               key="tab-skills"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.12, ease: "easeOut" }}
               className="space-y-12"
             >
               {/* Category Filter Chips */}
@@ -294,14 +294,11 @@ export function SkillCertificateTabsSection() {
               {/* Skills Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
                 {filteredSkills.map((skill, idx) => (
-                  <motion.div
+                  <div
                     key={`${skill.name}-${idx}`}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.25, delay: idx * 0.02 }}
-                    className="group relative rounded-2xl bg-card border border-neutral-200 dark:border-white/10 p-5 flex flex-col items-center justify-center text-center gap-3 hover:border-emerald-500/50 dark:hover:border-emerald-400/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 select-none"
+                    className="group relative rounded-2xl bg-card border border-neutral-200 dark:border-white/10 p-5 flex flex-col items-center justify-center text-center gap-3 hover:border-emerald-500/50 dark:hover:border-emerald-400/50 hover:shadow-xl transition-all duration-200 hover:-translate-y-1 select-none"
                   >
-                    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-white/5 group-hover:scale-110 transition-transform duration-300 p-2.5">
+                    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-neutral-100 dark:bg-white/5 group-hover:scale-110 transition-transform duration-200 p-2.5">
                       <Image
                         src={skill.icon}
                         alt={skill.name}
@@ -326,7 +323,7 @@ export function SkillCertificateTabsSection() {
                         {skill.description}
                       </p>
                     )}
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -342,10 +339,10 @@ export function SkillCertificateTabsSection() {
           {activeTab === 'certificates' && (
             <motion.div
               key="tab-certificates"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.12, ease: "easeOut" }}
               className="space-y-10"
             >
               {/* Category Filter Chips (Learning, Event/Workshop, Hackathon, Internship) */}
@@ -410,11 +407,8 @@ export function SkillCertificateTabsSection() {
                   const badge = getCategoryBadge(cert.type, cert.category);
 
                   return (
-                    <motion.div
+                    <div
                       key={cert.id || idx}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: idx * 0.03 }}
                       onClick={() => {
                         if (previewUrl) {
                           setPreviewDoc({
@@ -425,7 +419,7 @@ export function SkillCertificateTabsSection() {
                           });
                         }
                       }}
-                      className="group relative rounded-3xl bg-card border border-neutral-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-400/50 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 cursor-pointer flex flex-col"
+                      className="group relative rounded-3xl bg-card border border-neutral-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-400/50 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 cursor-pointer flex flex-col"
                     >
                       {/* Thumbnail Image */}
                       <div className="relative w-full h-48 sm:h-52 bg-neutral-900 overflow-hidden">
@@ -481,7 +475,7 @@ export function SkillCertificateTabsSection() {
                         </div>
                       </div>
 
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>

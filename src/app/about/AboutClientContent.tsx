@@ -1,9 +1,18 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
-import { ExperienceSection } from '@/components/sections/experience/ExperienceSection';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Sparkles, 
+  ArrowRight, 
+  FileText,
+  GraduationCap,
+  Briefcase,
+} from 'lucide-react';
+import Link from 'next/link';
+import ExperienceMarquee from '@/components/sections/ExperienceMarquee';
+import ExperienceStickyScroll from '@/components/sections/ExperienceStickyScroll';
+import { ExperienceTimeline } from '@/components/sections/ExperienceTimeline';
 
 export function AboutClientContent() {
   const leftEyeRef = useRef<HTMLDivElement>(null);
@@ -21,7 +30,7 @@ export function AboutClientContent() {
         const eyeCenterY = rect.top + rect.height / 2;
 
         const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
-        const distance = Math.min(12, Math.hypot(e.clientX - eyeCenterX, e.clientY - eyeCenterY) / 10);
+        const distance = Math.min(10, Math.hypot(e.clientX - eyeCenterX, e.clientY - eyeCenterY) / 12);
 
         const x = Math.cos(angle) * distance;
         const y = Math.sin(angle) * distance;
@@ -43,15 +52,15 @@ export function AboutClientContent() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground pt-32 pb-24 overflow-x-hidden selection:bg-lime-400 selection:text-black">
+    <div className="min-h-screen w-full bg-background text-foreground pt-28 pb-24 overflow-x-hidden selection:bg-lime-400 selection:text-black flex flex-col justify-center items-center">
       
       {/* 1. Hero: Nice To Meet You */}
-      <section className="relative w-full max-w-[1400px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24 pt-8 pb-16 flex flex-col items-center justify-center text-center">
+      <section className="relative w-full max-w-[1400px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24 pt-6 pb-16 flex flex-col items-center justify-center text-center">
         
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
           <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-neutral-500 dark:text-neutral-400 mb-6 flex items-center gap-2">
@@ -95,10 +104,11 @@ export function AboutClientContent() {
           </div>
         </motion.div>
 
+        {/* Bio & Profile Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left"
         >
           {/* Photo Card */}
@@ -129,17 +139,122 @@ export function AboutClientContent() {
               Full Stack and MERN Stack Developer with hands-on experience building scalable web applications, cross-platform mobile apps with Flutter, and production-ready management systems. Proficient in React, Next.js, Node.js, Express, MongoDB, and PostgreSQL.
             </p>
             <p className="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed">
-              Currently pursuing BCA at Vivekananda Global University (VGU), Jaipur with an outstanding 9.43 CGPA. Delivered complete end-to-end platforms from scratch across internships and freelance engagements. Proven across 4 paid roles and 10+ shipped projects including international freelance clients.
+              Passionate about engineering seamless digital experiences, high-performance backends, and responsive user interfaces that solve real-world problems.
             </p>
+
+            <div className="pt-2 flex flex-wrap gap-3">
+              <Link
+                href="/resume"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 font-bold text-sm hover:opacity-90 transition-opacity"
+              >
+                <FileText className="w-4 h-4" />
+                <span>View Full Resume</span>
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-bold text-sm hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+              >
+                <span>Explore Projects</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </motion.div>
       </section>
 
-      {/* 2. Full Experience Section */}
-      <section className="relative w-full overflow-hidden">
-        <ExperienceSection />
+      {/* Scrolling Logo Marquee */}
+      <ExperienceMarquee />
+
+      {/* 2. Education & Journey Tabs */}
+      <section className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <AboutTabs />
       </section>
 
+    </div>
+  );
+}
+
+// ─── Tabs Component ───────────────────────────────────────────────────────────
+
+type TabId = 'education' | 'journey';
+
+function AboutTabs() {
+  const [activeTab, setActiveTab] = useState<TabId>('education');
+
+  const tabs: { id: TabId; label: string; icon: React.ReactNode; description: string }[] = [
+    {
+      id: 'education',
+      label: 'Education',
+      icon: <GraduationCap className="w-5 h-5" />,
+      description: 'Formal computer science education and verified academic distinction.',
+    },
+    {
+      id: 'journey',
+      label: 'Journey',
+      icon: <Briefcase className="w-5 h-5" />,
+      description: 'A timeline of roles, responsibilities, and professional growth across various organizations.',
+    },
+  ];
+
+  return (
+    <div>
+      {/* Tab Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center text-center mb-10"
+      >
+        <span className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-500 dark:text-neutral-400 mb-3 flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-lime-500" />
+          Background
+        </span>
+
+        {/* Animated description */}
+        <div className="min-h-[4rem] mb-6">
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={activeTab}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3 }}
+              className="text-xl sm:text-2xl font-bold text-neutral-700 dark:text-neutral-300 max-w-2xl"
+            >
+              &ldquo;{tabs.find(t => t.id === activeTab)?.description}&rdquo;
+            </motion.p>
+          </AnimatePresence>
+        </div>
+
+        {/* Tab Buttons */}
+        <div className="flex gap-3 flex-wrap justify-center">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+                activeTab === tab.id
+                  ? 'bg-lime-500 text-white shadow-lime-500/25 shadow-md'
+                  : 'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-700'
+              }`}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Tab Content — both always mounted, only visibility toggled (no remount lag) */}
+      <div>
+        <div className={activeTab === 'education' ? 'block' : 'hidden'}>
+          <ExperienceStickyScroll />
+        </div>
+        <div className={activeTab === 'journey' ? 'block' : 'hidden'}>
+          <ExperienceTimeline />
+        </div>
+      </div>
     </div>
   );
 }

@@ -38,6 +38,7 @@ export interface Experience {
     isOngoing: boolean;
     location?: string;
     type: 'full-time' | 'part-time' | 'contract' | 'internship' | 'freelance' | 'volunteer' | 'apprenticeship' | 'self-employed';
+    category?: string;
     logo?: string;
     logoBg?: string;
     link?: string;

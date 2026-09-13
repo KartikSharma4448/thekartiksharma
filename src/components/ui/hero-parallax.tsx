@@ -1,13 +1,5 @@
 "use client";
 import React from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  MotionValue,
-} from "framer-motion";
-
 import { useTranslations } from 'next-intl';
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -25,109 +17,51 @@ export const HeroParallax = ({
 }) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
-  const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
 
-  // Spring smooths ONLY the rotation to prevent aliasing jitter ("shaking")
-  const rotateSpringConfig = { stiffness: 200, damping: 20 };
-
-  const translateX = useTransform(scrollYProgress, [0, 1], [0, isLowPowerMode ? 200 : 800]);
-  const translateXReverse = useTransform(scrollYProgress, [0, 1], [0, isLowPowerMode ? -200 : -800]);
-
-  const rotateXRaw = useTransform(scrollYProgress, [0, 0.2], [isLowPowerMode ? 0 : 5, 0]);
-  const rotateX = useSpring(rotateXRaw, rotateSpringConfig);
-
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [isLowPowerMode ? 0.8 : 0.2, 1]);
-
-  const rotateZRaw = useTransform(scrollYProgress, [0, 0.2], [isLowPowerMode ? 0 : 5, 0]);
-  const rotateZ = useSpring(rotateZRaw, rotateSpringConfig);
-  const translateY = useTransform(scrollYProgress, [0, 0.2], [isLowPowerMode ? -100 : -500, isLowPowerMode ? 100 : 500]);
   return (
-    <div
-      ref={ref}
-      className={cn(
-        "pt-10 pb-20 sm:pb-40 overflow-hidden antialiased relative flex flex-col self-auto",
-        isLowPowerMode
-          ? "h-[100vh] sm:h-[120vh]"
-          : "h-[180vh] sm:h-[200vh] lg:h-[250vh] [perspective:2000px] [transform-style:preserve-3d]"
-      )}
-    >
+    <div className="pt-10 pb-16 md:pb-24 overflow-hidden relative flex flex-col w-full">
       <Header />
-      <motion.div
-        style={{
-          translateY,
-          opacity,
-          backfaceVisibility: 'hidden',
-        }}
-        className=""
-      >
-        <motion.div className={cn("flex flex-row-reverse space-x-reverse space-x-20 mb-20", isLowPowerMode && "mb-10 space-x-10")}>
+      <div className="mt-12 sm:mt-16 w-full space-y-6 sm:space-y-8 overflow-hidden">
+        <div className="flex flex-row space-x-6 sm:space-x-8 overflow-x-auto no-scrollbar px-4 sm:px-6 md:px-8">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
-              translate={translateX}
               key={product.title}
               isLowPowerMode={isLowPowerMode}
             />
           ))}
-        </motion.div>
-        <motion.div className={cn("flex flex-row mb-20 space-x-20", isLowPowerMode && "mb-10 space-x-10")}>
+        </div>
+        <div className="flex flex-row space-x-6 sm:space-x-8 overflow-x-auto no-scrollbar px-4 sm:px-6 md:px-8">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
-              translate={translateXReverse}
               key={product.title}
               isLowPowerMode={isLowPowerMode}
             />
           ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 };
 
-import { Mouse } from "lucide-react";
-
 export const Header = () => {
   const t = useTranslations('projectHeader');
   return (
-    <div className="max-w-7xl relative mx-auto pt-32 md:pt-48 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
+    <div className="max-w-7xl relative mx-auto pt-24 md:pt-36 px-4 sm:px-6 md:px-8 w-full text-center md:text-left">
+      <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground dark:text-white">
         {t('title')}
       </h1>
       <p
-        className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200"
+        className="max-w-2xl text-base md:text-xl mt-6 text-muted-foreground dark:text-neutral-300 leading-relaxed"
         dangerouslySetInnerHTML={{ __html: t.raw('subtitle') }}
       />
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute left-4 md:left-4 -bottom-32 md:-bottom-48 flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-      >
-        <div className="w-[1px] h-10 md:h-16 bg-gradient-to-b from-transparent via-neutral-400 to-transparent relative overflow-hidden">
-          <motion.div
-            className="absolute top-0 w-full h-1/2 bg-white blur-[1px]"
-            animate={{ y: [0, 40, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
-        <span className="text-[9px] uppercase tracking-[0.3em] text-neutral-500 font-medium">
-          Scroll
-        </span>
-      </motion.div>
     </div>
   );
 };
 
 export const ProductCard = ({
   product,
-  translate,
   isLowPowerMode,
 }: {
   product: {
@@ -135,41 +69,36 @@ export const ProductCard = ({
     link: string;
     thumbnail: string;
   };
-  translate: MotionValue<number>;
   isLowPowerMode?: boolean;
 }) => {
   return (
-    <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={isLowPowerMode ? {} : {
-        y: -20,
-      }}
+    <div
       key={product.title}
       className={cn(
-        "group/product relative shrink-0",
-        isLowPowerMode ? "h-48 w-[12rem] md:h-64 md:w-[20rem]" : "h-64 w-[16rem] md:h-96 md:w-[30rem]"
+        "group/product relative shrink-0 rounded-2xl overflow-hidden border border-border/40 bg-card shadow-sm hover:shadow-xl transition-all duration-300",
+        isLowPowerMode
+          ? "h-44 w-[12rem] sm:h-52 sm:w-[16rem]"
+          : "h-48 w-[14rem] sm:h-56 sm:w-[18rem] md:h-64 md:w-[22rem]"
       )}
     >
       <a
         href={product.link}
-        className="block group-hover/product:shadow-2xl "
+        className="block w-full h-full relative"
       >
         <Image
           src={product.thumbnail}
           height={600}
           width={600}
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+          className="object-cover object-left-top absolute h-full w-full inset-0 transition-transform duration-500 group-hover/product:scale-105"
           alt={product.title}
           priority={true}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
+        <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black/60 transition-opacity duration-300 pointer-events-none" />
+        <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white font-medium text-sm sm:text-base transition-opacity duration-300">
+          {product.title}
+        </h2>
       </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
-    </motion.div>
+    </div>
   );
 };

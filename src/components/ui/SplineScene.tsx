@@ -52,7 +52,7 @@ export const SplineScene: FC<SplineSceneProps> = ({ scene, className }) => {
                     }
                 }
             },
-            { rootMargin: "200px" }
+            { rootMargin: "50px" }
         );
 
         observer.observe(containerRef.current);

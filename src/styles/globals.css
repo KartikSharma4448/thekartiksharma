@@ -174,9 +174,10 @@
       #171717 70%
     );
     background-size: 200% auto;
-    animation: text-shiny 4s linear infinite;
+    animation: text-shiny 8s linear infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    will-change: background-position;
   }
 
   .dark .text-shiny {

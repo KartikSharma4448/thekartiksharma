@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useSpring, useMotionValue } from 'framer-motion';
 import { Search, X, LayoutGrid, List, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Project } from '@/types';
 import { cn } from '@/lib/utils';
@@ -53,13 +53,22 @@ export function SyedNoorWorksShowcase({
     const springY = useSpring(cursorY, { stiffness: 280, damping: 25 });
 
     useEffect(() => {
+        // Only track mouse in list view — no need in grid view
+        if (viewMode !== 'list') return;
+        let rafId: number;
         const handleMouseMove = (e: MouseEvent) => {
-            cursorX.set(e.clientX + 32);
-            cursorY.set(e.clientY - 90);
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                cursorX.set(e.clientX + 32);
+                cursorY.set(e.clientY - 90);
+            });
         };
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, [cursorX, cursorY]);
+        window.addEventListener('mousemove', handleMouseMove, { passive: true });
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            cancelAnimationFrame(rafId);
+        };
+    }, [viewMode, cursorX, cursorY]);
 
     // Extract available years
     const availableYears = useMemo(() => {
@@ -119,14 +128,15 @@ export function SyedNoorWorksShowcase({
     return (
         <div className="w-full relative selection:bg-neutral-900 selection:text-white dark:selection:bg-white dark:selection:text-black">
             
-            {/* Floating Image Preview for List View Mode */}
+            {/* Floating Image Preview — only rendered in list view */}
+            {viewMode === 'list' && (
             <motion.div
                 className="fixed pointer-events-none z-[9999] hidden lg:block w-[340px] h-[210px] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-black -translate-y-1/2"
                 style={{
                     left: springX,
                     top: springY,
-                    opacity: hoveredListProject && viewMode === 'list' ? 1 : 0,
-                    scale: hoveredListProject && viewMode === 'list' ? 1 : 0.8,
+                    opacity: hoveredListProject ? 1 : 0,
+                    scale: hoveredListProject ? 1 : 0.8,
                 }}
                 transition={{ duration: 0.2 }}
             >
@@ -141,6 +151,7 @@ export function SyedNoorWorksShowcase({
                     />
                 )}
             </motion.div>
+            )}
 
             {/* ================= 1. HERO HEADER ================= */}
             <header className="pt-28 md:pt-36 pb-12 md:pb-16 max-w-[1500px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
@@ -297,21 +308,12 @@ export function SyedNoorWorksShowcase({
                     {/* 1. 2-COLUMN ANIMATED GRID VIEW */}
                     {viewMode === 'grid' && (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
-                            <AnimatePresence mode="popLayout">
-                                {filteredProjects.map((project, index) => {
-                                    const year = getProjectYear(project);
-                                    const imageSrc = project.image || getPlaceholderImageUrl(project.title);
+                            {filteredProjects.map((project, index) => {
+                                const year = getProjectYear(project);
+                                const imageSrc = project.image || getPlaceholderImageUrl(project.title);
 
-                                    return (
-                                        <motion.div
-                                            key={project.id}
-                                            layout
-                                            initial={{ opacity: 0, y: 50 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true, margin: "-40px" }}
-                                            transition={{ duration: 0.6, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                                            whileHover={{ y: -8 }}
-                                        >
+                                return (
+                                    <div key={project.id}>
                                             <Link
                                                 href={`/projects/${project.slug}`}
                                                 className="group flex flex-col h-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-white dark:bg-[#0c0c10] border border-black/10 dark:border-white/10 shadow-xl hover:shadow-[0_30px_60px_rgba(0,0,0,0.18)] dark:hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)] transition-all duration-500 cursor-pointer p-4 sm:p-6"
@@ -377,31 +379,27 @@ export function SyedNoorWorksShowcase({
 
                                                 </div>
                                             </Link>
-                                        </motion.div>
+                                    </div>
                                     );
                                 })}
-                            </AnimatePresence>
                         </div>
                     )}
 
                     {/* 2. EDITORIAL LIST VIEW */}
                     {viewMode === 'list' && (
                         <div className="flex flex-col border-t border-black/10 dark:border-white/10">
-                            <AnimatePresence mode="popLayout">
-                                {filteredProjects.map((project, index) => {
-                                    const year = getProjectYear(project);
+                            {filteredProjects.map((project, index) => {
+                                const year = getProjectYear(project);
 
-                                    return (
-                                        <motion.div
-                                            key={project.id}
-                                            layout
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -20 }}
-                                            transition={{ duration: 0.35, delay: index * 0.04 }}
-                                            onMouseEnter={() => setHoveredListProject(project)}
-                                            onMouseLeave={() => setHoveredListProject(null)}
-                                        >
+                                return (
+                                    <motion.div
+                                        key={project.id}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.25, delay: index * 0.03 }}
+                                        onMouseEnter={() => setHoveredListProject(project)}
+                                        onMouseLeave={() => setHoveredListProject(null)}
+                                    >
                                             <Link
                                                 href={`/projects/${project.slug}`}
                                                 className="group flex flex-col sm:flex-row sm:items-center justify-between py-7 sm:py-9 border-b border-black/10 dark:border-white/10 transition-all duration-300 hover:px-4 hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer rounded-2xl"
@@ -426,10 +424,9 @@ export function SyedNoorWorksShowcase({
                                                     </div>
                                                 </div>
                                             </Link>
-                                        </motion.div>
-                                    );
-                                })}
-                            </AnimatePresence>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     )}
 

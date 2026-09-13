@@ -36,6 +36,9 @@ import { Timeline } from '@/components/ui/timeline';
 import { InnovativeExperienceHero } from '@/components/sections/InnovativeExperienceHero';
 import { DeferredMount } from '@/components/ui/DeferredMount';
 import { DocumentPreviewModal } from '@/components/ui/DocumentPreviewModal';
+import MagneticEffect from '@/components/ui/MagneticEffect';
+import { usePerformance } from '@/hooks/usePerformance';
+import { getJourneyImages } from '@/app/actions/getJourneyImages';
 
 type TabType = 'education' | 'journey' | 'experience';
 
@@ -56,10 +59,6 @@ const highlightContent = {
         description: "Real-world projects that solve real problems. Building solutions that make a difference."
     }
 };
-
-import { usePerformance } from '@/hooks/usePerformance';
-
-import { getJourneyImages } from '@/app/actions/getJourneyImages';
 
 function ExperienceHighlightSection({ type, isLowPowerMode }: { type: TabType; isLowPowerMode: boolean }) {
     const content = highlightContent[type];
@@ -93,84 +92,303 @@ interface TabItem {
     description: string;
 }
 
-import MagneticEffect from '@/components/ui/MagneticEffect';
-
 function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
-    const [activeTab, setActiveTab] = useState<number>(0);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [activeTab, setActiveTab] = useState<number>(1);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const tabs: TabItem[] = [
-        { id: 'education', label: 'Education', description: 'Building strong foundations through academic excellence and systematic learning.' },
-        { id: 'journey', label: 'Journey', description: 'A curated timeline of roles, engineering responsibilities, and professional growth.' },
+        { id: 'education', label: 'Education', description: 'Building strong foundations through academic excellence at Vivekananda Global University and continuous learning.' },
+        { id: 'journey', label: 'Journey', description: 'A timeline of roles, responsibilities, and professional growth across various organizations.' },
+        { id: 'experience', label: 'Experience', description: 'Detailed breakdown of work experiences with project highlights and achievements.' },
     ];
+
+    const categories = [
+        { id: 'professional', label: 'Professional Experience', icon: Briefcase, color: 'bg-blue-600', prefix: 'prof-' },
+        { id: 'leadership', label: 'Leadership & Organizational', icon: Users, color: 'bg-purple-600', prefix: 'lead-' },
+        { id: 'volunteer', label: 'Volunteer Experience', icon: Heart, color: 'bg-orange-500', prefix: 'vol-' },
+        { id: 'certifications', label: 'Certifications & Development', icon: Award, color: 'bg-emerald-500', prefix: 'cert-' },
+    ];
+
+    const heightFix = () => {
+        if (contentRef.current && contentRef.current.parentElement)
+            contentRef.current.parentElement.style.height = `${contentRef.current.clientHeight}px`;
+    };
+
+    useEffect(() => {
+        heightFix();
+    }, [activeTab, selectedCategory]);
+
+    const filteredExperiences = useMemo(() => {
+        if (!selectedCategory) return [];
+        const cat = categories.find(c => c.id === selectedCategory);
+        if (!cat) return [];
+        return portfolioData.experiences.filter(exp => exp.id.startsWith(cat.prefix) || exp.category?.toLowerCase() === cat.id);
+    }, [selectedCategory]);
 
     return (
         <div className="mb-24">
-            {/* Header with Title & Description */}
-            <div className="mx-auto w-full max-w-5xl px-4 sm:px-8 text-center mb-10 sm:mb-14">
-                <div className="mb-6 sm:mb-8">
-                    <p className="text-base sm:text-xl md:text-2xl font-bold text-foreground max-w-2xl mx-auto leading-snug">
-                        &ldquo;{tabs[activeTab].description}&rdquo;
-                    </p>
+            {/* Testimonial-style Header with Hemisphere & Glowing Orb */}
+            <div className="mx-auto w-full max-w-5xl px-8 text-center sm:px-12 mb-12">
+                {/* Orb with Hemisphere Background */}
+                <div className="relative h-28 sm:h-36">
+                    <div className="pointer-events-none absolute top-0 left-1/2 h-[400px] w-[400px] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-cyan-500/25 before:via-cyan-500/5 before:via-25% before:to-cyan-500/0 before:to-75% sm:h-[560px] sm:w-[560px]">
+                        <div className="h-24 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_20%,theme(colors.white))] sm:h-32">
+                            {tabs.map((tab, index) => (
+                                <Transition
+                                    as="div"
+                                    key={index}
+                                    show={activeTab === index}
+                                    className="absolute inset-0 -z-10 h-full flex items-center justify-center"
+                                    enter="transition ease-out duration-700 order-first"
+                                    enterFrom="opacity-0 -rotate-[60deg]"
+                                    enterTo="opacity-100 rotate-0"
+                                    leave="transition ease-out duration-700"
+                                    leaveFrom="opacity-100 rotate-0"
+                                    leaveTo="opacity-0 rotate-[60deg]"
+                                >
+                                    <div className="relative top-8 sm:top-11 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 shadow-lg shadow-cyan-500/30" />
+                                </Transition>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
-                {/* Tab Buttons */}
-                <div className="flex justify-center gap-3 sm:gap-4">
-                    {tabs.map((tab, index) => {
-                        const isActive = activeTab === index;
-                        return (
-                            <button
-                                key={tab.id}
-                                className={cn(
-                                    "relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 sm:px-7 sm:py-3 text-sm sm:text-base font-bold transition-all duration-200 active:scale-95 shadow-sm",
-                                    isActive
-                                        ? "bg-neutral-950 text-white dark:bg-white dark:text-neutral-950 shadow-md"
-                                        : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800"
-                                )}
-                                onClick={() => setActiveTab(index)}
+                {/* Description Text */}
+                <div className="mb-6 transition-all delay-300 duration-150 ease-in-out sm:mb-9 min-h-[100px]">
+                    <div className="relative flex flex-col" ref={contentRef}>
+                        {tabs.map((tab, index) => (
+                            <Transition
+                                key={index}
+                                show={activeTab === index}
+                                enter="transition ease-out duration-300 delay-150 relative"
+                                enterFrom="opacity-0 blur-sm translate-y-4"
+                                enterTo="opacity-100 blur-0 translate-y-0"
+                                leave="transition ease-in duration-150 absolute top-0 left-0 w-full"
+                                leaveFrom="opacity-100 blur-0 translate-y-0"
+                                leaveTo="opacity-0 blur-sm -translate-y-4"
+                                beforeEnter={() => heightFix()}
                             >
-                                {tab.id === 'education' && <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" />}
-                                {tab.id === 'journey' && <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />}
-                                <span>{tab.label}</span>
+                                <div className="px-4 text-xl font-bold text-foreground sm:px-0 sm:text-2xl lg:text-3xl">
+                                    &ldquo;{tab.description}&rdquo;
+                                </div>
+                            </Transition>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Tab Buttons - Horizontal Scroll on Mobile, Centered on Tablet+ */}
+                <div className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 overflow-x-auto py-4 hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+                    {tabs.map((tab, index) => (
+                        <MagneticEffect key={index}>
+                            <button
+                                className={`group m-1.5 inline-flex justify-center items-center gap-2.5 rounded-full px-5 py-2.5 text-sm whitespace-nowrap shadow-sm transition-all duration-300 ease-out focus-visible:ring focus-visible:ring-cyan-300 focus-visible:outline-none sm:px-6 sm:py-3 sm:text-base hover:-translate-y-1 hover:shadow-lg ${activeTab === index
+                                    ? "bg-cyan-500 text-white shadow-cyan-500/25"
+                                    : "bg-white dark:bg-neutral-800/80 backdrop-blur-sm text-cyan-900 dark:text-cyan-100 hover:bg-cyan-50 dark:hover:bg-neutral-700/80 border border-transparent dark:border-white/5"
+                                    }`}
+                                onClick={() => {
+                                    setActiveTab(index);
+                                    if (index !== 2) setSelectedCategory(null);
+                                }}
+                            >
+                                {tab.id === 'education' && <GraduationCap className="w-5 h-5 transition-transform group-hover:scale-110" />}
+                                {tab.id === 'journey' && <Briefcase className="w-5 h-5 transition-transform group-hover:scale-110" />}
+                                {tab.id === 'experience' && <Rocket className="w-5 h-5 transition-transform group-hover:scale-110" />}
+                                <span className="font-medium">{tab.label}</span>
                             </button>
-                        );
-                    })}
+                        </MagneticEffect>
+                    ))}
                 </div>
             </div>
 
             {/* Tab Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {activeTab === 0 && (
-                    <motion.div
-                        key="education"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.25, ease: "easeOut" }}
-                    >
-                        <ExperienceStickyScroll />
-                        <div className="pb-[clamp(40px,10vh,120px)]" />
-                        <ExperienceHighlightSection type="education" isLowPowerMode={isLowPowerMode} />
-                    </motion.div>
-                )}
+                <AnimatePresence mode="wait">
+                    {/* Education Tab */}
+                    {activeTab === 0 && (
+                        <motion.div
+                            key="education"
+                            initial={{ opacity: 0, y: isLowPowerMode ? 0 : 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: isLowPowerMode ? 0 : -20 }}
+                            transition={{ duration: 0.4 }}
+                        >
+                            <ExperienceStickyScroll />
+                            <div className="pb-[clamp(40px,10vh,120px)]" />
+                            <ExperienceHighlightSection type="education" isLowPowerMode={isLowPowerMode} />
+                        </motion.div>
+                    )}
 
-                {activeTab === 1 && (
-                    <motion.div
-                        key="journey"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.25, ease: "easeOut" }}
-                    >
-                        <ExperienceTimeline isLowPowerMode={isLowPowerMode} />
-                        <div className="pb-[clamp(40px,10vh,120px)]" />
-                        <ExperienceHighlightSection type="journey" isLowPowerMode={isLowPowerMode} />
-                    </motion.div>
-                )}
+                    {/* Journey Tab */}
+                    {activeTab === 1 && (
+                        <motion.div
+                            key="journey"
+                            initial={{ opacity: 0, y: isLowPowerMode ? 0 : 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: isLowPowerMode ? 0 : -20 }}
+                            transition={{ duration: 0.4 }}
+                        >
+                            <ExperienceTimeline isLowPowerMode={isLowPowerMode} />
+                            <div className="pb-[clamp(40px,10vh,120px)]" />
+                            <ExperienceHighlightSection type="journey" isLowPowerMode={isLowPowerMode} />
+                        </motion.div>
+                    )}
+
+                    {/* Experience Tab */}
+                    {activeTab === 2 && (
+                        <motion.div
+                            key="experience"
+                            initial={{ opacity: 0, y: isLowPowerMode ? 0 : 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: isLowPowerMode ? 0 : -20 }}
+                            transition={{ duration: 0.4 }}
+                            className="space-y-12"
+                        >
+                            <AnimatePresence mode="wait">
+                                {!selectedCategory ? (
+                                    <motion.div
+                                        key="cta-selection"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:min-h-[600px] items-center"
+                                    >
+                                        {/* Left: Sticky Title & Context */}
+                                        <div className="lg:col-span-5 space-y-8">
+                                            <motion.div
+                                                initial={{ opacity: 0, x: -20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ delay: 0.2 }}
+                                            >
+                                                <h2 className="text-5xl md:text-7xl font-black text-neutral-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
+                                                    SELECT <br />
+                                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 via-neutral-600 to-neutral-400 dark:from-white dark:via-neutral-200 dark:to-neutral-500">
+                                                        ARCHIVE
+                                                    </span>
+                                                </h2>
+                                                <p className="text-xl text-neutral-500 dark:text-neutral-400 max-w-md leading-relaxed">
+                                                    Navigate through the timeline of my career. Choose a lens to filter the experience database.
+                                                </p>
+                                            </motion.div>
+
+                                            {/* Decorative Elements */}
+                                            <div className="hidden lg:block w-24 h-1 bg-gradient-to-r from-neutral-900 to-neutral-400 dark:from-white dark:to-neutral-600 rounded-full" />
+                                        </div>
+
+                                        {/* Right: Interactive List */}
+                                        <div className="lg:col-span-7 flex flex-col gap-4">
+                                            {categories.map((cat, idx) => (
+                                                <motion.button
+                                                    key={cat.id}
+                                                    initial={{ opacity: 0, x: 20 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    transition={{ delay: 0.1 * idx }}
+                                                    onClick={() => setSelectedCategory(cat.id)}
+                                                    className="group relative flex items-center gap-6 p-6 rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 hover:bg-white dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl dark:hover:shadow-neutral-900/50 text-left overflow-hidden"
+                                                >
+
+                                                    {/* Hover Gradient Background */}
+                                                    <div className={cn(
+                                                        "absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500",
+                                                        cat.color
+                                                    )} />
+
+                                                    {/* Category Icon */}
+                                                    <div className={cn(
+                                                        "w-16 h-16 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500",
+                                                        cat.color
+                                                    )}>
+                                                        <cat.icon className="w-8 h-8" />
+                                                    </div>
+
+                                                    {/* Text Content */}
+                                                    <div className="flex-1 relative z-10">
+                                                        <h4 className="text-2xl font-bold text-neutral-900 dark:text-white mb-1 group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
+                                                            {cat.label}
+                                                        </h4>
+                                                        <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400 line-clamp-1 group-hover:text-neutral-900 dark:group-hover:text-neutral-200 transition-colors">
+                                                            Tap to explore {cat.label.toLowerCase()} records
+                                                        </p>
+                                                    </div>
+
+                                                    {/* Arrow Action */}
+                                                    <div className="w-10 h-10 rounded-full bg-white dark:bg-black border border-neutral-200 dark:border-neutral-700 flex items-center justify-center text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white group-hover:border-neutral-400 dark:group-hover:border-neutral-600 transition-all duration-300">
+                                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                                                    </div>
+                                                </motion.button>
+                                            ))}
+                                        </div>
+                                    </motion.div>
+                                ) : (
+                                    <motion.div
+                                        key="ledger-view"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-32"
+                                    >
+                                        {/* Left: Sticky Sidebar Filters */}
+                                        <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit space-y-8">
+                                            <button
+                                                onClick={() => setSelectedCategory(null)}
+                                                className="group flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-neutral-500 hover:text-black dark:hover:text-white transition-colors px-4 py-2 -ml-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/50 w-fit"
+                                            >
+                                                <ArrowRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" />
+                                                <span>Back to Selection</span>
+                                            </button>
+
+                                            <div className="space-y-2">
+                                                <h3 className="text-4xl md:text-5xl font-black text-neutral-900 dark:text-white tracking-tighter leading-tight">
+                                                    {categories.find(c => c.id === selectedCategory)?.label}
+                                                </h3>
+                                                <div className="h-1.5 w-20 bg-gradient-to-r from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-600 rounded-full" />
+                                            </div>
+
+                                            <div className="hidden lg:flex flex-col gap-2">
+                                                <p className="text-xs font-bold uppercase text-neutral-400 tracking-widest mb-2">
+                                                    Filter View
+                                                </p>
+                                                {categories.map(cat => (
+                                                    <button
+                                                        key={cat.id}
+                                                        onClick={() => setSelectedCategory(cat.id)}
+                                                        className={cn(
+                                                            "text-left px-4 py-3 rounded-xl text-sm font-bold transition-all duration-300 border border-transparent",
+                                                            selectedCategory === cat.id
+                                                                ? "bg-white dark:bg-neutral-800 text-black dark:text-white shadow-lg border-neutral-200 dark:border-neutral-700"
+                                                                : "text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-900 hover:text-neutral-900 dark:hover:text-neutral-300"
+                                                        )}
+                                                    >
+                                                        {cat.label}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Right: Scrollable Content Stream */}
+                                        <div className="lg:col-span-8 space-y-6">
+                                            {filteredExperiences.map((exp, idx) => (
+                                                <CollapsibleExperienceCard key={exp.id} exp={exp} idx={idx} isLowPowerMode={isLowPowerMode} />
+                                            ))}
+
+                                            {filteredExperiences.length === 0 && (
+                                                <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
+                                                    <p>No records found in this sector.</p>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                            <div className="pb-[clamp(40px,10vh,120px)]" />
+                            <ExperienceHighlightSection type="experience" isLowPowerMode={isLowPowerMode} />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );
 }
-
-
-import { SmoothScrollHero } from '@/components/sections/SmoothScrollHero';
 
 export default function ExperiencePage() {
     const t = useTranslations('experience');
@@ -182,11 +400,8 @@ export default function ExperiencePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-background text-foreground relative"
+            className="bg-background text-foreground relative pt-24 md:pt-32"
         >
-            {/* Smooth Scroll Hero Section */}
-            <SmoothScrollHero />
-
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
                 <FloatingShape
                     className="w-[min(500px,80vw)] h-[min(500px,80vw)] -top-20 -right-40"
@@ -202,20 +417,20 @@ export default function ExperiencePage() {
             </div>
 
             <DeferredMount>
-                {/* 1. Work Experience Gallery Marquee */}
+                {/* 1. Work Experience Gallery Marquee (The 2 rows of logos) */}
                 <motion.div
-                    initial={{ opacity: 0, y: isLowPowerMode ? 0 : 60 }}
+                    initial={{ opacity: 0, y: isLowPowerMode ? 0 : 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                    className="w-full relative z-10 pt-20 mb-20 -mt-10 md:-mt-20 overflow-hidden"
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                    className="w-full relative z-10 mb-16 md:mb-20 overflow-hidden"
                 >
                     <ExperienceMarquee />
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: isLowPowerMode ? 0 : 60 }}
+                    initial={{ opacity: 0, y: isLowPowerMode ? 0 : 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                     className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
                 >
                     {/* 2. Tab Slider Section (Testimonial-style UI) */}
@@ -365,7 +580,7 @@ function CollapsibleExperienceCard({ exp, idx, isLowPowerMode }: { exp: Experien
                                 </div>
                             )}
 
-                            {/* 3. IMPACT */}
+                            {/* 3. IMPACT / HIGHLIGHTS */}
                             {exp.impact && exp.impact.length > 0 && (
                                 <div>
                                     <h5 className="text-xs font-black text-neutral-400 uppercase tracking-widest mb-4 flex items-center gap-2">
@@ -506,8 +721,6 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
                 return;
             }
 
-
-
             const baseSlug = slugify(title);
 
             try {
@@ -624,8 +837,8 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
 }
 
 function ExperienceTimeline({ isLowPowerMode }: { isLowPowerMode: boolean }) {
-    const experiences = portfolioData.experiences;
     const [previewDoc, setPreviewDoc] = useState<{ url: string; title: string; subtitle?: string } | null>(null);
+    const experiences = portfolioData.experiences;
 
     const groupedExperiences = useMemo(() => {
         const groups: { [key: string]: Experience[] } = {};

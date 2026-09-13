@@ -44,674 +44,1298 @@ export const portfolioData: PortfolioData = {
         ]
     },
     projects: [
-    {
-        "id": "p01-pranag-ai-web",
-        "slug": "pranag-ai-web-platform",
-        "title": "PRANAG AI – Web Platform",
-        "description": "End-to-end AI livestock management platform with Prompt Parser, PINN models, prediction services, and connected dashboards. Built responsive React frontend, scalable FastAPI backend with RESTful APIs, and structured PostgreSQL database architecture from scratch. Includes auth, data management modules, and deployment-ready scalable architecture.",
-        "longDescription": "End-to-end AI livestock management platform with Prompt Parser, PINN models, prediction services, and connected dashboards. Built responsive React frontend, scalable FastAPI backend with RESTful APIs, and structured PostgreSQL database architecture from scratch. Includes auth, data management modules, and deployment-ready scalable architecture.",
-        "image": "/profile.png",
-        "techStack": [
-            "React.js",
-            "FastAPI",
-            "PostgreSQL",
-            "Python",
-            "Tailwind CSS",
-            "REST API"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448",
-        "repoUrl": "https://github.com/KartikSharma4448",
-        "startDate": "2026-04-01",
-        "highlights": [
-            "React.js Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "AI & Machine Learning",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance React.js, FastAPI, PostgreSQL",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Internship Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p02-pranag-flutter",
-        "slug": "ai-livestock-diagnostic-mobile-app",
-        "title": "AI Livestock Diagnostic Mobile App",
-        "description": "Cross-platform cattle health monitoring app with biometric muzzle-print ID, CNN skin disease diagnosis, MFCC acoustic health screening, real-time health records, and backend API synchronization. Built from scratch using Flutter, Dart, and Kotlin.",
-        "longDescription": "Cross-platform cattle health monitoring app with biometric muzzle-print ID, CNN skin disease diagnosis, MFCC acoustic health screening, real-time health records, and backend API synchronization. Built from scratch using Flutter, Dart, and Kotlin.",
-        "image": "/profile.png",
-        "techStack": [
-            "Flutter",
-            "Dart",
-            "Kotlin",
-            "OpenCV",
-            "Audio MFCC",
-            "FastAPI"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/Pranag-fluter",
-        "repoUrl": "https://github.com/KartikSharma4448/Pranag-fluter",
-        "startDate": "2026-02-01",
-        "highlights": [
-            "Flutter Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Mobile & AI",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance Flutter, Dart, Kotlin",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Internship Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p03-vcc-erp",
-        "slug": "vcc-erp-coaching-institute-management",
-        "title": "VCC ERP – Coaching Institute Management",
-        "description": "Production-ready ERP for coaching institutes. Flutter mobile app for students (attendance, fees, quizzes, AI tutor, timetable) & teachers (class management, mark attendance). Next.js admin dashboard with full CRUD, analytics, CSV export, and role-based access. Node.js REST API with JWT auth and Prisma ORM on Supabase.",
-        "longDescription": "Production-ready ERP for coaching institutes. Flutter mobile app for students (attendance, fees, quizzes, AI tutor, timetable) & teachers (class management, mark attendance). Next.js admin dashboard with full CRUD, analytics, CSV export, and role-based access. Node.js REST API with JWT auth and Prisma ORM on Supabase.",
-        "image": "/Projects/ERP App/1.png",
-        "techStack": [
-            "Flutter",
-            "Dart",
-            "Next.js",
-            "Node.js",
-            "PostgreSQL",
-            "Supabase",
-            "Prisma",
-            "TypeScript",
-            "NVIDIA NIM",
-            "JWT"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://vcc-admin-panel.vercel.app",
-        "repoUrl": "https://github.com/KartikSharma4448",
-        "startDate": "2026-06-01",
-        "highlights": [
-            "Flutter Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Full Stack & ERP",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance Flutter, Dart, Next.js",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/Projects/ERP App/1.png",
-            "/Projects/ERP App/2.png",
-            "/Projects/ERP App/3.png",
-            "/Projects/ERP App/4.png"
-        ],
-        "team": "Client Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p04-rajasthali",
-        "slug": "rajasthali-travel-fleet-management-system",
-        "title": "Rajasthali – Travel & Fleet Management System",
-        "description": "Complete travel management ecosystem. Flutter app for drivers (live GPS tracking, speedometer, road navigation, auto-start tours, SOS alerts) & clients (track tours live). Next.js admin panel for fleet tracking, HR, payroll, attendance & analytics. All at ₹0/month cost using Supabase backend with Realtime updates.",
-        "longDescription": "Complete travel management ecosystem. Flutter app for drivers (live GPS tracking, speedometer, road navigation, auto-start tours, SOS alerts) & clients (track tours live). Next.js admin panel for fleet tracking, HR, payroll, attendance & analytics. All at ₹0/month cost using Supabase backend with Realtime updates.",
-        "image": "/Projects/Tours&fleet Management App/1.png",
-        "techStack": [
-            "Flutter",
-            "Dart",
-            "Next.js",
-            "TypeScript",
-            "PostgreSQL",
-            "Supabase",
-            "Riverpod",
-            "Leaflet",
-            "OSRM",
-            "Firebase FCM",
-            "Tailwind CSS"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448",
-        "repoUrl": "https://github.com/KartikSharma4448",
-        "startDate": "2026-06-01",
-        "highlights": [
-            "Flutter Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Fleet & Mobile App",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance Flutter, Dart, Next.js",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/Projects/Tours&fleet Management App/1.png",
-            "/Projects/Tours&fleet Management App/2.png",
-            "/Projects/Tours&fleet Management App/3.png"
-        ],
-        "team": "Client Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p05-cvcraft",
-        "slug": "cvcraft-v2-ai-powered-ats-resume-builder",
-        "title": "CVCraft v2 – AI-Powered ATS Resume Builder",
-        "description": "Full-stack ATS resume builder with live editing, real-time ATS scoring with keyword optimization, NVIDIA AI content refinement, instant PDF export, and flexible multi-template MongoDB schema.",
-        "longDescription": "Full-stack ATS resume builder with live editing, real-time ATS scoring with keyword optimization, NVIDIA AI content refinement, instant PDF export, and flexible multi-template MongoDB schema.",
-        "image": "/Projects/CVCraft/Screenshot 2026-07-04 010256.png",
-        "techStack": [
-            "FastAPI",
-            "React",
-            "MongoDB",
-            "NVIDIA AI",
-            "Tailwind CSS",
-            "Python"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://cvcraft-2fz1.onrender.com",
-        "repoUrl": "https://github.com/KartikSharma4448/CVCraft",
-        "startDate": "2026-05-31",
-        "highlights": [
-            "FastAPI Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "AI & Web Application",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance FastAPI, React, MongoDB",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/Projects/CVCraft/Screenshot 2026-07-04 010256.png",
-            "/Projects/CVCraft/Screenshot 2026-07-04 010304.png",
-            "/Projects/CVCraft/Screenshot 2026-07-04 010314.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p06-aegiscare",
-        "slug": "aegis-care-blockchain-healthcare-system",
-        "title": "Aegis Care – Blockchain Healthcare System",
-        "description": "Decentralized healthcare platform on Algorand blockchain with role-based smart contracts (patients, doctors, admins) and IPFS-based tamper-proof medical record and prescription storage using content identifiers.",
-        "longDescription": "Decentralized healthcare platform on Algorand blockchain with role-based smart contracts (patients, doctors, admins) and IPFS-based tamper-proof medical record and prescription storage using content identifiers.",
-        "image": "/profile.png",
-        "techStack": [
-            "Algorand",
-            "Python",
-            "AlgoKit",
-            "Smart Contracts",
-            "IPFS",
-            "TypeScript"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/Aegiscare",
-        "repoUrl": "https://github.com/KartikSharma4448/Aegiscare",
-        "startDate": "2026-06-01",
-        "highlights": [
-            "Algorand Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Web3 & Blockchain",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance Algorand, Python, AlgoKit",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p07-kidzgpt",
-        "slug": "kidzgpt-ai-3d-learning-assistant",
-        "title": "KidzGPT – AI 3D Learning Assistant",
-        "description": "AI learning assistant for children with interactive 3D animated characters, real-time voice and text AI conversations using LLM APIs, and gamified educational experience. Built for a freelance client.",
-        "longDescription": "AI learning assistant for children with interactive 3D animated characters, real-time voice and text AI conversations using LLM APIs, and gamified educational experience. Built for a freelance client.",
-        "image": "/profile.png",
-        "techStack": [
-            "React",
-            "Three.js",
-            "React Three Fiber",
-            "LLM APIs",
-            "Web Speech API"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/KidZ-GPT",
-        "repoUrl": "https://github.com/KartikSharma4448/KidZ-GPT",
-        "startDate": "2026-05-01",
-        "highlights": [
-            "React Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "AI & 3D Interactive",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance React, Three.js, React Three Fiber",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p08-todoup",
-        "slug": "todoup-ai-productivity-app",
-        "title": "TodoUp – AI Productivity App",
-        "description": "Published on Google Play Store. Modern task management app with AI-assisted task features, smart reminders, real-time Supabase cloud sync, and offline Hive storage for seamless internet-free experience.",
-        "longDescription": "Published on Google Play Store. Modern task management app with AI-assisted task features, smart reminders, real-time Supabase cloud sync, and offline Hive storage for seamless internet-free experience.",
-        "image": "/Projects/ToDoUp/1.png",
-        "techStack": [
-            "Flutter",
-            "Dart",
-            "Supabase",
-            "Hive"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/Todoup-flutter",
-        "repoUrl": "https://github.com/KartikSharma4448/Todoup-flutter",
-        "startDate": "2026-03-01",
-        "highlights": [
-            "Flutter Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Mobile App (Play Store)",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance Flutter, Dart, Supabase",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/Projects/ToDoUp/1.png",
-            "/Projects/ToDoUp/2.png",
-            "/Projects/ToDoUp/3.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p09-restroqr",
-        "slug": "restroqr-free-digital-qr-menu-table-ordering-system",
-        "title": "RestroQR – Free Digital QR Menu & Table Ordering System",
-        "description": "Full-stack restaurant management platform. Owners manage menus, tables & orders via a Flutter Android app. Customers scan a table QR code and place orders directly from their browser — no app download needed. Features multi-table encrypted QR ordering, real-time push notifications, earnings dashboard, and item analytics.",
-        "longDescription": "Full-stack restaurant management platform. Owners manage menus, tables & orders via a Flutter Android app. Customers scan a table QR code and place orders directly from their browser — no app download needed. Features multi-table encrypted QR ordering, real-time push notifications, earnings dashboard, and item analytics.",
-        "image": "/Projects/RestroQR/Screenshot 2026-06-28 174621.png",
-        "techStack": [
-            "Flutter",
-            "Dart",
-            "Node.js",
-            "Express",
-            "TypeScript",
-            "PostgreSQL",
-            "Next.js",
-            "Firebase FCM",
-            "Cloudinary"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://restro-qr-peach.vercel.app",
-        "repoUrl": "https://github.com/KartikSharma4448",
-        "startDate": "2026-06-28",
-        "highlights": [
-            "Flutter Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Full Stack & SaaS",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance Flutter, Dart, Node.js",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/Projects/RestroQR/Screenshot 2026-06-28 174621.png",
-            "/Projects/RestroQR/Screenshot 2026-06-28 174640.png",
-            "/Projects/RestroQR/Screenshot 2026-06-28 174652.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p10-task-tracker",
-        "slug": "task-tracker-full-stack-crud-app",
-        "title": "Task Tracker – Full Stack CRUD App",
-        "description": "Full-stack Task Tracker application with React, Node.js, Express, and MongoDB. Features CRUD operations, search, filtering, sorting, pagination, dark mode, toast notifications, and responsive design.",
-        "longDescription": "Full-stack Task Tracker application with React, Node.js, Express, and MongoDB. Features CRUD operations, search, filtering, sorting, pagination, dark mode, toast notifications, and responsive design.",
-        "image": "/profile.png",
-        "techStack": [
-            "React",
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "JavaScript"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/task-tracker",
-        "repoUrl": "https://github.com/KartikSharma4448/task-tracker",
-        "startDate": "2026-06-28",
-        "highlights": [
-            "React Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Full Stack CRUD",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance React, Node.js, Express",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p11-hope-paws",
-        "slug": "hope-paws-animal-road-safety-platform",
-        "title": "HOPE-PAWS – Animal & Road Safety Platform",
-        "description": "Next-generation smart platform to ensure animal and road safety using real-time reporting. Features incident reporting, service discovery, and transparent donation tracking.",
-        "longDescription": "Next-generation smart platform to ensure animal and road safety using real-time reporting. Features incident reporting, service discovery, and transparent donation tracking.",
-        "image": "/profile.png",
-        "techStack": [
-            "TypeScript",
-            "React",
-            "Full Stack Web App"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/Hope-Paws",
-        "repoUrl": "https://github.com/KartikSharma4448/Hope-Paws",
-        "startDate": "2025-12-23",
-        "highlights": [
-            "TypeScript Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Web Application",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance TypeScript, React, Full Stack Web App",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p12-rajasthali-website",
-        "slug": "rajasthali-tours-company-website",
-        "title": "Rajasthali Tours – Company Website",
-        "description": "Professional company website for Rajasthali Tours with booking information, tour packages, and travel services showcase.",
-        "longDescription": "Professional company website for Rajasthali Tours with booking information, tour packages, and travel services showcase.",
-        "image": "/profile.png",
-        "techStack": [
-            "JavaScript",
-            "HTML",
-            "CSS",
-            "Web Development"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/Rajasthali-website",
-        "repoUrl": "https://github.com/KartikSharma4448/Rajasthali-website",
-        "startDate": "2026-06-21",
-        "highlights": [
-            "JavaScript Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Web Development",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance JavaScript, HTML, CSS",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Client Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p13-sploink-ai",
-        "slug": "sploink-ai-vs-code-extension",
-        "title": "Sploink.AI – VS Code Extension",
-        "description": "Frontend development for AI agent management VS Code extension for a US-based client ($5/hr). Built responsive monitoring UI for agent workflow logs and real-time execution state visualization.",
-        "longDescription": "Frontend development for AI agent management VS Code extension for a US-based client ($5/hr). Built responsive monitoring UI for agent workflow logs and real-time execution state visualization.",
-        "image": "/assets/sploinkai.png",
-        "techStack": [
-            "React",
-            "TypeScript",
-            "VS Code Extension API"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448",
-        "repoUrl": "https://github.com/KartikSharma4448",
-        "startDate": "2026-05-01",
-        "highlights": [
-            "React Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "AI Tools & Extension",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance React, TypeScript, VS Code Extension API",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/assets/sploinkai.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    },
-    {
-        "id": "p14-automagic-vision",
-        "slug": "automagic-vision-hand-tracking-gesture-control",
-        "title": "AutoMagic Vision – Hand Tracking & Gesture Control",
-        "description": "Python computer vision project for hand tracking, gesture-based controls, and adaptive mouse automation. Uses OpenCV and MediaPipe for real-time gesture recognition.",
-        "longDescription": "Python computer vision project for hand tracking, gesture-based controls, and adaptive mouse automation. Uses OpenCV and MediaPipe for real-time gesture recognition.",
-        "image": "/profile.png",
-        "techStack": [
-            "Python",
-            "OpenCV",
-            "MediaPipe",
-            "Computer Vision"
-        ],
-        "tools": [
-            "VS Code",
-            "Git",
-            "GitHub",
-            "Postman"
-        ],
-        "status": "completed",
-        "demoUrl": "https://github.com/KartikSharma4448/AutoMagic-Vision",
-        "repoUrl": "https://github.com/KartikSharma4448/AutoMagic-Vision",
-        "startDate": "2026-03-01",
-        "highlights": [
-            "Python Architecture",
-            "Production-Ready Scalability",
-            "Modern UI/UX Design"
-        ],
-        "category": "Computer Vision & AI",
-        "features": [
-            {
-                "title": "Core Architecture",
-                "items": [
-                    "Built with high-performance Python, OpenCV, MediaPipe",
-                    "Robust error handling and production database schema",
-                    "Responsive user experience and smooth interactions"
-                ]
-            }
-        ],
-        "galleryImages": [
-            "/profile.png"
-        ],
-        "team": "Personal Project",
-        "role": "Full Stack & Lead Developer"
-    }
-],
+        {
+            id: "p01-pranag-ai-web",
+            slug: "pranag-ai-web-platform",
+            title: "PRANAG AI – Web Platform",
+            description: "End-to-end AI livestock management platform with Prompt Parser, PINN models, prediction services, and connected dashboards. Built responsive React frontend, scalable FastAPI backend with RESTful APIs, and structured PostgreSQL database architecture from scratch. Includes auth, data management modules, and deployment-ready scalable architecture.",
+            longDescription: "PRANAG AI Web Platform is a comprehensive livestock health analytics and disease intelligence platform. It features an advanced natural language Prompt Parser, Physics-Informed Neural Network (PINN) models for bovine metabolic tracking, and real-time disease risk forecasting dashboards. Built from the ground up with a responsive React.js frontend, an asynchronous FastAPI REST backend, and PostgreSQL with optimized relational schemas. The system empowers veterinarians and dairy farm managers with predictive cattle health insights.",
+            image: "/profile.png",
+            techStack: [
+                "React.js",
+                "FastAPI",
+                "PostgreSQL",
+                "Python",
+                "TensorFlow",
+                "PINN Models",
+                "Tailwind CSS",
+                "REST API"
+            ],
+            tools: [
+                "VS Code",
+                "Postman",
+                "Git",
+                "GitHub",
+                "Docker"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448",
+            repoUrl: "https://github.com/KartikSharma4448",
+            startDate: "2026-04-01",
+            endDate: "2026-06-30",
+            customTimeline: "Apr 2026 - Jun 2026",
+            highlights: [
+                "PINN Predictive Models",
+                "FastAPI Asynchronous Pipeline",
+                "PostgreSQL Relational Design",
+                "Role-Based Access Control"
+            ],
+            category: "AI & Machine Learning",
+            role: "Full Stack & AI Systems Architect",
+            team: "Internship Project / R&D Team",
+            features: [
+                {
+                    title: "AI & Physics-Informed Neural Networks",
+                    items: [
+                        "**Prompt Parser:** Natural language query engine translating clinical vet inquiries into structured telemetry filters",
+                        "**PINN Cattle Models:** Physics-Informed Neural Networks modeling bovine metabolic trajectories and feed efficiency",
+                        "**Disease Risk Matrix:** Multi-factor epidemiological risk scoring for early herd outbreak warnings"
+                    ]
+                },
+                {
+                    title: "Backend & Database Architecture",
+                    items: [
+                        "**FastAPI Microservices:** Asynchronous non-blocking Python backend delivering sub-40ms API responses",
+                        "**PostgreSQL Schema:** Optimized relational schema for millions of telemetry time-series and diagnostic records",
+                        "**JWT Authentication:** Role-based security tiers separating Veterinarians, Farm Managers, and Field Staff"
+                    ]
+                },
+                {
+                    title: "Frontend & Visualization",
+                    items: [
+                        "**Real-Time Dashboards:** Interactive Chart.js and Tailwind dashboards for biometric telemetry",
+                        "**Export & Reports:** Instant PDF and CSV clinical diagnostic report generation",
+                        "**Responsive UI:** Fully fluid layout adapting seamlessly across tablets and workstations"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "High latency when computing complex Physics-Informed Neural Network (PINN) inference queries on large herd datasets.",
+                    solution: "Designed an asynchronous task queue with background model workers and Redis caching for recurring parameter lookups, reducing response latency by 72%."
+                },
+                {
+                    problem: "Complex multi-tenant permissions needed across dairy farms, research institutions, and visiting veterinarians.",
+                    solution: "Implemented hierarchical Role-Based Access Control (RBAC) in FastAPI middleware with granular scoped JWT claims and PostgreSQL row-level indexing."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Clone the repository and setup environment",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/pranag-ai-web.git\ncd pranag-ai-web"
+                },
+                {
+                    title: "2. Backend Setup (FastAPI)",
+                    type: "code",
+                    cmd: "cd backend\npython -m venv venv\nsource venv/bin/activate  # Or venv\\Scripts\\activate on Windows\npip install -r requirements.txt\nuvicorn app.main:app --reload --port 8000"
+                },
+                {
+                    title: "3. Frontend Setup (React)",
+                    type: "code",
+                    cmd: "cd frontend\nnpm install\nnpm run dev"
+                }
+            ],
+            galleryImages: [
+                "/profile.png"
+            ]
+        },
+        {
+            id: "p02-pranag-flutter",
+            slug: "ai-livestock-diagnostic-mobile-app",
+            title: "AI Livestock Diagnostic Mobile App",
+            description: "Cross-platform cattle health monitoring app with biometric muzzle-print ID, CNN skin disease diagnosis, MFCC acoustic health screening, real-time health records, and backend API synchronization. Built from scratch using Flutter, Dart, and Kotlin.",
+            longDescription: "A cutting-edge on-device AI mobile diagnostic application for cattle and livestock health management. Incorporates biometric muzzle-print computer vision for unique cattle identification (analogous to human fingerprints), Convolutional Neural Networks (CNN) for photographic skin disease detection (e.g. Lumpy Skin Disease), and Mel-Frequency Cepstral Coefficients (MFCC) audio signal processing for respiratory cough screening. Designed with offline-first synchronization to operate reliably in remote rural farm environments.",
+            image: "/profile.png",
+            techStack: [
+                "Flutter",
+                "Dart",
+                "Kotlin",
+                "OpenCV",
+                "TensorFlow Lite",
+                "Audio MFCC",
+                "FastAPI",
+                "SQLite"
+            ],
+            tools: [
+                "Android Studio",
+                "VS Code",
+                "Git",
+                "Postman",
+                "Flutter DevTools"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448/Pranag-fluter",
+            repoUrl: "https://github.com/KartikSharma4448/Pranag-fluter",
+            startDate: "2026-02-01",
+            endDate: "2026-05-30",
+            customTimeline: "Feb 2026 - May 2026",
+            highlights: [
+                "Biometric Muzzle-Print ID",
+                "On-Device CNN Skin Diagnosis",
+                "MFCC Audio Respiratory Screening",
+                "Offline-First SQLite Sync"
+            ],
+            category: "Mobile & On-Device AI",
+            role: "Lead Mobile & Embedded AI Engineer",
+            team: "Internship Project",
+            features: [
+                {
+                    title: "Biometric & Vision AI",
+                    items: [
+                        "**Muzzle-Print Identification:** OpenCV edge contour and feature descriptor matching for cattle biometric recognition",
+                        "**CNN Dermatological Screening:** On-device TensorFlow Lite model diagnosing lesions and lumpy skin infections from camera feeds",
+                        "**Real-Time Bounding Boxes:** Instant visual confidence overlays and severity scoring"
+                    ]
+                },
+                {
+                    title: "Acoustic Respiratory Analysis",
+                    items: [
+                        "**MFCC Audio Extraction:** High-frequency audio sampling converting cough recordings into Mel-frequency spectrograms",
+                        "**Respiratory Pathology Classifier:** Differentiates healthy bovine sounds from pneumonia and respiratory distress",
+                        "**Noise-Reduction Filters:** Native Kotlin audio pre-processing isolating animal vocalizations from tractor and ambient farm noise"
+                    ]
+                },
+                {
+                    title: "Mobile Architecture & Sync",
+                    items: [
+                        "**Offline SQLite Engine:** Full local database allowing field vets to log medical histories without network connectivity",
+                        "**Background Sync:** Automatic batch synchronization with cloud FastAPI backend once network connectivity resumes",
+                        "**Multi-Language UI:** Localized interfaces tailored for grassroots dairy farmers and field technicians"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Running real-time image recognition and MFCC signal extraction on low-cost Android smartphones caused memory throttling and frame drops.",
+                    solution: "Quantized TensorFlow Lite models to 8-bit integers (INT8) and offloaded audio processing into native C++/Kotlin Android NDK isolates, achieving steady 60 FPS UI performance."
+                },
+                {
+                    problem: "Unpredictable cellular reception in rural farmlands caused data loss when veterinarians submitted field diagnosis reports.",
+                    solution: "Built an offline-first transactional SQLite write-ahead queue with idempotent UUID records and automatic retry mechanisms on network reconnect."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Prerequisites",
+                    type: "text",
+                    code: "Ensure Flutter 3.x, Dart 3.x, and Android SDK (API 34+) are installed and configured in your PATH."
+                },
+                {
+                    title: "2. Clone & Install Dependencies",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/Pranag-fluter.git\ncd Pranag-fluter\nflutter pub get"
+                },
+                {
+                    title: "3. Run on Connected Device",
+                    type: "code",
+                    cmd: "flutter run --release"
+                }
+            ],
+            galleryImages: [
+                "/profile.png"
+            ]
+        },
+        {
+            id: "p03-vcc-erp",
+            slug: "vcc-erp-coaching-institute-management",
+            title: "VCC ERP – Coaching Institute Management",
+            description: "Production-ready ERP for coaching institutes. Flutter mobile app for students (attendance, fees, quizzes, AI tutor, timetable) & teachers (class management, mark attendance). Next.js admin dashboard with full CRUD, analytics, CSV export, and role-based access. NestJS REST API with JWT auth and Prisma ORM on Supabase.",
+            longDescription: "VCC (Vinayak Coaching Classes) ERP is a comprehensive, multi-platform institute management system. Students and teachers interact via a high-performance Flutter Android mobile application, while administrators oversee institute operations through an Apple-inspired Next.js 16 web dashboard. Powered by a robust NestJS 11 backend with Prisma ORM on Supabase PostgreSQL, the system features automated attendance tracking, fee receipts, subject-wise digital document distribution, online MCQ quizzes, an AI Tutor powered by NVIDIA NIM Llama 3.1, and deep academic analytics.",
+            image: "/Projects/ERP App/Student - Dashboard.jpeg",
+            techStack: [
+                "Flutter 3.41",
+                "Dart 3.11",
+                "Next.js 16",
+                "NestJS 11",
+                "PostgreSQL",
+                "Supabase",
+                "Prisma 7.8",
+                "TypeScript",
+                "NVIDIA NIM (Llama 3.1)",
+                "JWT",
+                "Tailwind CSS v4"
+            ],
+            tools: [
+                "VS Code",
+                "Postman",
+                "Render",
+                "Vercel",
+                "Prisma Studio",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://vcc-admin-panel.vercel.app",
+            repoUrl: "https://github.com/KartikSharma4448",
+            startDate: "2026-06-01",
+            endDate: "2026-06-30",
+            customTimeline: "Jun 2026",
+            highlights: [
+                "Flutter Mobile + Next.js Admin",
+                "NestJS REST API + Prisma ORM",
+                "NVIDIA NIM AI Tutor Integration",
+                "Live Production Deployment"
+            ],
+            category: "Full Stack & ERP Ecosystem",
+            role: "Full Stack Lead Architect",
+            team: "Client Engagement",
+            features: [
+                {
+                    title: "Student Mobile App (Flutter)",
+                    items: [
+                        "**Month-wise Attendance:** Visual percentage rings and calendar heatmaps tracking class presence",
+                        "**Fee Ledger & Receipts:** Complete payment histories, outstanding balances, and receipt download",
+                        "**In-App Study Materials:** Subject-wise digital notes and PDF document reader",
+                        "**MCQ Quizzes & Rankings:** Instant quiz evaluations, timed tests, and subject breakdown scorecards",
+                        "**AI Tutor (NVIDIA NIM):** 24/7 conversational academic assistant powered by Llama 3.1 8B Instruct"
+                    ]
+                },
+                {
+                    title: "Teacher Mobile Panel (Flutter)",
+                    items: [
+                        "**Batch Attendance Marking:** One-tap roll call and absent notification triggers",
+                        "**Content Uploads:** Direct mobile upload of homework assignments, announcements, and notes",
+                        "**Batch Class Schedules:** Weekly timetable schedules and test mark entry"
+                    ]
+                },
+                {
+                    title: "Next.js 16 Web Admin Dashboard",
+                    items: [
+                        "**Institute Overview:** Real-time KPI metrics for active batches, revenue, and teacher payroll",
+                        "**Full CRUD Management:** Comprehensive directory for Students, Teachers, Batches, and Timetables",
+                        "**Rankings & CSV Export:** Automated scoreboard generation and bulk data reporting",
+                        "**Targeted Broadcasts:** Role and batch-specific in-app push notifications"
+                    ]
+                },
+                {
+                    title: "NestJS Backend & Supabase Database",
+                    items: [
+                        "**Role-Based Access Control (RBAC):** Strict JWT token authorization separating Admin, Teacher, and Student routes",
+                        "**Prisma ORM Architecture:** Strongly-typed schemas spanning 12+ relational database tables",
+                        "**Self-Ping Keep-Alive:** Automated 14-minute cron keep-alive preventing cloud cold-starts"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Coaching institute teachers needed to mark attendance and upload study materials without lag even during peak morning rush hours.",
+                    solution: "Optimized NestJS controllers with indexed Prisma queries, lean DTO validation via class-validator, and asynchronous file uploads, keeping API response times consistently under 35ms."
+                },
+                {
+                    problem: "Maintaining UI and design consistency across both a Flutter mobile app and a Next.js web application.",
+                    solution: "Created a unified Apple-inspired design system with frosted glass backdrop blur, Inter typography, shared HSL color tokens, and spring animation curves."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Backend (NestJS + Prisma)",
+                    type: "code",
+                    cmd: "cd backend\nnpm install\nnpx prisma generate\nnpx prisma migrate deploy\nnpm run start:dev"
+                },
+                {
+                    title: "2. Admin Panel (Next.js 16)",
+                    type: "code",
+                    cmd: "cd admin-panel\nnpm install\nnpm run dev"
+                },
+                {
+                    title: "3. Mobile App (Flutter)",
+                    type: "code",
+                    cmd: "cd flutter_app\nflutter pub get\nflutter run"
+                },
+                {
+                    title: "4. Live Demo Credentials",
+                    type: "text",
+                    code: "Admin: admin.vcc / VCC@1234\nTeacher: teacher.vcc / VCC@1234\nStudent: student.vcc / VCC@1234"
+                }
+            ],
+            galleryImages: [
+                "/Projects/ERP App/Student - Dashboard.jpeg",
+                "/Projects/ERP App/App login Page.jpeg",
+                "/Projects/ERP App/Student - Home Page.jpeg",
+                "/Projects/ERP App/Student - Attendance.jpeg",
+                "/Projects/ERP App/Student - fee Page.jpeg",
+                "/Projects/ERP App/Student - Time Table.jpeg",
+                "/Projects/ERP App/Student - Ai Chat Panel.jpeg",
+                "/Projects/ERP App/Student - Notification Panel.jpeg",
+                "/Projects/ERP App/Student - Profile.jpeg",
+                "/Projects/ERP App/Teacher Home Page.jpeg",
+                "/Projects/ERP App/Teacher - Class Management.jpeg",
+                "/Projects/ERP App/Teacher -Profile.jpeg"
+            ]
+        },
+        {
+            id: "p04-rajasthali",
+            slug: "rajasthali-travel-fleet-management-system",
+            title: "Rajasthali – Travel & Fleet Management System",
+            description: "Complete travel management ecosystem. Flutter app for drivers (live GPS tracking, speedometer, road navigation, auto-start tours, SOS alerts) & clients (track tours live). Next.js admin panel for fleet tracking, HR, payroll, attendance & analytics. All at ₹0/month cost using Supabase backend with Realtime updates.",
+            longDescription: "Rajasthali Traveling System is an end-to-end travel and fleet operations ecosystem custom built for Rajasthali Tours, Rajasthan. It pairs a Flutter mobile application for drivers and passengers with an enterprise Next.js 16 administration portal. Key capabilities include background GPS fleet tracking with 10-second Supabase Realtime updates, OSRM turn-by-turn driving navigation, real-time speedometer with overspeed sirens (>80 km/h), automated tour lifecycle triggers, full HR & payroll management with automated absence deductions, and public shareable tracking links — operating at ₹0/month infrastructure cost.",
+            image: "/Projects/Tours&fleet Management App/Admin - Dashboard.png",
+            techStack: [
+                "Flutter 3.7+",
+                "Dart",
+                "Next.js 16",
+                "React 19",
+                "TypeScript 5",
+                "PostgreSQL (18 Tables)",
+                "Supabase Realtime",
+                "Riverpod 2.6",
+                "Leaflet / OpenStreetMap",
+                "OSRM Routing API",
+                "Firebase FCM",
+                "Tailwind CSS 4"
+            ],
+            tools: [
+                "VS Code",
+                "Supabase Dashboard",
+                "Vercel",
+                "Git",
+                "Android Studio"
+            ],
+            status: "completed",
+            demoUrl: "https://rajasthali-admin.vercel.app",
+            repoUrl: "https://github.com/KartikSharma4448",
+            startDate: "2026-06-01",
+            endDate: "2026-06-30",
+            customTimeline: "Jun 2026",
+            highlights: [
+                "Real-Time GPS Tracking (10s sync)",
+                "OSRM Free Road Navigation & Speedometer",
+                "18-Table Supabase PostgreSQL Schema",
+                "₹0/Month Cloud Architecture"
+            ],
+            category: "Fleet & Mobile Logistics",
+            role: "Lead Full Stack & Mobile Engineer",
+            team: "Client Engagement",
+            features: [
+                {
+                    title: "Driver Mobile App (Flutter)",
+                    items: [
+                        "**Live GPS Background Service:** Android foreground service publishing location telemetry every 10 seconds",
+                        "**OSRM Turn-by-Turn Navigation:** Free routing engine calculating polylines, distances, and live ETAs",
+                        "**Live Speedometer & Overspeed Alert:** Gauge with audio warning when vehicle exceeds 80 km/h",
+                        "**Tour Auto-Start/Complete:** Automatic status transitions triggered by scheduled start and end dates",
+                        "**SOS Emergency System:** One-tap emergency dialer alerting police/medical help and dispatching admin alerts",
+                        "**Battery Saver Mode:** Reduces GPS query intervals to 30 seconds when stationary for over 60 seconds"
+                    ]
+                },
+                {
+                    title: "Client Passenger Panel (Flutter)",
+                    items: [
+                        "**Active Tour Tracker:** Live map tracking assigned vehicle and driver position in real time",
+                        "**Two-Way Location Sharing:** Passenger can share live coordinates directly with the driver",
+                        "**Itinerary & Hotel Schedules:** Detailed breakdown of tour checkpoints, sightseeing, and hotel bookings"
+                    ]
+                },
+                {
+                    title: "Next.js 16 Web Administration Portal",
+                    items: [
+                        "**Interactive Fleet Map:** Leaflet map rendering all active vehicles and drivers simultaneously via WebSockets",
+                        "**5-Step Tour Creation Wizard:** Driver selection → Vehicle allocation → Client assignment → Itinerary map → Checklist",
+                        "**HR & Automated Payroll:** Absence-based daily attendance tracking with automated salary calculations and deductions",
+                        "**Public Shareable Links:** Expiring `/track/{token}` public links allowing families to track tours in browser without login"
+                    ]
+                },
+                {
+                    title: "Backend & Database (Supabase)",
+                    items: [
+                        "**18 Relational Tables:** Comprehensive models for employees, clients, vehicles, tours, checklists, salary, and GPS pings",
+                        "**Row Level Security (RLS):** Strict multi-tenant security isolating driver, client, and owner data access",
+                        "**Firebase Cloud Messaging:** Instant push notifications dispatched when tour assignments update"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Continuous background GPS tracking drained mobile batteries and incurred excessive database write costs.",
+                    solution: "Implemented an adaptive geofencing and motion-detection algorithm: GPS polling drops from 10s to 30s when stationary for over 60 seconds, saving 45% battery life while staying well within Supabase free-tier limits."
+                },
+                {
+                    problem: "Commercial map APIs (Google Maps) would cost thousands of rupees monthly for a fleet with continuous updates.",
+                    solution: "Architected a zero-cost mapping stack using OpenStreetMap, Leaflet, and the open-source OSRM routing engine, delivering full navigation capabilities at ₹0/month."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Admin Dashboard (Next.js)",
+                    type: "code",
+                    cmd: "cd admin-portal\nnpm install\nnpm run dev"
+                },
+                {
+                    title: "2. Mobile App (Flutter)",
+                    type: "code",
+                    cmd: "cd driver_client_app\nflutter pub get\nflutter run"
+                },
+                {
+                    title: "3. Direct APK Download",
+                    type: "text",
+                    code: "Android APK available in public/Projects/Tours&fleet Management App/RajasthaliApp-release.apk"
+                }
+            ],
+            galleryImages: [
+                "/Projects/Tours&fleet Management App/Admin - Dashboard.png",
+                "/Projects/Tours&fleet Management App/Driver - Dashboard.jpg",
+                "/Projects/Tours&fleet Management App/Driver - Active Tour.jpg",
+                "/Projects/Tours&fleet Management App/Driver & Client Share Live Location Each Other.jpg",
+                "/Projects/Tours&fleet Management App/Client - Active Tour.jpg",
+                "/Projects/Tours&fleet Management App/Admin - Tours Managent.png",
+                "/Projects/Tours&fleet Management App/Admin - Vehicle Management.png",
+                "/Projects/Tours&fleet Management App/Admin - Employee Management.png",
+                "/Projects/Tours&fleet Management App/Admin - Sallary Management.png",
+                "/Projects/Tours&fleet Management App/Driver - Completed Tour.jpg",
+                "/Projects/Tours&fleet Management App/Client - My All Tour.jpg",
+                "/Projects/Tours&fleet Management App/Admin - leave Requests.png",
+                "/Projects/Tours&fleet Management App/Admin - Employee Attendance.png"
+            ]
+        },
+        {
+            id: "p05-cvcraft",
+            slug: "cvcraft-v2-ai-powered-ats-resume-builder",
+            title: "CVCraft v2 – AI-Powered ATS Resume Builder",
+            description: "Full-stack ATS resume builder with live editing, real-time ATS scoring with keyword optimization, NVIDIA AI content refinement, instant PDF export, and flexible multi-template MongoDB schema.",
+            longDescription: "CVCraft v2 is an advanced AI-powered ATS resume builder engineered to help job seekers bypass Applicant Tracking Systems. It delivers real-time ATS compatibility scoring, automated keyword gap analysis, and one-click bullet point refinement powered by NVIDIA NIM (Gemma-2, nv-embed-v1, and Mistral reranker). Built on React 18 and FastAPI with MongoDB persistence, it features instant client-side PDF export (jsPDF), LaTeX server-side compilation, and 84 property-based tests verifying total system integrity — completely free with no signup required.",
+            image: "/Projects/CVCraft/Screenshot 2026-07-04 010256.png",
+            techStack: [
+                "FastAPI",
+                "React 18",
+                "MongoDB 6.0",
+                "NVIDIA NIM (Gemma-2-2b-it)",
+                "nv-embed-v1",
+                "rerank-qa-mistral-4b",
+                "Tailwind CSS 3.4",
+                "Python 3.10+",
+                "jsPDF",
+                "Hypothesis",
+                "fast-check"
+            ],
+            tools: [
+                "VS Code",
+                "Postman",
+                "Render",
+                "MongoDB Compass",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://cvcraft-2fz1.onrender.com",
+            repoUrl: "https://github.com/KartikSharma4448/CVCraft",
+            startDate: "2026-05-31",
+            endDate: "2026-06-30",
+            customTimeline: "May 2026 - Jun 2026",
+            highlights: [
+                "NVIDIA NIM AI Integration",
+                "Real-time ATS Keyword Scoring",
+                "84 Property-Based Tests",
+                "Zero Signup Requirement"
+            ],
+            category: "AI & Full Stack Web App",
+            role: "Full Stack & AI Engineer",
+            team: "Personal Project",
+            features: [
+                {
+                    title: "NVIDIA NIM AI Intelligence",
+                    items: [
+                        "**Gemma-2-2b-it Refinement:** Context-aware enhancement of resume work experience bullet points and summaries",
+                        "**nv-embed-v1 Semantic Vectors:** High-dimension text embeddings analyzing semantic overlap between resume and target job descriptions",
+                        "**Mistral Reranking:** Precision keyword matching and missing technical terminology suggestions"
+                    ]
+                },
+                {
+                    title: "Live Builder & PDF Engine",
+                    items: [
+                        "**Live Split Preview:** Dynamic real-time rendering updating CV output instantly as user types",
+                        "**2 ATS-Optimized Templates:** Jake Ryan Classic Professional and Modern Clean ATS layouts",
+                        "**Multi-Tier PDF Export:** Instant client-side jsPDF downloads and server-side pdflatex compiling",
+                        "**No Signup Barrier:** Instant access without authentication barriers or paywalls"
+                    ]
+                },
+                {
+                    title: "Testing & Quality Assurance",
+                    items: [
+                        "**84 Property-Based Tests:** 42 backend tests via Hypothesis and 42 frontend tests via fast-check",
+                        "**Invariant Verification:** Score bounds validation, cache deduplication, and fallback behavior when AI tokens deplete",
+                        "**SEO & Analytics:** Google Analytics 4 tracking with structured JSON-LD and OpenGraph cards"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "ATS scoring algorithms often returned erratic match percentages when comparing disparate terminology across industries.",
+                    solution: "Combined vector cosine similarity (via NVIDIA nv-embed-v1) with a cross-encoder reranking model (rerank-qa-mistral-4b), stabilizing accuracy across technical domains."
+                },
+                {
+                    problem: "Third-party AI API outages or rate limits could block users from editing and downloading their resumes.",
+                    solution: "Engineered graceful fallback mechanisms with local regex-based keyword extractors and in-memory Redis caching, keeping the builder fully operational 100% of the time."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Clone and Install Dependencies",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/CVCraft.git\ncd CVCraft"
+                },
+                {
+                    title: "2. Backend Setup (FastAPI)",
+                    type: "code",
+                    cmd: "cd backend\npip install -r requirements.txt\nuvicorn main:app --reload --port 8000"
+                },
+                {
+                    title: "3. Frontend Setup (React)",
+                    type: "code",
+                    cmd: "cd frontend\nnpm install\nnpm start"
+                }
+            ],
+            galleryImages: [
+                "/Projects/CVCraft/Screenshot 2026-07-04 010256.png",
+                "/Projects/CVCraft/Screenshot 2026-07-04 010304.png",
+                "/Projects/CVCraft/Screenshot 2026-07-04 010314.png"
+            ]
+        },
+        {
+            id: "p06-aegiscare",
+            slug: "aegis-care-blockchain-healthcare-system",
+            title: "Aegis Care – Blockchain Healthcare System",
+            description: "Decentralized healthcare platform on Algorand blockchain with role-based smart contracts (patients, doctors, admins) and IPFS-based tamper-proof medical record and prescription storage using content identifiers.",
+            longDescription: "Aegis Care is a decentralized healthcare management system engineered on the Algorand blockchain. It replaces vulnerable centralized electronic health records with cryptographically signed, immutable smart contracts and distributed IPFS storage. Patients maintain sovereign ownership over their medical records, granting temporary, revocable access to certified practitioners. The platform eliminates medical prescription forgery and ensures HIPAA-compliant data integrity.",
+            image: "/profile.png",
+            techStack: [
+                "Algorand",
+                "Python (PyTeal / Beaker)",
+                "AlgoKit",
+                "Smart Contracts",
+                "IPFS",
+                "TypeScript",
+                "React"
+            ],
+            tools: [
+                "AlgoKit CLI",
+                "VS Code",
+                "Pera Wallet",
+                "IPFS Desktop",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448/Aegiscare",
+            repoUrl: "https://github.com/KartikSharma4448/Aegiscare",
+            startDate: "2026-06-01",
+            endDate: "2026-06-30",
+            customTimeline: "Jun 2026",
+            highlights: [
+                "Algorand Smart Contracts",
+                "Decentralized IPFS Storage",
+                "Cryptographic Medical Signatures",
+                "Patient Data Sovereignty"
+            ],
+            category: "Web3 & Blockchain",
+            role: "Lead Blockchain & Full Stack Engineer",
+            team: "Personal Project",
+            features: [
+                {
+                    title: "Smart Contract Architecture",
+                    items: [
+                        "**Role-Based Access:** On-chain PyTeal contracts regulating patient permissions, doctor credentials, and pharmacist validations",
+                        "**Tamper-Proof Prescriptions:** Digital prescriptions hashed and anchored directly to the Algorand blockchain",
+                        "**Revocable Consent:** Patients can grant and revoke temporary doctor access to diagnostic records at any time"
+                    ]
+                },
+                {
+                    title: "Decentralized Storage (IPFS)",
+                    items: [
+                        "**CID Content Addressing:** Heavy medical scans and lab reports are stored on IPFS with cryptographic CID hashes",
+                        "**Client-Side Encryption:** AES-256 encrypted payload before IPFS pinning ensures only authorized private keys can decrypt files",
+                        "**Integrity Verification:** Automated on-chain hash verification ensuring zero tampering of diagnostic reports"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Storing high-resolution MRI and CT scans directly on-chain is cost-prohibitive on blockchain networks.",
+                    solution: "Stored encrypted medical assets off-chain on IPFS and anchored only the SHA-256 content identifier hash inside Algorand smart contract state storage."
+                },
+                {
+                    problem: "Doctor verification needed to prevent unauthorized entities from writing medical prescriptions.",
+                    solution: "Built a multi-signature administrative gate validating medical council licenses on-chain prior to granting practitioner permissions."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Install AlgoKit & Dependencies",
+                    type: "code",
+                    cmd: "pipx install algokit\nalgokit localnet start"
+                },
+                {
+                    title: "2. Clone & Deploy Smart Contracts",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/Aegiscare.git\ncd Aegiscare\nalgokit project bootstrap\nalgokit project deploy localnet"
+                }
+            ],
+            galleryImages: [
+                "/profile.png"
+            ]
+        },
+        {
+            id: "p07-kidzgpt",
+            slug: "kidzgpt-ai-3d-learning-assistant",
+            title: "KidzGPT – AI 3D Learning Assistant",
+            description: "AI learning assistant for children with interactive 3D animated characters, real-time voice and text AI conversations using LLM APIs, and gamified educational experience. Built for a freelance client.",
+            longDescription: "KidzGPT is an interactive 3D AI learning companion crafted for young learners. It brings educational topics to life through a responsive 3D animated character rendered via Three.js and React Three Fiber. Children can speak directly to the character using the Web Speech API and receive child-safe, curriculum-tailored explanations, voice narration, and gamified quizzes.",
+            image: "/profile.png",
+            techStack: [
+                "React",
+                "Three.js",
+                "React Three Fiber",
+                "LLM APIs",
+                "Web Speech API",
+                "Framer Motion",
+                "Tailwind CSS"
+            ],
+            tools: [
+                "VS Code",
+                "Blender (GLTF models)",
+                "Git",
+                "Chrome DevTools"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448/KidZ-GPT",
+            repoUrl: "https://github.com/KartikSharma4448/KidZ-GPT",
+            startDate: "2026-05-01",
+            endDate: "2026-05-31",
+            customTimeline: "May 2026",
+            highlights: [
+                "Real-time 3D Character Animation",
+                "Web Speech Voice Interaction",
+                "Kid-Safe LLM Prompt Guardrails",
+                "Gamified Learning Quizzes"
+            ],
+            category: "AI & 3D Interactive",
+            role: "Lead Frontend & 3D Interactive Developer",
+            team: "Freelance Engagement",
+            features: [
+                {
+                    title: "3D Animation & Interactivity",
+                    items: [
+                        "**React Three Fiber World:** Optimized 3D model rigging with procedural lip-sync and idle eye-tracking animations",
+                        "**Interactive Touch:** Character responds to cursor movements, touch gestures, and conversational mood shifts",
+                        "**Lightweight Rendering:** Optimized GLTF meshes maintaining 60 FPS across mobile and desktop browsers"
+                    ]
+                },
+                {
+                    title: "Voice AI & Kid-Safe Safeguards",
+                    items: [
+                        "**Two-Way Speech:** Real-time voice recognition and natural speech synthesis via browser Web Speech APIs",
+                        "**Curriculum Guardrails:** Custom LLM system prompts enforcing age-appropriate, encouraging, and educational responses",
+                        "**Interactive Quizzes:** Dynamic trivia games with visual rewards and positive reinforcement feedback loops"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "3D avatar rendering caused battery drain and stuttering on budget mobile devices.",
+                    solution: "Implemented adaptive Level-of-Detail (LOD) rendering and throttled animation tick loops when tab is in background, cutting GPU load by 60%."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Clone & Run Locally",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/KidZ-GPT.git\ncd KidZ-GPT\nnpm install\nnpm run dev"
+                }
+            ],
+            galleryImages: [
+                "/profile.png"
+            ]
+        },
+        {
+            id: "p08-todoup",
+            slug: "todoup-ai-productivity-app",
+            title: "TodoUp – AI Productivity App",
+            description: "Published on Google Play Store. Modern task management app with AI-assisted task features, smart reminders, real-time Supabase cloud sync, and offline Hive storage for seamless internet-free experience.",
+            longDescription: "TodoUp is a modern task management and daily productivity mobile application published on the Google Play Store. Built with Flutter 3 and Dart, backed by Supabase PostgreSQL, and engineered with an offline-first Hive storage engine, TodoUp allows users to organize their daily schedule, receive smart AI task suggestions, and trigger scheduled local notifications seamlessly even without an internet connection.",
+            image: "/Projects/ToDoUp/Banner Main.webp",
+            techStack: [
+                "Flutter 3.x",
+                "Dart 3.x",
+                "Supabase",
+                "Hive (Offline-First)",
+                "flutter_local_notifications",
+                "Material Design 3"
+            ],
+            tools: [
+                "Android Studio",
+                "VS Code",
+                "Google Play Console",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://play.google.com/store/apps/details?id=app.todoup",
+            repoUrl: "https://github.com/KartikSharma4448/Todoup-flutter",
+            startDate: "2026-03-01",
+            endDate: "2026-04-30",
+            customTimeline: "Mar 2026 - Apr 2026",
+            highlights: [
+                "Live on Google Play Store",
+                "Offline-First Hive Storage",
+                "Supabase Real-time Cloud Sync",
+                "Smart Scheduled Reminders"
+            ],
+            category: "Mobile App (Play Store)",
+            role: "Mobile App Architect & Creator",
+            team: "Personal Shipped Product",
+            features: [
+                {
+                    title: "Core Task Management",
+                    items: [
+                        "**Task Organization:** Create, categorize, prioritize, and manage complex daily tasks with custom tags",
+                        "**AI Smart Suggestions:** Context-aware automated breakdown of broad goals into actionable subtasks",
+                        "**Scheduled Reminders:** Background notifications powered by `flutter_local_notifications` with direct task deep-linking"
+                    ]
+                },
+                {
+                    title: "Offline-First Sync Engine",
+                    items: [
+                        "**Hive Local Storage:** Instant zero-latency UI writes stored in local binary Hive boxes",
+                        "**Supabase Cloud Sync:** Bidirectional conflict-free sync resolving updates via timestamp comparison",
+                        "**Supabase Authentication:** Secure JWT-based email/password authentication persisting across app sessions"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Handling task sync conflicts between multiple devices operating offline simultaneously.",
+                    solution: "Architected a last-write-wins (LWW) conflict resolution protocol utilizing microsecond timestamps and soft-deletion flags in PostgreSQL."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Google Play Store",
+                    type: "text",
+                    code: "Install directly from Google Play: https://play.google.com/store/apps/details?id=app.todoup"
+                },
+                {
+                    title: "2. Build from Source",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/Todoup-flutter.git\ncd Todoup-flutter\nflutter pub get\nflutter run"
+                }
+            ],
+            galleryImages: [
+                "/Projects/ToDoUp/Banner Main.webp",
+                "/Projects/ToDoUp/Banner -1.webp",
+                "/Projects/ToDoUp/Banner -2.webp",
+                "/Projects/ToDoUp/Logo.webp"
+            ]
+        },
+        {
+            id: "p09-restroqr",
+            slug: "restroqr-free-digital-qr-menu-table-ordering-system",
+            title: "RestroQR – Free Digital QR Menu & Table Ordering System",
+            description: "Full-stack restaurant management platform. Owners manage menus, tables & orders via a Flutter Android app. Customers scan a table QR code and place orders directly from their browser — no app download needed. Features multi-table encrypted QR ordering, real-time push notifications, earnings dashboard, and item analytics.",
+            longDescription: "RestroQR is a comprehensive digital dining and restaurant operations platform. Restaurant owners manage their operations via a Flutter Android application, while dine-in customers scan AES-256-GCM encrypted QR codes on their tables to browse menus, customize dishes, and place orders directly in their phone browser without installing any app. Backed by Node.js, Express, Neon PostgreSQL (12 relational tables), Next.js 14, and Firebase Cloud Messaging, it streamlines the entire order lifecycle.",
+            image: "/Projects/RestroQR/banner-1.png",
+            techStack: [
+                "Flutter 3.11+",
+                "Dart",
+                "Node.js",
+                "Express",
+                "TypeScript",
+                "PostgreSQL (Neon)",
+                "Next.js 14",
+                "Firebase FCM",
+                "Cloudinary CDN",
+                "AES-256-GCM",
+                "Tailwind CSS"
+            ],
+            tools: [
+                "VS Code",
+                "Postman",
+                "Render",
+                "Vercel",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://restro-qr-peach.vercel.app",
+            repoUrl: "https://github.com/KartikSharma4448",
+            startDate: "2026-06-28",
+            endDate: "2026-07-04",
+            customTimeline: "Jun 2026 - Jul 2026",
+            highlights: [
+                "Encrypted Table QR (AES-256-GCM)",
+                "App-Less Browser Ordering (Next.js 14)",
+                "Firebase Instant Order Alerts",
+                "17 Property-Based Invariant Tests"
+            ],
+            category: "Full Stack & SaaS Ecosystem",
+            role: "Full Stack Lead Engineer",
+            team: "Personal Product",
+            features: [
+                {
+                    title: "Restaurant Owner Mobile App (Flutter)",
+                    items: [
+                        "**Digital Menu Builder:** Category management, photo uploads via Cloudinary, veg/non-veg tags, and pricing",
+                        "**Multi-Table QR Generator:** Generate and export encrypted QR codes per table or single restaurant QR",
+                        "**Live Order Dispatch:** Instant audio & push notifications on new orders with state lifecycle (Accept → Complete → Paid)",
+                        "**Revenue & Dish Analytics:** Daily/monthly sales breakdowns and best-seller performance metrics"
+                    ]
+                },
+                {
+                    title: "Customer Web Ordering (Next.js 14)",
+                    items: [
+                        "**Zero-Install Dining:** Instant menu loading in mobile browser upon scanning table QR code",
+                        "**Live Cart & Checkout:** Real-time dish customization, special instructions, and order placement",
+                        "**Unique Reference IDs:** Structured order tracking codes (e.g., ORD-ABC123) with live preparation status"
+                    ]
+                },
+                {
+                    title: "Security & Backend Architecture",
+                    items: [
+                        "**AES-256-GCM QR Encryption:** Cryptographically secured table tokens preventing URL tampering or table enumeration",
+                        "**Robust Testing Suite:** 17 property-based invariant tests with fast-check and supertest guaranteeing order integrity",
+                        "**Tenant Isolation:** Strict database isolation ensuring owners access only their proprietary business telemetry"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Malicious users could alter table numbers in the URL to submit fake food orders to other dining tables.",
+                    solution: "Implemented AES-256-GCM cryptographic encryption with initialization vectors and auth tags for all table QR URLs, causing invalid tokens to safely fail with generic 404s."
+                },
+                {
+                    problem: "Deleting or editing menu items could corrupt past financial and order history reports.",
+                    solution: "Implemented immutable order item snapshots that preserve historical dish titles and prices at time-of-order even if the menu item is later modified or deleted."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Backend API (Express + TypeScript)",
+                    type: "code",
+                    cmd: "cd backend\nnpm install\nnpm run migrate\nnpm run dev"
+                },
+                {
+                    title: "2. Customer Web App (Next.js 14)",
+                    type: "code",
+                    cmd: "cd customer-web\nnpm install\nnpm run dev"
+                },
+                {
+                    title: "3. Owner App (Flutter)",
+                    type: "code",
+                    cmd: "cd owner_app\nflutter pub get\nflutter run"
+                }
+            ],
+            galleryImages: [
+                "/Projects/RestroQR/banner-1.png",
+                "/Projects/RestroQR/banner-2.png",
+                "/Projects/RestroQR/screenshot-1.jpg",
+                "/Projects/RestroQR/screenshot-2.jpg",
+                "/Projects/RestroQR/screenshot-3.jpg",
+                "/Projects/RestroQR/screenshot-4.jpg",
+                "/Projects/RestroQR/screenshot-5.jpg"
+            ]
+        },
+        {
+            id: "p10-task-tracker",
+            slug: "task-tracker-full-stack-crud-app",
+            title: "Task Tracker – Full Stack CRUD App",
+            description: "Full-stack Task Tracker application with React, Node.js, Express, and MongoDB. Features CRUD operations, search, filtering, sorting, pagination, dark mode, toast notifications, and responsive design.",
+            longDescription: "A robust full-stack task and project tracking web application built using the MERN stack. Designed with clean architectural separation between the React client and Express REST backend, it provides responsive task management, multi-field filtering (by status, priority, and date), full-text search, server-side pagination, toast alerts, and a polished dark/light mode UI.",
+            image: "/profile.png",
+            techStack: [
+                "React",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "JavaScript",
+                "Tailwind CSS",
+                "REST API"
+            ],
+            tools: [
+                "VS Code",
+                "Postman",
+                "MongoDB Atlas",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448/task-tracker",
+            repoUrl: "https://github.com/KartikSharma4448/task-tracker",
+            startDate: "2026-06-28",
+            endDate: "2026-06-30",
+            customTimeline: "Jun 2026",
+            highlights: [
+                "Complete MERN Architecture",
+                "Multi-Field Search & Filter",
+                "Pagination & Sort Pipeline",
+                "Dark Mode UI"
+            ],
+            category: "Full Stack Web App",
+            role: "Full Stack Developer",
+            team: "Personal Project",
+            features: [
+                {
+                    title: "Productivity & Management",
+                    items: [
+                        "**Full CRUD Operations:** Seamless creation, reading, editing, and deletion of project tasks",
+                        "**Advanced Search & Filtering:** Dynamic query filtering across priority tags, categories, and due dates",
+                        "**Server-Side Pagination:** High-efficiency cursor pagination handling large task lists seamlessly"
+                    ]
+                },
+                {
+                    title: "UI & Developer Experience",
+                    items: [
+                        "**Fluid Theme Switcher:** Instant smooth transition between dark and light color modes",
+                        "**Toast Notification System:** Instant user feedback on asynchronous network requests",
+                        "**Responsive Design:** Fully fluid layouts tailored for mobile, tablet, and desktop viewports"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Debouncing search inputs across high-frequency keystrokes to prevent backend API request spam.",
+                    solution: "Created a custom React `useDebounce` hook with a 300ms delay window, reducing redundant server queries by 85%."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Clone and Install",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/task-tracker.git\ncd task-tracker\ncd backend && npm install\ncd ../frontend && npm install"
+                },
+                {
+                    title: "2. Run Development Servers",
+                    type: "code",
+                    cmd: "# In backend:\nnpm start\n# In frontend:\nnpm run dev"
+                }
+            ],
+            galleryImages: [
+                "/profile.png"
+            ]
+        },
+        {
+            id: "p11-hope-paws",
+            slug: "hope-paws-animal-road-safety-platform",
+            title: "HOPE-PAWS – Animal & Road Safety Platform",
+            description: "Next-generation smart platform to ensure animal and road safety using real-time reporting. Features incident reporting, service discovery, and transparent donation tracking.",
+            longDescription: "HOPE-PAWS is a community-driven animal rescue and road safety web platform. It connects citizens encountering injured or distressed stray animals on highways with nearby veterinary clinics, NGO shelters, and ambulance services in real time. Features include geotagged incident reporting, automated route matching, and transparent donation tracking for animal medical care.",
+            image: "/profile.png",
+            techStack: [
+                "TypeScript",
+                "React",
+                "Node.js",
+                "Tailwind CSS",
+                "Leaflet Maps",
+                "REST API"
+            ],
+            tools: [
+                "VS Code",
+                "Git",
+                "Postman"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448/Hope-Paws",
+            repoUrl: "https://github.com/KartikSharma4448/Hope-Paws",
+            startDate: "2025-12-23",
+            endDate: "2026-01-15",
+            customTimeline: "Dec 2025 - Jan 2026",
+            highlights: [
+                "Geotagged Incident Reporting",
+                "Rescue Service Matching",
+                "Transparent Donation Tracking",
+                "Interactive Safety Maps"
+            ],
+            category: "Social Impact & Web App",
+            role: "Full Stack Lead Developer",
+            team: "Hackathon / Community Project",
+            features: [
+                {
+                    title: "Rescue & Emergency",
+                    items: [
+                        "**Incident Reporting:** One-tap geolocation capture and photo upload for injured road animals",
+                        "**Emergency Responder Routing:** Proximity-based dispatch alerting closest animal shelter volunteers",
+                        "**Status Tracking:** Real-time timeline following animal rescue from reporting to rehabilitation"
+                    ]
+                },
+                {
+                    title: "Community & Impact",
+                    items: [
+                        "**Transparent Crowdfunding:** Direct donation allocation tracking tied to specific animal treatment cases",
+                        "**Interactive Danger Zones:** Heatmap visualizing high-frequency accident zones for civic awareness"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Accurately pinning emergency locations when users report from rural highways without street names.",
+                    solution: "Integrated browser GPS geolocation API with reverse geocoding and OpenStreetMap fallback pins for exact coordinate tagging."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Clone & Start",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/Hope-Paws.git\ncd Hope-Paws\nnpm install\nnpm run dev"
+                }
+            ],
+            galleryImages: [
+                "/profile.png"
+            ]
+        },
+        {
+            id: "p12-rajasthali-website",
+            slug: "rajasthali-tours-company-website",
+            title: "Rajasthali Tours – Company Website",
+            description: "Professional company website for Rajasthali Tours with booking information, tour packages, and travel services showcase.",
+            longDescription: "The official commercial web portal for Rajasthali Tours. Designed to showcase desert safari packages, heritage city tours across Jaipur, Jodhpur, Udaipur, and Jaisalmer, and luxury fleet rentals. Implements modern responsive design, high-resolution media galleries, fast page load speeds, interactive itinerary guides, and seamless booking enquiry channels.",
+            image: "/Projects/Tours&fleet Management App/Admin - Dashboard.png",
+            techStack: [
+                "JavaScript",
+                "HTML5",
+                "CSS3",
+                "Responsive Web Design",
+                "SEO Optimization"
+            ],
+            tools: [
+                "VS Code",
+                "Git",
+                "Chrome DevTools"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448/Rajasthali-website",
+            repoUrl: "https://github.com/KartikSharma4448/Rajasthali-website",
+            startDate: "2026-06-21",
+            endDate: "2026-06-27",
+            customTimeline: "Jun 2026",
+            highlights: [
+                "Rajasthan Tour Package Showcase",
+                "Fleet Rental Directory",
+                "SEO Structured Metadata",
+                "Responsive Booking Forms"
+            ],
+            category: "Web Development",
+            role: "Frontend Developer",
+            team: "Client Engagement",
+            features: [
+                {
+                    title: "Showcase & Travel Catalog",
+                    items: [
+                        "**Curated Tour Itineraries:** Comprehensive day-by-day guides for Golden Triangle and Royal Rajasthan tours",
+                        "**Vehicle Fleet Catalog:** High-res photo galleries, seating specs, and rental rates for sedans, SUVs, and luxury coaches",
+                        "**Direct Booking Enquiry:** Instant lead capture connecting travellers directly to tour operators via WhatsApp and email"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Ensuring high-resolution destination photography loaded fast on mobile devices across 3G/4G connections.",
+                    solution: "Optimized all visual assets into modern compressed WebP formats with lazy loading and responsive `srcset` tags."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Clone & Run",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/Rajasthali-website.git\ncd Rajasthali-website\n# Open index.html in any browser or use VS Code Live Server"
+                }
+            ],
+            galleryImages: [
+                "/Projects/Tours&fleet Management App/Admin - Dashboard.png"
+            ]
+        },
+        {
+            id: "p13-sploink-ai",
+            slug: "sploink-ai-vs-code-extension",
+            title: "Sploink.AI – VS Code Extension",
+            description: "Frontend development for AI agent management VS Code extension for a US-based client ($5/hr). Built responsive monitoring UI for agent workflow logs and real-time execution state visualization.",
+            longDescription: "Frontend architecture and UI development for Sploink.AI's developer extension inside Visual Studio Code. Built under a paid international engagement ($5/hr) with a US remote startup led by Timothy Nguyen. Created high-performance React webview panels that render real-time execution trees of autonomous coding agents, tool call payloads, and collapsible prompt debugging logs.",
+            image: "/assets/sploinkai.png",
+            techStack: [
+                "React",
+                "TypeScript",
+                "VS Code Extension API",
+                "Tailwind CSS",
+                "Webview API"
+            ],
+            tools: [
+                "VS Code Extension Development Host",
+                "Git",
+                "Postman"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448",
+            repoUrl: "https://github.com/KartikSharma4448",
+            startDate: "2026-05-01",
+            endDate: "2026-06-30",
+            customTimeline: "May 2026 - Jun 2026",
+            highlights: [
+                "Paid International Client Project ($5/hr)",
+                "VS Code Webview Architecture",
+                "Real-time Agent Trace Visualizer",
+                "React & TypeScript Design System"
+            ],
+            category: "Developer Tools & AI",
+            role: "Frontend Developer Intern ($5/hr)",
+            team: "Sploink (US Startup)",
+            features: [
+                {
+                    title: "Agent Monitoring & Webview UI",
+                    items: [
+                        "**Real-Time State Visualization:** Dynamic execution hierarchy showing active agent thoughts, subtasks, and tool calls",
+                        "**Collapsible Debugging Streams:** Low-latency display of streaming LLM outputs and JSON tool argument inspection",
+                        "**VS Code Theme Harmony:** UI natively adapts to the user's active VS Code dark and light theme tokens"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "VS Code webview communication protocol requires message-passing with serialization constraints.",
+                    solution: "Engineered a strongly-typed bidirectional RPC bridge between the extension background host and React webview state."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Extension Development Setup",
+                    type: "code",
+                    cmd: "# Press F5 in VS Code to launch the Extension Development Host window with the React webview"
+                }
+            ],
+            galleryImages: [
+                "/assets/sploinkai.png"
+            ]
+        },
+        {
+            id: "p14-automagic-vision",
+            slug: "automagic-vision-hand-tracking-gesture-control",
+            title: "AutoMagic Vision – Hand Tracking & Gesture Control",
+            description: "Python computer vision project for hand tracking, gesture-based controls, and adaptive mouse automation. Uses OpenCV and MediaPipe for real-time gesture recognition.",
+            longDescription: "AutoMagic Vision is an AI-driven computer vision automation suite in Python. Leveraging Google MediaPipe and OpenCV, it performs real-time 21-point 3D hand landmark estimation from standard webcams. It maps fine motor finger gestures to OS-level mouse navigation, click triggers, drag-and-drop actions, volume adjustments, and keyboard shortcuts without requiring physical hardware sensors.",
+            image: "/profile.png",
+            techStack: [
+                "Python",
+                "OpenCV",
+                "Google MediaPipe",
+                "PyAutoGUI",
+                "NumPy"
+            ],
+            tools: [
+                "VS Code",
+                "Python 3.10+",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://github.com/KartikSharma4448/AutoMagic-Vision",
+            repoUrl: "https://github.com/KartikSharma4448/AutoMagic-Vision",
+            startDate: "2026-03-01",
+            endDate: "2026-03-31",
+            customTimeline: "Mar 2026",
+            highlights: [
+                "21-Point Hand Landmark Estimation",
+                "Real-Time Gesture Mouse Control",
+                "Adaptive Motion Smoothing",
+                "High-FPS OpenCV Pipeline"
+            ],
+            category: "Computer Vision & AI",
+            role: "Lead Computer Vision Developer",
+            team: "Personal Project",
+            features: [
+                {
+                    title: "Landmark Tracking & Automation",
+                    items: [
+                        "**MediaPipe 21-Point Model:** High-accuracy real-time finger joint and palm tracking",
+                        "**Virtual Mouse Controller:** Cursor movement tracking index finger position with exponential moving average smoothing",
+                        "**Gesture Gestalt:** Pinch gestures trigger clicks, open-palm navigates windows, and two-finger scroll adjusts volume"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Hand landmark jitter caused the virtual mouse cursor to tremble on small motor movements.",
+                    solution: "Implemented an exponential weighted moving average (EWMA) and dynamic deadband filter that stabilizes subtle tremors while maintaining high-speed responsiveness."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Clone & Run",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/AutoMagic-Vision.git\ncd AutoMagic-Vision\npip install -r requirements.txt\npython main.py"
+                }
+            ],
+            galleryImages: [
+                "/profile.png"
+            ]
+        },
+        {
+            id: "p15-codeuppath",
+            slug: "codeuppath-tech-opportunity-career-platform",
+            title: "CodeUpPath – Tech Opportunity & Career Platform",
+            description: "Student-focused technology opportunity platform helping developers discover internships, hackathons, certifications and real-world project experience. Includes opportunity aggregation, user dashboards, community integration and digital service offerings.",
+            longDescription: "CodeUpPath is a student-focused technology career and opportunity platform built to bridge the gap between aspiring developers and the tech industry. It aggregates verified internships, national hackathons, global open-source programs, and industry certifications into a unified interactive portal. Built with Next.js, TypeScript, Node.js, and Supabase, it includes customizable developer profile showcases and curated engineering roadmaps.",
+            image: "/CodeUpPathbanner1.png",
+            techStack: [
+                "Next.js",
+                "TypeScript",
+                "Node.js",
+                "Supabase",
+                "Tailwind CSS",
+                "REST APIs",
+                "Vercel"
+            ],
+            tools: [
+                "VS Code",
+                "Postman",
+                "Supabase",
+                "Vercel",
+                "Git"
+            ],
+            status: "completed",
+            demoUrl: "https://codeuppath.com",
+            repoUrl: "https://github.com/KartikSharma4448",
+            startDate: "2026-03-14",
+            endDate: "2026-06-30",
+            customTimeline: "Mar 2026 - Present",
+            highlights: [
+                "Opportunity Discovery Engine",
+                "Student Portfolio Builder",
+                "Supabase Backend Integration",
+                "Live Production Platform"
+            ],
+            category: "Full Stack & EdTech",
+            role: "Founder & Lead Full Stack Architect",
+            team: "CodeUpPath Initiative",
+            features: [
+                {
+                    title: "Opportunity Discovery & Curation",
+                    items: [
+                        "**Opportunity Aggregation:** Search and filter verified software engineering internships, hackathons, and fellowship grants",
+                        "**Custom Roadmaps:** Step-by-step curriculum guides for Full Stack, Mobile App Development, and AI Engineering",
+                        "**Community Network:** Connect with student builders, hackathon teammates, and peer code reviewers"
+                    ]
+                },
+                {
+                    title: "Platform & Infrastructure",
+                    items: [
+                        "**Next.js App Router:** Server-side rendering delivering fast initial page loads and high SEO rankings",
+                        "**Supabase Data Layer:** Managed PostgreSQL database with instant query response times",
+                        "**Tailwind CSS UI:** Sleek, accessible design with dynamic search and filtering components"
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Aggregating dynamic opportunity listings from various sources while keeping data fresh and validated.",
+                    solution: "Built an automated ingest pipeline in Node.js that validates application deadlines, checks link health, and updates Supabase database records nightly."
+                }
+            ],
+            installation: [
+                {
+                    title: "1. Live Website",
+                    type: "text",
+                    code: "Visit live platform at: https://codeuppath.com"
+                },
+                {
+                    title: "2. Local Development",
+                    type: "code",
+                    cmd: "git clone https://github.com/KartikSharma4448/CodeUpPath.git\ncd CodeUpPath\nnpm install\nnpm run dev"
+                }
+            ],
+            galleryImages: [
+                "/CodeUpPathbanner1.png"
+            ]
+        }
+    ],
     experiences: [
     {
         "id": "exp-00-sploink",

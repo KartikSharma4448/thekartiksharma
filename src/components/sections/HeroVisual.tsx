@@ -9,7 +9,7 @@ import gsap from "gsap";
 import { ProfileCard } from "@/components/ui/profile-card";
 import { Spotlight } from "@/components/ui/spotlight-new";
 
-export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
+export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
   const { personal } = portfolioData;
   const [showProfile, setShowProfile] = useState(false);
   const [tooltip, setTooltip] = useState<{ show: boolean; text: string; x: number; y: number; icon: 'zap' | 'terminal' | null }>({
@@ -41,8 +41,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
           ease: "power3.out",
           onComplete: () => {
             gsap.to(githubRef.current, {
-              y: -10,
-              duration: 2,
+              y: -8,
+              duration: 3,
               repeat: -1,
               yoyo: true,
               ease: "sine.inOut",
@@ -63,8 +63,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
           ease: "power3.out",
           onComplete: () => {
             gsap.to(linkedinRef.current, {
-              y: 10,
-              duration: 2.5,
+              y: 8,
+              duration: 3.5,
               repeat: -1,
               yoyo: true,
               ease: "sine.inOut",
@@ -85,8 +85,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
           ease: "power3.out",
           onComplete: () => {
             gsap.to(instagramRef.current, {
-              x: 10,
-              duration: 3,
+              x: 8,
+              duration: 4,
               repeat: -1,
               yoyo: true,
               ease: "sine.inOut",
@@ -96,21 +96,21 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
         }
       );
 
-      // Zap pulsing - Energetic heartbeat effect
+      // Zap pulsing - Slower heartbeat
       gsap.to([zapRef.current, zapSmallRef.current], {
-        scale: 1.2,
-        duration: 0.6,
+        scale: 1.15,
+        duration: 1.2,
         repeat: -1,
         yoyo: true,
         ease: "power2.inOut",
         force3D: true
       });
 
-      // Bot floating - Responsive and smooth
+      // Bot floating - Slower and smoother
       gsap.to(botRef.current, {
-        rotation: 8,
-        y: -10,
-        duration: 1.8,
+        rotation: 6,
+        y: -8,
+        duration: 2.5,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -128,7 +128,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
       className="relative min-h-screen w-full flex flex-col bg-background text-foreground overflow-hidden selection:bg-primary/20"
     >
       {/* Background Pattern */}
-      <div className="w-full absolute h-full z-0 bg-[radial-gradient(circle,_#888_0.5px,_transparent_0.5px)] dark:bg-[radial-gradient(circle,_#444_0.5px,_transparent_0.5px)] opacity-20 [background-size:24px_24px]" />
+      <div className="w-full absolute h-full z-0 bg-[radial-gradient(circle,_#888_0.5px,_transparent_0.5px)] dark:bg-[radial-gradient(circle,_#444_0.5px,_transparent_0.5px)] opacity-20 [background-size:24px_24px] [contain:strict]" />
 
       {/* Spotlight Effect - Dramatic lighting */}
       <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden">

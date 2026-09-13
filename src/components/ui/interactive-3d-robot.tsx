@@ -1,6 +1,8 @@
 'use client';
 
 import { Suspense, lazy } from 'react';
+import { usePerformance } from '@/hooks/usePerformance';
+
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 interface InteractiveRobotSplineProps {
@@ -9,6 +11,16 @@ interface InteractiveRobotSplineProps {
 }
 
 export function InteractiveRobotSpline({ scene, className }: InteractiveRobotSplineProps) {
+  const { isLowPowerMode } = usePerformance();
+
+  if (isLowPowerMode) {
+    return (
+      <div className={`w-full h-full flex items-center justify-center bg-transparent ${className}`}>
+        <div className="w-48 h-48 bg-primary/10 blur-[80px] rounded-full animate-pulse" />
+      </div>
+    );
+  }
+
   return (
     <Suspense
       fallback={
@@ -20,10 +32,9 @@ export function InteractiveRobotSpline({ scene, className }: InteractiveRobotSpl
         </div>
       }
     >
-      
       <Spline
         scene={scene}
-        className={className} 
+        className={className}
       />
     </Suspense>
   );

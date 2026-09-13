@@ -40,7 +40,7 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
         <motion.div
             initial={isLowPowerMode ? { opacity: 0, y: 10 } : { opacity: 0, y: 30, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: isLowPowerMode ? 0.4 : 0.6, delay: isLowPowerMode ? 0 : delay, ease: [0.22, 1, 0.36, 1] }}
             className="group relative"
         >
@@ -132,20 +132,16 @@ export function ProjectStats({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ margin: "-100px" }}
+                    viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12 sm:mb-16"
                 >
-                    <motion.div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6"
-                        animate={isLowPowerMode ? {} : { scale: [1, 1.05, 1] }}
-                        transition={isLowPowerMode ? {} : { duration: 2, repeat: Infinity }}
-                    >
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
                         <Sparkles className="w-4 h-4 text-primary" />
                         <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">
                             Project Impact
                         </span>
-                    </motion.div>
+                    </div>
 
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-3">
                         Building The Future
