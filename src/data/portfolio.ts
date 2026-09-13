@@ -1913,6 +1913,15 @@ export const portfolioData: PortfolioData = {
             type: "image",
             url: "/gallery/hackathon-techno-tarang-team-coding.jpg",
             category: "hackathons"
+        },
+        {
+            id: "gal-14",
+            title: "ACEHACK 5.0 – National Hackathon @ UEM Jaipur",
+            description: "Kartik Sharma attending ACEHACK 5.0, a premier MLH-partnered national hackathon held at University of Engineering & Management (UEM), Jaipur.",
+            date: "2026-03-08",
+            type: "image",
+            url: "/gallery/hackathon-acehack-5-kartik-booth.jpg",
+            category: "hackathons"
         }
     ]
 };

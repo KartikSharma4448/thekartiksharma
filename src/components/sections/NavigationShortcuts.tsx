@@ -10,6 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
 
 const GALLERY_IMAGES = [
+    '/gallery/hackathon-acehack-5-kartik-booth.jpg',
     '/gallery/hackathon-techno-tarang-team-coding.jpg',
     '/gallery/devfest-jaipur-kartik-backdrop.jpg',
     '/gallery/devfest-jaipur-auditorium-crowd.jpg',
