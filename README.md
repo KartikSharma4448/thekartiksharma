@@ -13,7 +13,7 @@
 [![Three.js](https://img.shields.io/badge/Three.js-0.170-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org/)
 [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-kartiksharma.site-6366f1?style=for-the-badge)](https://kartiksharma.site)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-thekartiksharma.in-6366f1?style=for-the-badge)](https://thekartiksharma.in)
 [![GitHub](https://img.shields.io/badge/GitHub-KartikSharma4448-181717?style=for-the-badge&logo=github)](https://github.com/KartikSharma4448)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/kartik-sharma06)
 

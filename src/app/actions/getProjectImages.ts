@@ -5,7 +5,8 @@ import path from 'path';
 
 export async function getProjectImages(slug: string, title?: string): Promise<string[]> {
     const publicDir = path.join(process.cwd(), 'public');
-    const projectDir = path.join(publicDir, 'project'); // Folder: public/project
+    const projectDir = path.join(publicDir, 'project');
+    if (!fs.existsSync(projectDir)) return [];
     const validImages: string[] = [];
 
     // Strategy 1: Slug-based (terraflow-platform -> terraflowplatform)
