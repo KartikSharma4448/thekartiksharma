@@ -926,11 +926,13 @@ export const portfolioData: PortfolioData = {
         "gpa": "9.43 CGPA",
         "activities": [
             "Hackathon Leader (Team Akatsuki)",
+            "Captain & Lead – Posture Sense (National Level Project Exhibition)",
             "AI & Web Development Club",
             "Tech Speaker & Community Builder"
         ],
         "achievements": [
             "9.43 CGPA Academic Distinction",
+            "National Level Project Exhibition 2025 – Team Captain (Posture Sense)",
             "AceHack 5.0 Finalist"
         ]
     }
@@ -1406,6 +1408,29 @@ export const portfolioData: PortfolioData = {
             "Rajasthan",
             "Generative AI",
             "AI Hackathon",
+            "Verified Certificate"
+        ]
+    },
+    {
+        "id": "cert-vgu-project-exhibition-posture-sense",
+        "title": "National Level Project Exhibition 2025 – Posture Sense",
+        "issuer": "Vivekananda Global University (VGU), Jaipur",
+        "date": "2025-11-20",
+        "description": "Certificate of Participation proudly awarded to Kartik Sharma as Member/Captain of team 'POSTURE SENSE' in the National Level Project Exhibition competition organized by Vivekananda Global University during Academic Session 2025-26.",
+        "category": "event",
+        "type": "event",
+        "credentialId": "VGU-NLPE-2025-POSTURE-SENSE",
+        "credentialUrl": "https://vgu.ac.in",
+        "image": "/certificate/vgu-national-project-exhibition-posture-sense.jpg",
+        "tags": [
+            "Vivekananda Global University",
+            "VGU Jaipur",
+            "National Level Project Exhibition",
+            "Posture Sense",
+            "Team Captain",
+            "Project Exhibition",
+            "Competition",
+            "Academic Session 2025-26",
             "Verified Certificate"
         ]
     }

@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const certificates = [
+  "/certificate/vgu-national-project-exhibition-posture-sense.jpg",
   "/certificate/hackathon-openai-nxtwave-buildathon-rajasthan.png",
   "/certificate/hackathon-hackindia-spark12-jaipur.png",
   "/certificate/hackathon-hackindia-adaption-autoscientist.png",
