@@ -110,6 +110,9 @@ export const metadata: Metadata = {
             { url: '/favicon.svg', type: 'image/svg+xml' },
         ],
     },
+    verification: {
+        google: 'a4IMjZ0QyL1ovF73JqRBZA6eRVBqQ70nCzwdYqLLj6c',
+    },
 };
 
 export const viewport: Viewport = {
