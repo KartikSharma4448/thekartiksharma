@@ -153,7 +153,7 @@ export function DeveloperTerminalModal() {
             <p className="text-sky-400 font-bold">⚡ Kartik Sharma — Full Stack & MERN Stack Developer</p>
             <p className="text-neutral-300 leading-relaxed">
               Based in <span className="text-emerald-400 font-semibold">Jaipur, Rajasthan, India</span>. 
-              Currently pursuing BCA at <span className="text-amber-400">Vivekananda Global University (VGU)</span> with 9.43 CGPA.
+              Currently pursuing BCA at <span className="text-amber-400">Vivekananda Global University (VGU)</span> specializing in Full Stack & Cloud Computing.
               Specialized in high-performance web systems (React, Next.js, Node.js, Express, MongoDB) and cross-platform mobile development with Flutter.
             </p>
             <div className="pt-1 flex flex-wrap gap-2 text-[11px]">

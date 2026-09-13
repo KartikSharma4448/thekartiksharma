@@ -146,11 +146,11 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                             Vivekananda Global University (VGU)
                         </h3>
                         <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                            Bachelor of Computer Applications (BCA) in Full Stack &amp; Cloud Computing with an exceptional <span className="text-lime-600 dark:text-lime-400 font-bold">9.43 CGPA</span> academic distinction. Currently in <span className="font-semibold text-foreground">5th Semester</span>, leading hackathons (Team Akatsuki leader), building production-grade MERN &amp; Flutter applications, and architecting AI-driven platforms.
+                            Bachelor of Computer Applications (BCA) in Full Stack &amp; Cloud Computing with an exceptional <span className="text-lime-600 dark:text-lime-400 font-bold">Academic Distinction</span> in software engineering. Currently in <span className="font-semibold text-foreground">5th Semester</span>, leading hackathons (Team Akatsuki leader), building production-grade MERN &amp; Flutter applications, and architecting AI-driven platforms.
                         </p>
                         
                         <div className="flex flex-wrap gap-2 mt-6">
-                            {["9.43 CGPA Distinction", "5th Semester Ongoing", "BCA Full Stack & Cloud", "Batch 2024-2027", "Hackathon Leader", "VGU Jaipur"].map(tag => (
+                            {["Academic Distinction", "5th Semester Ongoing", "BCA Full Stack & Cloud", "Batch 2024-2027", "Hackathon Leader", "VGU Jaipur"].map(tag => (
                                 <span key={tag} className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-black/10 dark:border-white/10 group-hover:border-lime-500/40 transition-colors">
                                     {tag}
                                 </span>
@@ -171,7 +171,7 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                             />
                         </div>
                         <div className="text-center md:text-right">
-                            <span className="text-2xl sm:text-3xl font-black text-lime-600 dark:text-lime-400 font-mono">9.43 CGPA</span>
+                            <span className="text-2xl sm:text-3xl font-black text-lime-600 dark:text-lime-400 font-mono">BCA Honors</span>
                             <div className="text-[11px] font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400">5th Sem Ongoing • VGU Jaipur</div>
                         </div>
                     </div>

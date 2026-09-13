@@ -1547,7 +1547,7 @@ export const portfolioData: PortfolioData = {
         "startDate": "2023-07-01",
         "endDate": "2026-06-30",
         "isOngoing": true,
-        "gpa": "9.43 CGPA",
+        "gpa": "First Class with Distinction",
         "activities": [
             "Hackathon Leader (Team Akatsuki)",
             "Captain & Lead – Posture Sense (National Level Project Exhibition)",
@@ -1558,7 +1558,7 @@ export const portfolioData: PortfolioData = {
             "Tech Speaker & Community Builder"
         ],
         "achievements": [
-            "9.43 CGPA Academic Distinction",
+            "Academic Distinction in Full Stack & Cloud Computing",
             "National Level Project Exhibition 2025 – Team Captain (Posture Sense)",
             "AceHack 5.0 Finalist"
         ]

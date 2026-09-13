@@ -3,7 +3,7 @@ import { AboutClientContent } from './AboutClientContent';
 
 export const metadata: Metadata = {
   title: 'About Kartik Sharma | Full Stack & MERN Developer | Flutter Architect',
-  description: 'Learn about Kartik Sharma, Full Stack & MERN Developer, Mobile App Architect, and BCA student at Vivekananda Global University (VGU) Jaipur (9.43 CGPA). Explore educational background at AS Public School, RSCIT VMOU, hackathons, and 10+ shipped production platforms.',
+  description: 'Learn about Kartik Sharma, Full Stack & MERN Developer, Mobile App Architect, and BCA student at Vivekananda Global University (VGU) Jaipur. Explore educational background at AS Public School, RSCIT VMOU, hackathons, and 10+ shipped production platforms.',
   keywords: [
     'Kartik Sharma',
     'About Kartik Sharma',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Kartik Sharma MERN Developer',
     'Kartik Sharma Jaipur',
     'Vivekananda Global University VGU Kartik Sharma',
-    'VGU Jaipur 9.43 CGPA',
+    'VGU Jaipur BCA Full Stack Developer',
     'AS Public Sr. Sec. School Kartik Sharma',
     'VMOU RSCIT Kartik Sharma',
     'Full Stack Developer Jaipur',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://thekartiksharma.in/about',
     title: 'About Kartik Sharma | Full Stack & MERN Developer',
-    description: 'Explore Kartik Sharma\'s background, 9.43 CGPA academic distinction at VGU Jaipur, AS Public Sr. Sec. School, RSCIT VMOU, 4 paid roles, and 10+ shipped production platforms.',
+    description: 'Explore Kartik Sharma\'s background, academic distinction in Full Stack & Cloud at VGU Jaipur, AS Public Sr. Sec. School, RSCIT VMOU, 4 paid roles, and 10+ shipped production platforms.',
     siteName: 'Kartik Sharma Portfolio',
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About Kartik Sharma | Full Stack & MERN Developer',
-    description: 'Explore Kartik Sharma\'s background, 9.43 CGPA academic distinction at VGU Jaipur, 4 paid roles, and 10+ shipped platforms.',
+    description: 'Explore Kartik Sharma\'s background, academic distinction at VGU Jaipur, 4 paid roles, and 10+ shipped platforms.',
     images: ['/profile.png'],
     creator: '@itszeromind',
   },
@@ -78,7 +78,7 @@ const aboutJsonLd = {
       {
         '@type': 'EducationalOrganization',
         name: 'Vivekananda Global University (VGU), Jaipur',
-        description: 'Bachelor of Computer Applications (BCA) - 9.43 CGPA Distinction',
+        description: 'Bachelor of Computer Applications (BCA) in Full Stack & Cloud Computing',
       },
       {
         '@type': 'EducationalOrganization',

@@ -59,7 +59,7 @@ ${projectList}
 ${expList || 'See portfolio for details.'}
 
 ## Education
-${eduList || 'Bachelor of Computer Applications (BCA) at Vivekananda Global University (VGU), Jaipur (9.43 CGPA).'}
+${eduList || 'Bachelor of Computer Applications (BCA) at Vivekananda Global University (VGU), Jaipur (Full Stack & Cloud Computing).'}
 
 ## Technical Skills
 ${skillList || 'AI, Machine Learning, Full Stack Development, Blockchain.'}

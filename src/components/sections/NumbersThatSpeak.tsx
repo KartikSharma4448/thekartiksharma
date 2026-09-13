@@ -17,10 +17,10 @@ const stats = [
     description: 'Full-stack internships & international freelance client projects.',
   },
   {
-    label: 'Academic Distinction',
-    number: '9.43',
-    suffix: ' CGPA',
-    description: 'BCA in Full Stack & Cloud Computing at VGU Jaipur.',
+    label: 'Tech Stack Tools',
+    number: '20',
+    suffix: '+',
+    description: 'Modern frameworks, databases, AI models, and cloud platforms.',
   },
   {
     label: 'Verified Certifications',

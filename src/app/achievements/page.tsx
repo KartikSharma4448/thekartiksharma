@@ -6,12 +6,12 @@ import { SkillCertificateTabsSection } from '@/components/sections/SkillCertific
 
 export const metadata: Metadata = {
     title: 'Achievements, Certifications & Awards | Kartik Sharma',
-    description: 'Explore verified certifications, awards, and academic honors earned by Kartik Sharma: 9.43 CGPA distinction at Vivekananda Global University (VGU) Jaipur, AWS Academy Cloud Graduate, AI Innovation Challenge, and technical certifications.',
+    description: 'Explore verified certifications, awards, and academic honors earned by Kartik Sharma: academic distinction at Vivekananda Global University (VGU) Jaipur, AWS Academy Cloud Graduate, AI Innovation Challenge, and technical certifications.',
     keywords: [
         'Kartik Sharma Achievements',
         'Kartik Sharma Certifications',
         'Kartik Sharma Awards',
-        'VGU Jaipur 9.43 CGPA',
+        'VGU Jaipur Academic Honors',
         'Vivekananda Global University Academic Honors',
         'AWS Academy Cloud Graduate Kartik Sharma',
         'AI Innovation Challenge Award',
@@ -74,7 +74,7 @@ const achievementsJsonLd = {
     itemListElement: [
         {
             '@type': 'EducationalOccupationalCredential',
-            name: 'Bachelor of Computer Applications (BCA) - 9.43 CGPA',
+            name: 'Bachelor of Computer Applications (BCA) in Full Stack & Cloud Computing',
             recognizedBy: {
                 '@type': 'EducationalOrganization',
                 name: 'Vivekananda Global University (VGU), Jaipur'

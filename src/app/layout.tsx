@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         'Backend Developer',
         'Mobile App Developer Jaipur',
         'Vivekananda Global University VGU Kartik Sharma',
-        'VGU Jaipur BCA 9.43 CGPA',
+        'VGU Jaipur BCA Full Stack Developer',
         'Sploink US Frontend Developer',
         'PetsGo PRANAG AI Developer',
         'Anukriti Prakashan Web Developer',
@@ -144,7 +144,7 @@ const jsonLd = {
                 {
                     '@type': 'EducationalOrganization',
                     name: 'Vivekananda Global University (VGU), Jaipur',
-                    description: 'Bachelor of Computer Applications (BCA) - 9.43 CGPA Distinction',
+                    description: 'Bachelor of Computer Applications (BCA) in Full Stack & Cloud Computing',
                 },
                 {
                     '@type': 'EducationalOrganization',

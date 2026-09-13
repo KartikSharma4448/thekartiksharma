@@ -55,7 +55,7 @@ export function AboutHomeSection() {
   }, []);
 
   const stats = [
-    { label: 'Academic CGPA', value: '9.43', sub: 'Vivekananda Global University' },
+    { label: 'Specialization', value: 'Full Stack', sub: 'MERN + Mobile Architect' },
     { label: 'Paid Industry Roles', value: '4+', sub: 'Full Stack & Mobile' },
     { label: 'Projects Shipped', value: '10+', sub: 'Web, Mobile & AI Platforms' },
     { label: 'Core Expertise', value: 'MERN + Flutter', sub: 'Scalable Full Stack Architect' }
@@ -182,7 +182,7 @@ export function AboutHomeSection() {
                 </div>
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">BCA @ VGU Jaipur</div>
-                  <div className="text-xs font-bold text-white">9.43 CGPA (5th Sem, 2024-2027)</div>
+                  <div className="text-xs font-bold text-white">Full Stack & Cloud (5th Sem)</div>
                 </div>
               </motion.div>
 

@@ -24,7 +24,7 @@ interface InnovativeExperienceHeroProps {
 
 const NODES_DATA: Record<string, NodeData[]> = {
     education: [
-        { label: 'Vivekananda Global University', description: 'BCA in Full Stack & Cloud Computing (9.43 CGPA Distinction).', orbitIndex: 0, position: 0.1, imageUrl: "/assets/vgulogo.png" },
+        { label: 'Vivekananda Global University', description: 'BCA in Full Stack & Cloud Computing with Academic Distinction.', orbitIndex: 0, position: 0.1, imageUrl: "/assets/vgulogo.png" },
         { label: 'VMOU Kota', description: 'Academic computing foundations and structured software learning.', orbitIndex: 1, position: 0.25, imageUrl: "/assets/vmou.png" },
         { label: 'Google Skills & Cloud', description: 'Cloud infrastructure, Agentic AI, and production system design.', orbitIndex: 0, position: 0.45, imageUrl: "/assets/googleskills.png" },
         { label: 'Microsoft Learn', description: 'Modern software engineering, full stack architecture & tools.', orbitIndex: 1, position: 0.65, imageUrl: "/assets/microsoftlearn.png" },
