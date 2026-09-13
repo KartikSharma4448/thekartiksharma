@@ -1386,6 +1386,28 @@ export const portfolioData: PortfolioData = {
             "Online Global Challenge",
             "Verified Certificate"
         ]
+    },
+    {
+        "id": "cert-hackathon-openai-nxtwave-buildathon",
+        "title": "OpenAI Academy x NxtWave Regional Buildathon – Rajasthan",
+        "issuer": "OpenAI Academy & NxtWave",
+        "date": "2026-01-04",
+        "description": "Certificate of Participation awarded to Kartik Sharma as a part of the OpenAI Academy learning community for participating in the 2-day OpenAI Academy x NxtWave Regional Buildathon - Rajasthan, certified by Rahul Attuluri (CEO, NxtWave).",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "OPENAI-NXTWAVE-BUILDATHON-RAJ-2026",
+        "credentialUrl": "https://www.ccbp.in",
+        "image": "/certificate/hackathon-openai-nxtwave-buildathon-rajasthan.png",
+        "tags": [
+            "OpenAI Academy",
+            "NxtWave",
+            "Rahul Attuluri",
+            "Regional Buildathon",
+            "Rajasthan",
+            "Generative AI",
+            "AI Hackathon",
+            "Verified Certificate"
+        ]
     }
 ],
     hardSkills: [
