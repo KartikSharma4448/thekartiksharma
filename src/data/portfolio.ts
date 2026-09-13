@@ -927,6 +927,7 @@ export const portfolioData: PortfolioData = {
         "activities": [
             "Hackathon Leader (Team Akatsuki)",
             "Captain & Lead – Posture Sense (National Level Project Exhibition)",
+            "GDG DevFest 2025 Attendee (Rajasthan International Centre - RIC)",
             "Delegation Member – Indian Air Force (IAF) Station Visit (Dec 2025)",
             "Ethical Hacking & Cybersecurity (HACK-O-SHOP by VGU x tensaX)",
             "AI & Web Development Club",
@@ -1414,6 +1415,28 @@ export const portfolioData: PortfolioData = {
         ]
     },
     {
+        "id": "cert-hackathon-snapdragon-multiverse",
+        "title": "Snapdragon Multiverse Hackathon (Qualcomm x OnePlus x Sarvam AI)",
+        "issuer": "Qualcomm Snapdragon, OnePlus & Sarvam AI",
+        "date": "2025-09-13",
+        "description": "Selected finalist in the flagship Snapdragon Multiverse Hackathon held at Qualcomm Headquarters. Architected on-device AI innovations and agentic applications with team 'Aton HOME', powered by Snapdragon NPU, OnePlus hardware, and Sarvam AI models.",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "SNAPDRAGON-MULTIVERSE-ATON-HOME",
+        "credentialUrl": "https://www.qualcomm.com",
+        "image": "/gallery/snapdragon-multiverse-hackathon-group.jpg",
+        "tags": [
+            "Qualcomm Snapdragon",
+            "OnePlus",
+            "Sarvam AI",
+            "Multiverse Hackathon",
+            "On-Device AI",
+            "Aton HOME",
+            "Hackathon Finalist",
+            "Verified Certificate"
+        ]
+    },
+    {
         "id": "cert-vgu-project-exhibition-posture-sense",
         "title": "National Level Project Exhibition 2025 – Posture Sense",
         "issuer": "Vivekananda Global University (VGU), Jaipur",
@@ -1475,6 +1498,26 @@ export const portfolioData: PortfolioData = {
             "Industrial Visit",
             "VGU Delegation",
             "Official Event"
+        ]
+    },
+    {
+        "id": "event-gdg-devfest-2025-ric-jaipur",
+        "title": "Google Developer Groups (GDG) DevFest Jaipur 2025 @ RIC",
+        "issuer": "Google Developer Groups (GDG) Jaipur & Google for Developers",
+        "date": "2025-12-20",
+        "description": "Participated in GDG DevFest Jaipur 2025 hosted at Rajasthan International Centre (RIC), Jaipur. Joined 500+ tech leaders, Google Developer Experts (GDEs), and engineers covering modern AI, Cloud infrastructure, Gemini APIs, and scalable web architectures.",
+        "category": "event",
+        "type": "event",
+        "image": "/gallery/devfest-jaipur-auditorium-crowd.jpg",
+        "tags": [
+            "Google Developer Groups",
+            "GDG Jaipur",
+            "DevFest 2025",
+            "Rajasthan International Centre",
+            "RIC Jaipur",
+            "Google for Developers",
+            "AI & Cloud Conference",
+            "Community Attendee"
         ]
     }
 ],
@@ -1756,21 +1799,93 @@ export const portfolioData: PortfolioData = {
     gallery: [
         {
             id: "gal-1",
-            title: "VGU Google AI Campus",
-            description: "Vivekananda Global University campus initiative.",
-            date: "2026-06",
+            title: "DevFest Jaipur – Main Auditorium Keynote & Crowd",
+            description: "Over 500+ developers, tech enthusiasts and Googlers gathered at Jaipur DevFest celebrating community and technology.",
+            date: "2025-12-20",
             type: "image",
-            url: "/assets/vgulogo.png",
-            category: "campus"
+            url: "/gallery/devfest-jaipur-auditorium-crowd.jpg",
+            category: "conferences"
         },
         {
             id: "gal-2",
+            title: "DevFest Jaipur – Tech Sessions & Deep Dives",
+            description: "Attending technical keynotes and developer tracks on AI, Cloud, and Web architectures at DevFest Jaipur.",
+            date: "2025-12-20",
+            type: "image",
+            url: "/gallery/devfest-jaipur-session-hall.jpg",
+            category: "conferences"
+        },
+        {
+            id: "gal-3",
+            title: "DevFest Jaipur – Speaker & Mentor Networking",
+            description: "Connecting with GDG leaders, Google Developer Experts (GDEs) and community speakers.",
+            date: "2025-12-20",
+            type: "image",
+            url: "/gallery/devfest-jaipur-speaker-networking.jpg",
+            category: "community"
+        },
+        {
+            id: "gal-4",
+            title: "DevFest Jaipur – Community Organizers & Mentors",
+            description: "Interacting with GDG Jaipur organizers and tech community leaders.",
+            date: "2025-12-20",
+            type: "image",
+            url: "/gallery/devfest-jaipur-community-mentors.jpg",
+            category: "community"
+        },
+        {
+            id: "gal-5",
+            title: "DevFest Jaipur – Developer Peer Meetup",
+            description: "Collaborating with fellow engineers, open source contributors and tech builders.",
+            date: "2025-12-20",
+            type: "image",
+            url: "/gallery/devfest-jaipur-developer-group.jpg",
+            category: "community"
+        },
+        {
+            id: "gal-6",
             title: "Industrial Visit to Indian Air Force Station, Jaipur",
             description: "Official university delegation visit to IAF Station Jaipur exploring aerospace and defense communications infrastructure.",
             date: "2025-12-05",
             type: "image",
             url: "/gallery/iaf-station-jaipur-visit.jpg",
             category: "delegation"
+        },
+        {
+            id: "gal-7",
+            title: "Snapdragon Multiverse Hackathon – Official Group Photo",
+            description: "Grand group photo with all finalist teams, mentors, and executives at Qualcomm Headquarters during the Snapdragon Multiverse Hackathon.",
+            date: "2025-09-13",
+            type: "image",
+            url: "/gallery/snapdragon-multiverse-hackathon-group.jpg",
+            category: "hackathons"
+        },
+        {
+            id: "gal-8",
+            title: "Snapdragon Multiverse Hackathon – Stage & Keynote",
+            description: "Opening keynote and technical briefing on Snapdragon NPU & on-device AI stacks at Qualcomm stage.",
+            date: "2025-09-13",
+            type: "image",
+            url: "/gallery/snapdragon-multiverse-hackathon-stage.jpg",
+            category: "hackathons"
+        },
+        {
+            id: "gal-9",
+            title: "Qualcomm Headquarters – Building 7",
+            description: "Architecture and exterior of Qualcomm Headquarters Building 7, venue of the Snapdragon Multiverse Hackathon.",
+            date: "2025-09-13",
+            type: "image",
+            url: "/gallery/qualcomm-headquarters-building.jpg",
+            category: "venue"
+        },
+        {
+            id: "gal-10",
+            title: "Snapdragon Multiverse Hackathon – Official Delegate Pass",
+            description: "Official delegate badge for Kartik Sharma (Team Aton HOME) at Snapdragon Multiverse Hackathon with OnePlus & Sarvam AI.",
+            date: "2025-09-13",
+            type: "image",
+            url: "/gallery/snapdragon-multiverse-hackathon-badge.jpg",
+            category: "hackathons"
         }
     ]
 };

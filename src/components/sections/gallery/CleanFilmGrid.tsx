@@ -3,7 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-// import { portfolioData } from "@/data/portfolio";
+import { portfolioData } from "@/data/portfolio";
 import { X, Play, Maximize2, ChevronLeft, ChevronRight, Minimize2, ListFilter, ArrowDownUp, ImageIcon, Video, ArrowRight, LayoutGrid, StretchHorizontal, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getAllGalleryImages, GalleryImage } from "@/app/actions/getGalleryImages";
@@ -11,15 +11,11 @@ import MagneticEffect from "@/components/ui/MagneticEffect";
 import { InfiniteImageField } from "@/components/ui/infinite-image-field";
 
 type FilterType = 'all' | 'image' | 'video';
-// type SortType = 'newest' | 'oldest';
-
-
-
 
 export default function CleanFilmGrid({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [filter, setFilter] = useState<FilterType>('all');
-    const [viewMode, setViewMode] = useState<'rows' | 'grid' | 'infinite'>('grid'); // Default grid
+    const [viewMode, setViewMode] = useState<'rows' | 'grid' | 'infinite'>('grid');
     const [isLightboxMaximized, setIsLightboxMaximized] = useState(false);
     const [visibleCount, setVisibleCount] = useState(12);
     const [galleryItems, setGalleryItems] = useState<any[]>([]);
@@ -28,19 +24,27 @@ export default function CleanFilmGrid({ isLowPowerMode }: { isLowPowerMode?: boo
         const fetchImages = async () => {
             try {
                 const images = await getAllGalleryImages();
-                const formattedItems = images.map((img, index) => ({
-                    id: `gallery-${index}`,
-                    title: img.filename.split('.')[0].replace(/-/g, ' '),
-                    type: 'image',
-                    category: 'Gallery',
-                    date: '2024',
-                    thumbnail: img.src,
-                    url: img.src,
-                    description: 'Gallery Image'
-                }));
-                setGalleryItems(formattedItems);
+                const formattedItems = images.map((img, index) => {
+                    const match = portfolioData.gallery?.find(
+                        item => item.url === img.src || img.src.includes(item.url.replace('/gallery/', ''))
+                    );
+                    const rawName = img.filename.split('.')[0].replace(/-/g, ' ');
+                    const prettyTitle = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+                    return {
+                        id: match?.id || `gallery-${index}`,
+                        title: match?.title || prettyTitle,
+                        type: match?.type || 'image',
+                        category: match?.category ? match.category.charAt(0).toUpperCase() + match.category.slice(1) : 'Highlights',
+                        date: match?.date || '2025',
+                        thumbnail: img.src,
+                        url: img.src,
+                        description: match?.description || 'Gallery moment and milestone capture.'
+                    };
+                });
+                setGalleryItems(formattedItems.length > 0 ? formattedItems : portfolioData.gallery);
             } catch (error) {
                 console.error("Failed to load gallery images", error);
+                setGalleryItems(portfolioData.gallery);
             }
         };
         fetchImages();
