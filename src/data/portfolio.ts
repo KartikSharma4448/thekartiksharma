@@ -1261,6 +1261,89 @@ export const portfolioData: PortfolioData = {
             "MongoDB",
             "Verified Certificate"
         ]
+    },
+    {
+        "id": "cert-hackathon-rajasthan-ai",
+        "title": "AI Hackathon – AI Impact Summit",
+        "issuer": "DOIT&C, Government of Rajasthan & JECC Jaipur",
+        "date": "2026-01-06",
+        "description": "Certificate of Participation proudly presented to Kartik Sharma for actively participating in the state-level AI Hackathon held during AI Impact Summit at JECC Jaipur, organized by Department of Information Technology & Communication (DOIT&C), Government of Rajasthan.",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "DOITC-AI-HACKATHON-JECC-2026",
+        "credentialUrl": "https://github.com/KartikSharma4448",
+        "image": "/certificate/hackathon-rajasthan-ai-hackathon.jpg",
+        "tags": [
+            "DOIT&C",
+            "Government of Rajasthan",
+            "AI Hackathon",
+            "AI Impact Summit",
+            "JECC Jaipur",
+            "Himanshu Gupta IAS",
+            "Verified Certificate"
+        ]
+    },
+    {
+        "id": "cert-hackathon-techno-tarang",
+        "title": "Techno Tarang Hackathon 3.0",
+        "issuer": "Poornima College of Engineering, Jaipur",
+        "date": "2026-04-19",
+        "description": "Certificate of Participation presented to Kartik Sharma for participating in TECHNO TARANG HACKATHON 3.0 (\"Where Code Builds the Future of Earth\") organized by Poornima College of Engineering, Jaipur.",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "TECHNOTARANG-HACKATHON-3.0-PCE",
+        "credentialUrl": "https://github.com/KartikSharma4448",
+        "image": "/certificate/hackathon-techno-tarang-poornima.jpg",
+        "tags": [
+            "Poornima College of Engineering",
+            "Techno Tarang 3.0",
+            "Hackathon",
+            "Software Engineering",
+            "Competitive Coding",
+            "Verified Certificate"
+        ]
+    },
+    {
+        "id": "cert-hackathon-acehack-5",
+        "title": "ACEHACK 5.0 – National Hackathon",
+        "issuer": "University of Engineering & Management (UEM) Jaipur & MLH",
+        "date": "2026-03-08",
+        "description": "Certificate of Participation proudly presented to Kartik Sharma for participating with enthusiasm and dedication in ACEHACK 5.0 (Major League Hacking partner hackathon) at University of Engineering & Management, Jaipur.",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "ACEHACK-5.0-UEM-MLH",
+        "credentialUrl": "https://github.com/KartikSharma4448",
+        "image": "/certificate/hackathon-acehack-5-uem.jpg",
+        "tags": [
+            "ACEHACK 5.0",
+            "Major League Hacking (MLH)",
+            "UEM Jaipur",
+            "Hackathon",
+            "Competitive Coding",
+            "Verified Certificate"
+        ]
+    },
+    {
+        "id": "cert-hackathon-design-a-thon",
+        "title": "DESIGN-A-THON – Code Red 4.0 Triathlon",
+        "issuer": "ACIC-VCU Foundation & AIM (NITI Aayog)",
+        "date": "2024-10-27",
+        "description": "Certificate of Participation awarded to Kartik Sharma from team \"Strik Innovators\" for participating in the DESIGN-A-THON event held during Code Red 4.0 Triathlon organized by ACIC-VCU Foundation, supported by AIM (NITI Aayog), DOIT&C, iStart & NextGen Academy.",
+        "category": "hackathon",
+        "type": "hackathon",
+        "credentialId": "DESIGN-A-THON-CODERED-4.0",
+        "credentialUrl": "https://github.com/KartikSharma4448",
+        "image": "/certificate/hackathon-design-a-thon-code-red.jpg",
+        "tags": [
+            "ACIC-VCU",
+            "NITI Aayog AIM",
+            "iStart Rajasthan",
+            "DOIT&C",
+            "Hackathon",
+            "Design-A-Thon",
+            "Strik Innovators",
+            "Verified Certificate"
+        ]
     }
 ],
     hardSkills: [

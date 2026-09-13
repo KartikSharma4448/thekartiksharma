@@ -37,16 +37,19 @@ interface CertificateHeroScrollProps {
 }
 
 const CERTIFICATE_POOL = [
-    "Data Analytics on Google Cloud.webp",
-    "Deep Learning Beginner.webp",
-    "Docker, Kubernetes dan DevOps.webp",
-    "Fullstack Programming Untuk Pemula.webp",
-    "Introduction to Generative AI.webp",
-    "Machine Learning Foundations.webp",
-    "Mastering Smart Contract.webp",
-    "Started with Databases.webp",
-    "Supervised Machine Learning Regression and Classification.webp",
-    "elevAIte with Dicoding Program 2025.webp"
+    "hackathon-rajasthan-ai-hackathon.jpg",
+    "hackathon-techno-tarang-poornima.jpg",
+    "hackathon-acehack-5-uem.jpg",
+    "hackathon-design-a-thon-code-red.jpg",
+    "cisco-thingqbator-flutter-certificate.png",
+    "cisco-thingqbator-mean-stack-certificate.png",
+    "deloitte-data-analytics-certificate.png",
+    "simplilearn-full-stack-developer-certificate.png",
+    "simplilearn-mern-stack-certificate.png",
+    "be10x-ai-tools-claude-workshop-certificate.png",
+    "google-play-store-listing-certificate.png",
+    "freecodecamp-responsive-web-design-certificate.png",
+    "microsoft-applied-skills-ai-chat.png"
 ];
 
 const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick, isLowPowerMode: isLowPowerModeProp }) => {
