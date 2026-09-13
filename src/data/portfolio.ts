@@ -927,6 +927,7 @@ export const portfolioData: PortfolioData = {
         "activities": [
             "Hackathon Leader (Team Akatsuki)",
             "Captain & Lead – Posture Sense (National Level Project Exhibition)",
+            "Delegation Member – Indian Air Force (IAF) Station Visit (Dec 2025)",
             "Ethical Hacking & Cybersecurity (HACK-O-SHOP by VGU x tensaX)",
             "AI & Web Development Club",
             "Tech Speaker & Community Builder"
@@ -1457,6 +1458,24 @@ export const portfolioData: PortfolioData = {
             "Cybersecurity Workshop",
             "Verified Certificate"
         ]
+    },
+    {
+        "id": "event-iaf-station-jaipur-visit",
+        "title": "Industrial Delegation Visit – Indian Air Force Station, Jaipur",
+        "issuer": "Indian Air Force (IAF) & Vivekananda Global University",
+        "date": "2025-12-05",
+        "description": "Selected as part of the official university delegation on 5th December 2025 to visit the Indian Air Force (IAF) Station, Jaipur, exploring defense communications, radar technology, and aerospace infrastructure.",
+        "category": "event",
+        "type": "event",
+        "image": "/gallery/iaf-station-jaipur-visit.jpg",
+        "tags": [
+            "Indian Air Force",
+            "IAF Station Jaipur",
+            "Defense & Aerospace",
+            "Industrial Visit",
+            "VGU Delegation",
+            "Official Event"
+        ]
     }
 ],
     hardSkills: [
@@ -1743,6 +1762,15 @@ export const portfolioData: PortfolioData = {
             type: "image",
             url: "/assets/vgulogo.png",
             category: "campus"
+        },
+        {
+            id: "gal-2",
+            title: "Industrial Visit to Indian Air Force Station, Jaipur",
+            description: "Official university delegation visit to IAF Station Jaipur exploring aerospace and defense communications infrastructure.",
+            date: "2025-12-05",
+            type: "image",
+            url: "/gallery/iaf-station-jaipur-visit.jpg",
+            category: "delegation"
         }
     ]
 };
