@@ -1,39 +1,81 @@
-"use client";
+import type { Metadata } from 'next';
+import { GalleryClientContent } from './GalleryClientContent';
 
-import CleanFilmGrid from "@/components/sections/gallery/CleanFilmGrid";
-import ManifestoHero from "@/components/sections/gallery/ManifestoHero";
-import dynamic from "next/dynamic";
-import ImpactSection from "@/components/ui/impact-section";
-import { usePerformance } from "@/hooks/usePerformance";
-import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
-import { DeferredMount } from '@/components/ui/DeferredMount';
+export const metadata: Metadata = {
+    title: 'Visual Journey & Gallery | Kartik Sharma',
+    description: 'A visual archive of milestones, tech events, hackathons, speaking engagements, and campus life at Vivekananda Global University (VGU) Jaipur.',
+    keywords: [
+        'Kartik Sharma Gallery',
+        'Kartik Sharma Photos',
+        'VGU Jaipur Campus Life',
+        'Hackathon Moments Kartik Sharma',
+        'Tech Events Jaipur',
+        'Software Engineer Journey Photos',
+        'Developer Community Rajasthan'
+    ],
+    authors: [{ name: 'Kartik Sharma', url: 'https://thekartiksharma.in' }],
+    creator: 'Kartik Sharma',
+    publisher: 'Kartik Sharma',
+    alternates: {
+        canonical: 'https://thekartiksharma.in/gallery',
+    },
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://thekartiksharma.in/gallery',
+        title: 'Visual Journey & Gallery | Kartik Sharma',
+        description: 'Visual chronicle of milestones, technical hackathons, and moments in software development.',
+        siteName: 'Kartik Sharma Portfolio',
+        images: [
+            {
+                url: '/profile.png',
+                width: 1200,
+                height: 630,
+                alt: 'Kartik Sharma - Visual Gallery',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Visual Journey & Gallery | Kartik Sharma',
+        description: 'Visual archive of milestones, hackathons, and moments.',
+        creator: '@itszeromind',
+        images: ['/profile.png'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+};
 
-const GLSLHills = dynamic(() => import("@/components/ui/glsl-hills").then(mod => mod.GLSLHills), {
-    ssr: false,
-});
+const galleryJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: 'Kartik Sharma Visual Gallery',
+    url: 'https://thekartiksharma.in/gallery',
+    description: 'Visual chronicle of hackathons, achievements, and milestones.',
+    author: {
+        '@type': 'Person',
+        name: 'Kartik Sharma',
+        url: 'https://thekartiksharma.in'
+    }
+};
 
 export default function GalleryPage() {
-    const { isLowPowerMode } = usePerformance();
-
     return (
-        <main className="bg-background min-h-screen selection:bg-cyan-500/30 selection:text-cyan-500 overflow-x-hidden relative">
-            {!isLowPowerMode && (
-                <div className="fixed inset-0 z-0 pointer-events-none opacity-50 dark:opacity-50 mix-blend-multiply dark:mix-blend-screen">
-                    <DeferredMount>
-                        <GLSLHills />
-                    </DeferredMount>
-                </div>
-            )}
-            <div className="relative z-10">
-                <ManifestoHero isLowPowerMode={isLowPowerMode} />
-                <DeferredMount>
-                    <ErrorBoundary fallback={<div className="container mx-auto py-20 text-center">Gallery Grid Unavailable</div>}>
-                        <CleanFilmGrid isLowPowerMode={isLowPowerMode} />
-                    </ErrorBoundary>
-                    <ImpactSection />
-                </DeferredMount>
-            </div>
-        </main>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryJsonLd) }}
+            />
+            <GalleryClientContent />
+        </>
     );
 }
-

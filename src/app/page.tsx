@@ -1,61 +1,100 @@
-'use client';
+import type { Metadata } from 'next';
+import { HomeClientContent } from './HomeClientContent';
 
-import { useEffect } from 'react';
-import dynamic from 'next/dynamic';
-import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+export const metadata: Metadata = {
+    title: 'Kartik Sharma | Full Stack & MERN Developer | Flutter Mobile Architect',
+    description: 'Official portfolio of Kartik Sharma — Full Stack and MERN Stack Developer, Flutter Mobile Architect, and AI Systems Builder based in Jaipur, India. Explore production projects, architecture case studies, and engineering experience across 4 paid roles and 10+ shipped platforms.',
+    keywords: [
+        'Kartik Sharma',
+        'thekartiksharma.in',
+        'Kartik Sharma Portfolio',
+        'Kartik Sharma Developer',
+        'Kartik Sharma Jaipur',
+        'Full Stack Developer Jaipur',
+        'MERN Stack Developer India',
+        'Flutter Developer Jaipur',
+        'Next.js Developer India',
+        'React Developer India',
+        'Node.js Developer',
+        'FastAPI Python Developer',
+        'PostgreSQL Database Architect',
+        'AI Driven Systems Builder',
+        'Hire Full Stack Developer',
+        'Freelance Web Developer India',
+        'PRANAG AI Kartik Sharma',
+        'VGU Jaipur Kartik Sharma',
+        'Software Engineer Portfolio',
+        'REST API Architect'
+    ],
+    authors: [{ name: 'Kartik Sharma', url: 'https://thekartiksharma.in' }],
+    creator: 'Kartik Sharma',
+    publisher: 'Kartik Sharma',
+    alternates: {
+        canonical: 'https://thekartiksharma.in',
+    },
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://thekartiksharma.in',
+        title: 'Kartik Sharma | Full Stack & MERN Developer | Flutter Mobile Architect',
+        description: 'Explore production projects, engineering case studies, and full-stack solutions built by Kartik Sharma with Next.js, React, Node.js, and Flutter.',
+        siteName: 'Kartik Sharma Portfolio',
+        images: [
+            {
+                url: '/profile.png',
+                width: 1200,
+                height: 630,
+                alt: 'Kartik Sharma - Full Stack & MERN Developer',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Kartik Sharma | Full Stack & MERN Developer',
+        description: 'Full Stack & MERN Developer building scalable digital platforms with React, Next.js, FastAPI, and Flutter.',
+        creator: '@itszeromind',
+        images: ['/profile.png'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+};
 
-import { ToolsSection } from "@/components/sections/skills/ToolsSection";
-import { HeroVisual } from "@/components/sections/HeroVisual";
-import { NumbersThatSpeak } from "@/components/sections/NumbersThatSpeak";
-import { ExpertiseSection } from "@/components/sections/ExpertiseSection";
-import CTASection from "@/components/sections/CTASection";
-import { PixelPet } from "@/components/ui/PixelPet";
-import { SocialCorner } from '@/components/layout/SocialCorner';
-import { DeferredMount } from '@/components/ui/DeferredMount';
-
-if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-}
-
-// ─── Main Page ───────────────────────────────────────────────────────────────
+const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Kartik Sharma Portfolio',
+    url: 'https://thekartiksharma.in',
+    description: 'Portfolio of Kartik Sharma — Full Stack & MERN Stack Developer, Flutter Architect, and AI Systems Builder.',
+    author: {
+        '@type': 'Person',
+        name: 'Kartik Sharma',
+        url: 'https://thekartiksharma.in',
+        jobTitle: 'Full Stack & MERN Stack Developer',
+        sameAs: [
+            'https://github.com/KartikSharma4448',
+            'https://linkedin.com/in/kartik-sharma06',
+            'https://www.instagram.com/itszeromind'
+        ]
+    }
+};
 
 export default function HomePage() {
-    useEffect(() => {
-        if (typeof window === 'undefined' || !('ResizeObserver' in window)) return;
-        const refreshLayout = () => {
-            window.dispatchEvent(new Event('resize'));
-            ScrollTrigger.refresh();
-        };
-        const resizeObserver = new ResizeObserver(() => { refreshLayout(); });
-        resizeObserver.observe(document.body);
-        window.addEventListener('load', refreshLayout);
-        return () => {
-            resizeObserver.disconnect();
-            window.removeEventListener('load', refreshLayout);
-            ScrollTrigger.getAll().forEach(t => t.kill());
-        };
-    }, []);
-
     return (
-        <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="relative overflow-x-clip"
-        >
-            <HeroVisual isExiting={true} />
-
-            <DeferredMount>
-                <PixelPet isInline={true} />
-                <ToolsSection />
-                <NumbersThatSpeak />
-                <ExpertiseSection />
-                <CTASection />
-                <SocialCorner className="fixed bottom-12 right-12 z-[30]" />
-            </DeferredMount>
-        </motion.main>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+            />
+            <HomeClientContent />
+        </>
     );
 }
-
