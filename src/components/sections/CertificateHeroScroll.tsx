@@ -37,6 +37,7 @@ interface CertificateHeroScrollProps {
 }
 
 const CERTIFICATE_POOL = [
+    "vgu-hack-o-shop-ethical-hacking-workshop.jpg",
     "vgu-national-project-exhibition-posture-sense.jpg",
     "hackathon-openai-nxtwave-buildathon-rajasthan.png",
     "hackathon-hackindia-spark12-jaipur.png",

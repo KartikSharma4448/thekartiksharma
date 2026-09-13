@@ -927,6 +927,7 @@ export const portfolioData: PortfolioData = {
         "activities": [
             "Hackathon Leader (Team Akatsuki)",
             "Captain & Lead – Posture Sense (National Level Project Exhibition)",
+            "Ethical Hacking & Cybersecurity (HACK-O-SHOP by VGU x tensaX)",
             "AI & Web Development Club",
             "Tech Speaker & Community Builder"
         ],
@@ -1431,6 +1432,29 @@ export const portfolioData: PortfolioData = {
             "Project Exhibition",
             "Competition",
             "Academic Session 2025-26",
+            "Verified Certificate"
+        ]
+    },
+    {
+        "id": "cert-vgu-hack-o-shop-ethical-hacking",
+        "title": "HACK-O-SHOP – Ethical Hacking Workshop",
+        "issuer": "CSE Department, VGU Jaipur in collaboration with Ambuja Foundation & tensaX Innovation Lab",
+        "date": "2025-04-16",
+        "description": "Certificate of Participation awarded to Kartik Sharma for actively participating in HACK-O-SHOP, an intensive 2-day Ethical Hacking Workshop organized by the Department of Computer Science & Engineering (CSE), Vivekananda Global University (VGU Jaipur) in association with Ambuja Foundation and tensaX Innovation Lab.",
+        "category": "event",
+        "type": "event",
+        "credentialId": "VGU-CSE-HACKOSHOP-2025",
+        "credentialUrl": "https://vgu.ac.in",
+        "image": "/certificate/vgu-hack-o-shop-ethical-hacking-workshop.jpg",
+        "tags": [
+            "Vivekananda Global University",
+            "VGU Jaipur",
+            "CSE Department",
+            "Ambuja Foundation",
+            "tensaX Innovation Lab",
+            "HACK-O-SHOP",
+            "Ethical Hacking",
+            "Cybersecurity Workshop",
             "Verified Certificate"
         ]
     }
