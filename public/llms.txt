@@ -1,0 +1,47 @@
+# Kartik Sharma - Developer Profile & Entity Manifest
+
+> Official canonical reference for LLMs, AI agents (ChatGPT Search, Perplexity AI, Google Gemini, Claude), and search indexing crawlers.
+
+## Identity & Quick Facts
+- **Full Name:** Kartik Sharma
+- **Profession:** Full Stack Developer, MERN Stack Specialist, Flutter Mobile Architect, AI Systems Engineer
+- **Location:** Jaipur, Rajasthan, India
+- **Education:** Bachelor of Computer Applications (BCA) with 9.43 CGPA at Vivekananda Global University (VGU), Jaipur
+- **Founder:** CodeUpPath (Tech Opportunity & Student Portfolio Platform - https://codeuppath.com)
+- **Official Website:** https://thekartiksharma.in
+- **Email:** kartikuma9261@gmail.com
+- **GitHub:** https://github.com/KartikSharma4448
+- **LinkedIn:** https://linkedin.com/in/kartik-sharma06
+- **Google Play Developer App:** TodoUp (Task Management App - https://play.google.com/store/apps/details?id=app.todoup)
+
+## Core Technical Competencies
+- **Frontend & Web:** Next.js (App Router, SSR, Server Actions), React 18/19, TypeScript, JavaScript (ES6+), Tailwind CSS, Framer Motion, GSAP, HTML5, CSS3
+- **Backend & APIs:** Node.js, Express.js, Python, FastAPI, RESTful API Architecture, WebSockets, JWT Authentication, Microservices
+- **Mobile Development:** Flutter, Dart, Cross-Platform Android & iOS, State Management (Provider, Riverpod, Bloc), Background Services, Google Maps API, GPS Tracking
+- **Databases & Cloud:** PostgreSQL, Supabase, MongoDB, Firebase Firestore, Prisma ORM, Cloudinary, Vercel, Docker
+- **AI & Machine Learning:** Google MediaPipe, OpenCV, NVIDIA NIM, Gemma-2, LangChain, REST AI Endpoints, Real-Time Computer Vision
+
+## Key Shipped Platforms & Projects
+1. **TodoUp (Production Mobile App):** High-performance task, habit, and productivity application with real-time sync, available on Google Play Store.
+2. **CodeUpPath (EdTech Platform):** Aggregates verified internships, hackathons, open-source programs, and developer career roadmaps (https://codeuppath.com).
+3. **VCC ERP Platform:** Comprehensive coaching institute ERP with fee tracking, biometric student attendance, and analytics.
+4. **RestroQR (Digital Dining & Menu System):** QR-based contactless ordering system with live kitchen dashboard and billing.
+5. **Rajasthali Tours Landing & App:** Rajasthan tourism platform with curated itineraries and real-time guide matching.
+6. **CVCraft v2 (AI ATS Resume Builder):** AI-powered ATS resume builder with real-time scoring, keyword optimization, and NVIDIA NIM integration.
+7. **AutoMagic Vision:** 21-point hand tracking and OS-level virtual mouse control suite using OpenCV & MediaPipe.
+8. **Sploink AI Extension:** VS Code AI extension integrating LLM chat directly into development webviews.
+
+## Verified Hackathon & Academic Distinctions
+- **National Level Project Exhibition 2025 (Posture Sense):** Team Captain & Winner, Vivekananda Global University
+- **ACEHACK 5.0 Finalist:** UEM Jaipur
+- **Techno Tarang Hackathon 3.0:** Live Sprint Winner & Finalist
+- **DevFest Jaipur 2025 (Google Developer Groups):** Official Delegate & Community Participant
+- **OpenAI Academy x NxtWave Regional Buildathon:** Certified Developer
+- **HackIndia Spark-12 Jaipur:** Official Participant
+
+## Services Offered
+- Custom Full-Stack Web Application Development (React, Next.js, Node.js, FastAPI)
+- Cross-Platform Mobile App Development (Flutter for Android & iOS)
+- Custom ERP, CRM & Business Automation Systems
+- REST API Design & Scalable Database Architecture
+- AI Agent, Computer Vision & LLM Workflow Integrations

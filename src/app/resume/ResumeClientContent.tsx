@@ -1,10 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Download, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { Loader2 } from 'lucide-react';
 import { usePerformance } from '@/hooks/usePerformance';
 
 const PdfViewer = dynamic(() => import('@/components/ui/pdf-viewer').then(mod => mod.PdfViewer), {
@@ -19,8 +18,7 @@ const PdfViewer = dynamic(() => import('@/components/ui/pdf-viewer').then(mod =>
 
 export function ResumeClientContent() {
     const { isLowPowerMode } = usePerformance();
-    const fileId = "1mfYs2MOHpwEFLe-Ld4OCcgS1Lbo6wW7O";
-    const resumeUrl = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+    const resumeUrl = "/resume.pdf";
 
     return (
         <div className="h-screen bg-background relative flex flex-col pt-24 pb-4 overflow-hidden">
@@ -38,7 +36,15 @@ export function ResumeClientContent() {
                     <span>Back to Portfolio</span>
                 </Link>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
+                    <a
+                        href={resumeUrl}
+                        download="Kartik_Sharma_Resume.pdf"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-muted/80 hover:bg-muted text-foreground font-medium transition-all active:scale-95 shadow-sm border border-border"
+                    >
+                        <Download className="w-4 h-4" />
+                        <span>Download PDF</span>
+                    </a>
                     <a
                         href={resumeUrl}
                         target="_blank"
@@ -59,7 +65,7 @@ export function ResumeClientContent() {
                 className="flex-1 w-full max-w-[1400px] mx-auto px-4 md:px-6 min-h-0 pb-4 relative"
             >
                 <div className="w-full h-full bg-muted/30 rounded-2xl border border-border/50 overflow-hidden relative group">
-                    <PdfViewer url="/resume.pdf" />
+                    <PdfViewer url={resumeUrl} />
                 </div>
             </motion.div>
         </div>
