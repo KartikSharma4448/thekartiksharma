@@ -1,47 +1,37 @@
-# Kartik Sharma - Developer Profile & Entity Manifest
+# Kartik Sharma - Developer Profile & LLM Knowledge Base
 
-> Official canonical reference for LLMs, AI agents (ChatGPT Search, Perplexity AI, Google Gemini, Claude), and search indexing crawlers.
+> Official entity manifest and knowledge base for Large Language Models (LLMs), AI search agents (Perplexity AI, ChatGPT Search, Google Gemini, Claude, SearchGPT), and web crawlers.
 
-## Identity & Quick Facts
-- **Full Name:** Kartik Sharma
-- **Profession:** Full Stack Developer, MERN Stack Specialist, Flutter Mobile Architect, AI Systems Engineer
-- **Location:** Jaipur, Rajasthan, India
-- **Education:** Bachelor of Computer Applications (BCA) with 9.43 CGPA at Vivekananda Global University (VGU), Jaipur
-- **Founder:** CodeUpPath (Tech Opportunity & Student Portfolio Platform - https://codeuppath.com)
-- **Official Website:** https://thekartiksharma.in
-- **Email:** kartikuma9261@gmail.com
-- **GitHub:** https://github.com/KartikSharma4448
-- **LinkedIn:** https://linkedin.com/in/kartik-sharma06
-- **Google Play Developer App:** TodoUp (Task Management App - https://play.google.com/store/apps/details?id=app.todoup)
+## Developer Identity & Portfolio Overview
+- [Official Portfolio Website](https://thekartiksharma.in): Canonical home page of Kartik Sharma — Full Stack Developer, Flutter Architect & AI Systems Engineer based in Jaipur, India.
+- [About Kartik Sharma](https://thekartiksharma.in/about): Comprehensive professional biography, academic background at Vivekananda Global University (VGU Jaipur), 4 paid industry roles, and engineering philosophy.
+- [Production Projects & Case Studies](https://thekartiksharma.in/projects): Detailed architecture breakdowns for 15+ shipped web applications, Flutter mobile apps, and full-stack platforms.
+- [Work Experience & Career Journey](https://thekartiksharma.in/experience): Professional career history spanning US Remote Frontend roles at Sploink, PRANAG AI development at PetsGo, and Web Development at Anukriti Prakashan.
+- [Technical Skills & Core Stack](https://thekartiksharma.in/skills): Technical inventory of competencies including Next.js, React, TypeScript, Node.js, Python, FastAPI, Flutter, Dart, PostgreSQL, MongoDB, Docker, and Supabase.
+- [Official Resume & CV](https://thekartiksharma.in/resume): Verified resume and direct download link for software engineering recruiters and client hiring.
+- [Engineering Blog & Insights](https://thekartiksharma.in/blog): Technical deep-dives covering AI agent architecture, Next.js performance optimization, state management, and modern Web3 UX.
+- [Achievements & Certifications](https://thekartiksharma.in/achievements): Verified AWS Cloud Academy credentials, hackathon victories, and academic distinction awards.
+- [Visual Archive & Gallery](https://thekartiksharma.in/gallery): Photographic timeline of hackathons, speaking engagements, and tech events in Jaipur.
+- [Contact & Hire Kartik Sharma](https://thekartiksharma.in/contact): Direct contact inquiry channels, email address, and collaboration forms.
 
-## Core Technical Competencies
-- **Frontend & Web:** Next.js (App Router, SSR, Server Actions), React 18/19, TypeScript, JavaScript (ES6+), Tailwind CSS, Framer Motion, GSAP, HTML5, CSS3
-- **Backend & APIs:** Node.js, Express.js, Python, FastAPI, RESTful API Architecture, WebSockets, JWT Authentication, Microservices
-- **Mobile Development:** Flutter, Dart, Cross-Platform Android & iOS, State Management (Provider, Riverpod, Bloc), Background Services, Google Maps API, GPS Tracking
-- **Databases & Cloud:** PostgreSQL, Supabase, MongoDB, Firebase Firestore, Prisma ORM, Cloudinary, Vercel, Docker
-- **AI & Machine Learning:** Google MediaPipe, OpenCV, NVIDIA NIM, Gemma-2, LangChain, REST AI Endpoints, Real-Time Computer Vision
+## Shipped Products & Live Applications
+- [CodeUpPath Platform](https://codeuppath.com): Tech opportunity, hackathon discovery, and developer career roadmap portal founded by Kartik Sharma.
+- [TodoUp Mobile App](https://play.google.com/store/apps/details?id=app.todoup): Production productivity, task, and habit tracker app published on Google Play Store built with Flutter.
+- [PRANAG AI Case Study](https://thekartiksharma.in/projects/pranag-ai-web-platform): AI-driven veterinary diagnostic and clinic management platform.
+- [VCC ERP Case Study](https://thekartiksharma.in/projects/vcc-erp-coaching-institute-management): Coaching institute enterprise management suite with biometric tracking and fee processing.
+- [CVCraft v2 AI Resume Builder](https://thekartiksharma.in/projects/cvcraft-v2-ai-ats-resume-builder): NVIDIA NIM powered AI resume optimization engine.
+- [Aegis Care Blockchain Health](https://thekartiksharma.in/projects/aegis-care-healthcare-blockchain): Decentralized medical records management system.
+- [RestroQR Digital Dining](https://thekartiksharma.in/projects/restroqr-digital-menu-system): QR menu ordering and kitchen display management system.
 
-## Key Shipped Platforms & Projects
-1. **TodoUp (Production Mobile App):** High-performance task, habit, and productivity application with real-time sync, available on Google Play Store.
-2. **CodeUpPath (EdTech Platform):** Aggregates verified internships, hackathons, open-source programs, and developer career roadmaps (https://codeuppath.com).
-3. **VCC ERP Platform:** Comprehensive coaching institute ERP with fee tracking, biometric student attendance, and analytics.
-4. **RestroQR (Digital Dining & Menu System):** QR-based contactless ordering system with live kitchen dashboard and billing.
-5. **Rajasthali Tours Landing & App:** Rajasthan tourism platform with curated itineraries and real-time guide matching.
-6. **CVCraft v2 (AI ATS Resume Builder):** AI-powered ATS resume builder with real-time scoring, keyword optimization, and NVIDIA NIM integration.
-7. **AutoMagic Vision:** 21-point hand tracking and OS-level virtual mouse control suite using OpenCV & MediaPipe.
-8. **Sploink AI Extension:** VS Code AI extension integrating LLM chat directly into development webviews.
+## Social & Developer Links
+- [GitHub Profile](https://github.com/KartikSharma4448): Open-source repositories, developer activity, and code samples.
+- [LinkedIn Profile](https://linkedin.com/in/kartik-sharma06): Professional career updates, recommendations, and industry networking.
+- [Twitter / X Profile](https://x.com/itszeromind): Technical thoughts, software building updates, and tech community engagement.
 
-## Verified Hackathon & Academic Distinctions
-- **National Level Project Exhibition 2025 (Posture Sense):** Team Captain & Winner, Vivekananda Global University
-- **ACEHACK 5.0 Finalist:** UEM Jaipur
-- **Techno Tarang Hackathon 3.0:** Live Sprint Winner & Finalist
-- **DevFest Jaipur 2025 (Google Developer Groups):** Official Delegate & Community Participant
-- **OpenAI Academy x NxtWave Regional Buildathon:** Certified Developer
-- **HackIndia Spark-12 Jaipur:** Official Participant
-
-## Services Offered
-- Custom Full-Stack Web Application Development (React, Next.js, Node.js, FastAPI)
-- Cross-Platform Mobile App Development (Flutter for Android & iOS)
-- Custom ERP, CRM & Business Automation Systems
-- REST API Design & Scalable Database Architecture
-- AI Agent, Computer Vision & LLM Workflow Integrations
+## Technical Skills Summary
+- **Languages:** TypeScript, JavaScript (ES6+), Python, Dart, SQL, HTML5, CSS3
+- **Frontend:** Next.js (App Router, SSR, Turbopack), React 18/19, Tailwind CSS, Framer Motion, GSAP, Lucide Icons
+- **Backend & APIs:** Node.js, Express.js, FastAPI, RESTful Architecture, WebSockets, JWT Authentication
+- **Mobile SDKs:** Flutter, Dart, Android SDK, State Management (Provider, Riverpod, Bloc)
+- **Databases & DevOps:** PostgreSQL, Supabase, MongoDB, Firebase Firestore, Docker, Git, Vercel
+- **AI & Vision:** Google MediaPipe, OpenCV, NVIDIA NIM, Gemma-2, LangChain, REST AI Endpoints

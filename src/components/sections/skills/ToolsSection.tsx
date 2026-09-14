@@ -22,7 +22,7 @@ import { VscVscode } from 'react-icons/vsc';
 import { Terminal as TerminalIcon } from 'lucide-react';
 
 // Robust vector icon mapping with accurate brand colors
-const toolIconComponents: Record<string, { icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>; color: string }> = {
+const toolIconComponents: Record<string, { icon: React.ComponentType<{ className?: string; style?: React.CSSProperties; 'aria-label'?: string; role?: string }>; color: string }> = {
     'VS Code': { icon: VscVscode, color: '#007ACC' },
     'Android Studio': { icon: SiAndroidstudio, color: '#3DDC84' },
     'Postman': { icon: SiPostman, color: '#FF6C37' },
@@ -141,6 +141,8 @@ const ToolPill = ({ tool }: { tool: any }) => {
         <div className="flex items-center gap-2.5 sm:gap-4 md:gap-6 px-4 py-2 sm:px-7 sm:py-3.5 md:px-10 md:py-5 bg-neutral-900/5 dark:bg-white/5 backdrop-blur-xl border border-neutral-300/40 dark:border-white/10 rounded-full transition-all duration-300 hover:scale-105 hover:bg-neutral-900/10 dark:hover:bg-white/10 group select-none shrink-0 cursor-default">
             <div className="relative w-5 h-5 sm:w-8 sm:h-8 md:w-11 md:h-11 shrink-0 flex items-center justify-center">
                 <IconComp
+                    role="img"
+                    aria-label={`${tool.name} logo`}
                     className={cn(
                         "w-full h-full object-contain transition-all duration-300 text-neutral-400 dark:text-neutral-500 group-hover:scale-110",
                         tool.name === 'Vercel' ? "group-hover:text-black dark:group-hover:text-white group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]" :
