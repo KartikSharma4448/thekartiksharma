@@ -68,40 +68,35 @@ export function AboutClientContent() {
             About Kartik Sharma
           </span>
 
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] text-neutral-950 dark:text-white uppercase select-none">
-            Nice To
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] text-neutral-950 dark:text-white uppercase select-none flex flex-col items-center" aria-label="Nice To Meet You">
+            <span>Nice To</span>
+            <span className="flex items-center justify-center gap-3 sm:gap-6 mt-2 sm:mt-4 flex-wrap">
+              <span>Meet</span>
+
+              {/* Interactive Eyeballs */}
+              <span className="inline-flex items-center gap-2 sm:gap-4 bg-neutral-900 dark:bg-white p-2.5 sm:p-4 rounded-full shadow-2xl">
+                <span 
+                  ref={leftEyeRef} 
+                  className="w-8 h-8 sm:w-14 sm:h-14 bg-white dark:bg-neutral-900 rounded-full flex items-center justify-center relative overflow-hidden"
+                >
+                  <span 
+                    ref={leftPupilRef}
+                    className="w-3.5 h-3.5 sm:w-6 sm:h-6 bg-neutral-950 dark:bg-white rounded-full transition-transform duration-75 will-change-transform"
+                  />
+                </span>
+                <span 
+                  className="w-8 h-8 sm:w-14 sm:h-14 bg-white dark:bg-neutral-900 rounded-full flex items-center justify-center relative overflow-hidden"
+                >
+                  <span 
+                    ref={rightPupilRef}
+                    className="w-3.5 h-3.5 sm:w-6 sm:h-6 bg-neutral-950 dark:bg-white rounded-full transition-transform duration-75 will-change-transform"
+                  />
+                </span>
+              </span>
+
+              <span>You</span>
+            </span>
           </h1>
-
-          <div className="flex items-center justify-center gap-3 sm:gap-6 mt-2 sm:mt-4 flex-wrap">
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] text-neutral-950 dark:text-white uppercase select-none">
-              Meet
-            </h1>
-
-            {/* Interactive Eyeballs */}
-            <div className="flex items-center gap-2 sm:gap-4 bg-neutral-900 dark:bg-white p-2.5 sm:p-4 rounded-full shadow-2xl">
-              <div 
-                ref={leftEyeRef} 
-                className="w-8 h-8 sm:w-14 sm:h-14 bg-white dark:bg-neutral-900 rounded-full flex items-center justify-center relative overflow-hidden"
-              >
-                <div 
-                  ref={leftPupilRef}
-                  className="w-3.5 h-3.5 sm:w-6 sm:h-6 bg-neutral-950 dark:bg-white rounded-full transition-transform duration-75 will-change-transform"
-                />
-              </div>
-              <div 
-                className="w-8 h-8 sm:w-14 sm:h-14 bg-white dark:bg-neutral-900 rounded-full flex items-center justify-center relative overflow-hidden"
-              >
-                <div 
-                  ref={rightPupilRef}
-                  className="w-3.5 h-3.5 sm:w-6 sm:h-6 bg-neutral-950 dark:bg-white rounded-full transition-transform duration-75 will-change-transform"
-                />
-              </div>
-            </div>
-
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] text-neutral-950 dark:text-white uppercase select-none">
-              You
-            </h1>
-          </div>
         </motion.div>
 
         {/* Bio & Profile Card */}

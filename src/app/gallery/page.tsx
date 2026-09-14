@@ -3,7 +3,7 @@ import { GalleryClientContent } from './GalleryClientContent';
 
 export const metadata: Metadata = {
     title: 'Visual Journey & Gallery | Kartik Sharma',
-    description: 'A visual archive of milestones, tech events, hackathons, speaking engagements, and campus life at Vivekananda Global University (VGU) Jaipur.',
+    description: 'A visual archive of milestones, technical hackathons, speaking engagements, and campus life of Kartik Sharma at Vivekananda Global University (VGU), Jaipur.',
     keywords: [
         'Kartik Sharma Gallery',
         'Kartik Sharma Photos',

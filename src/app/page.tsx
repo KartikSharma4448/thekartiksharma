@@ -3,7 +3,7 @@ import { HomeClientContent } from './HomeClientContent';
 
 export const metadata: Metadata = {
     title: 'Kartik Sharma | Full Stack & MERN Developer | Flutter Mobile Architect',
-    description: 'Official portfolio of Kartik Sharma — Full Stack and MERN Stack Developer, Flutter Mobile Architect, and AI Systems Builder based in Jaipur, India. Explore production projects, architecture case studies, and engineering experience across 4 paid roles and 10+ shipped platforms.',
+    description: 'Official portfolio of Kartik Sharma — Full Stack Developer & Flutter Architect from Jaipur, India. Explore web apps, case studies, and 4 paid industry roles.',
     keywords: [
         'Kartik Sharma',
         'thekartiksharma.in',

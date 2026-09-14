@@ -3,7 +3,7 @@ import { ContactClientContent } from './ContactClientContent';
 
 export const metadata: Metadata = {
     title: 'Contact & Hire Kartik Sharma | Full Stack & MERN Developer | Jaipur',
-    description: 'Get in touch with Kartik Sharma for full-time software engineering roles, high-performance web development contracts, Flutter mobile app architecture, or technical consultation. Based in Jaipur, India.',
+    description: 'Contact Kartik Sharma for full-time engineering roles, high-performance web development, Flutter app architecture, and technical consulting based in Jaipur.',
     keywords: [
         'Contact Kartik Sharma',
         'Hire Kartik Sharma',

@@ -3,7 +3,7 @@ import { ExperienceClientContent } from './ExperienceClientContent';
 
 export const metadata: Metadata = {
     title: 'Work Experience & Engineering Roles | Kartik Sharma | Full Stack Developer',
-    description: 'Explore Kartik Sharma\'s engineering career across 4 paid roles and freelance engagements. Key roles include Frontend Developer at Sploink (US Remote), PRANAG AI Developer at PetsGo, and Web Developer at Anukriti Prakashan.',
+    description: 'Explore Kartik Sharma\'s engineering track record across 4 paid industry roles, international clients, and full-stack production platforms with React & Flutter.',
     keywords: [
         'Kartik Sharma Experience',
         'Kartik Sharma Career',

@@ -6,7 +6,7 @@ import { SkillCertificateTabsSection } from '@/components/sections/SkillCertific
 
 export const metadata: Metadata = {
     title: 'Technical Skills & Tech Stack | Kartik Sharma | Full Stack & AI Developer',
-    description: 'Explore the comprehensive technical skillset of Kartik Sharma: React.js, Next.js, TypeScript, Node.js, Express, FastAPI, Python, Flutter, PostgreSQL, MongoDB, Redis, Docker, and full-stack architecture.',
+    description: 'Explore the technical skillset of Kartik Sharma: Next.js, React, TypeScript, Node.js, Python, Flutter, PostgreSQL, Docker, and full-stack cloud architecture.',
     keywords: [
         'Kartik Sharma Skills',
         'Full Stack Developer Skills',

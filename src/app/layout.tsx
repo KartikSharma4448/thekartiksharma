@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         default: 'Kartik Sharma | Full Stack & MERN Stack Developer | Flutter Mobile Architect',
         template: '%s | Kartik Sharma',
     },
-    description: 'Official portfolio of Kartik Sharma — Full Stack & MERN Stack Developer from Jaipur, India. Specializing in high-performance web applications, Flutter mobile apps, Next.js, React, Node.js, Express, and PostgreSQL.',
+    description: 'Official portfolio of Kartik Sharma — Full Stack & MERN Developer from Jaipur, India. Building web & Flutter apps with Next.js, React, Node.js & PostgreSQL.',
     keywords: [
         'Kartik Sharma',
         'thekartiksharma.in',

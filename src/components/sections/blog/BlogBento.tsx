@@ -25,12 +25,12 @@ export const BlogBento = () => {
                             alt="avatar"
                             className="mb-3 size-12 rounded-full"
                         />
-                        <h1 className="mb-4 text-xl font-medium leading-tight">
-                            Hi, I'm Tom.{" "}
+                        <h2 className="mb-4 text-xl font-medium leading-tight">
+                            Hi, I'm Kartik.{" "}
                             <span className="text-muted-foreground">
-                                I build cool websites like this one.
+                                I engineer full-stack platforms and AI systems.
                             </span>
-                        </h1>
+                        </h2>
                         <a
                             href={`mailto:${portfolioData.personal.email}`}
                             className="flex items-center gap-1 text-red-400 hover:underline text-sm"

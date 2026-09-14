@@ -3,7 +3,7 @@ import { AboutClientContent } from './AboutClientContent';
 
 export const metadata: Metadata = {
   title: 'About Kartik Sharma | Full Stack & MERN Developer | Flutter Architect',
-  description: 'Learn about Kartik Sharma, Full Stack & MERN Developer, Mobile App Architect, and BCA student at Vivekananda Global University (VGU) Jaipur. Explore educational background at AS Public School, RSCIT VMOU, hackathons, and 10+ shipped production platforms.',
+  description: 'Learn about Kartik Sharma, Full Stack & Flutter Developer and BCA student at VGU Jaipur. Explore background, 4 paid industry roles, and 15+ shipped platforms.',
   keywords: [
     'Kartik Sharma',
     'About Kartik Sharma',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://thekartiksharma.in/about',
     title: 'About Kartik Sharma | Full Stack & MERN Developer',
-    description: 'Explore Kartik Sharma\'s background, academic distinction in Full Stack & Cloud at VGU Jaipur, AS Public Sr. Sec. School, RSCIT VMOU, 4 paid roles, and 10+ shipped production platforms.',
+    description: 'Explore Kartik Sharma\'s background, Full Stack & Cloud at VGU Jaipur, 4 paid industry roles, and 15+ shipped production platforms.',
     siteName: 'Kartik Sharma Portfolio',
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About Kartik Sharma | Full Stack & MERN Developer',
-    description: 'Explore Kartik Sharma\'s background, academic distinction at VGU Jaipur, 4 paid roles, and 10+ shipped platforms.',
+    description: 'Explore Kartik Sharma\'s background, 4 paid industry roles, Flutter expertise, and 15+ shipped production platforms.',
     images: ['/profile.png'],
     creator: '@itszeromind',
   },

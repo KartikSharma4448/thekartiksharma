@@ -53,9 +53,9 @@ export default function FeatureSection() {
         </div>
         {/* Left side: Heading and Text */}
         <div className="w-full md:w-[55%] z-20 p-6 sm:p-8 md:p-14 lg:p-20 group/text">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white tracking-tight leading-[1.1] transition-all duration-500 group-hover/text:tracking-[0.05em] group-hover/text:drop-shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:group-hover/text:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white tracking-tight leading-[1.1] transition-all duration-500 group-hover/text:tracking-[0.05em] group-hover/text:drop-shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:group-hover/text:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
             Engineering <br className="hidden md:block" /> the Future
-          </h1>
+          </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-10 max-w-xl text-base md:text-lg leading-relaxed transition-colors duration-500 group-hover/text:text-gray-900 dark:group-hover/text:text-gray-200">
             {portfolioData.personal.subtitle}
           </p>

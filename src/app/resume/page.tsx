@@ -3,7 +3,7 @@ import { ResumeClientContent } from './ResumeClientContent';
 
 export const metadata: Metadata = {
     title: 'Resume & Curriculum Vitae (CV) | Kartik Sharma | Full Stack Developer',
-    description: 'View and download the official resume of Kartik Sharma — Full Stack and MERN Stack Developer, Flutter Architect, and AI Systems Builder with 4 paid roles and 10+ shipped production platforms.',
+    description: 'View and download the official resume of Kartik Sharma — Full Stack Developer & Flutter Architect with 4 paid industry roles and 15+ shipped production platforms.',
     keywords: [
         'Kartik Sharma Resume',
         'Kartik Sharma CV',

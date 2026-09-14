@@ -6,7 +6,7 @@ import { SkillCertificateTabsSection } from '@/components/sections/SkillCertific
 
 export const metadata: Metadata = {
     title: 'Achievements, Certifications & Awards | Kartik Sharma',
-    description: 'Explore verified certifications, awards, and academic honors earned by Kartik Sharma: academic distinction at Vivekananda Global University (VGU) Jaipur, AWS Academy Cloud Graduate, AI Innovation Challenge, and technical certifications.',
+    description: 'Explore verified certifications, awards, and academic honors earned by Kartik Sharma across AWS Cloud Academy, AI competitions, and VGU Jaipur distinction.',
     keywords: [
         'Kartik Sharma Achievements',
         'Kartik Sharma Certifications',

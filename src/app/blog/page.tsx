@@ -3,7 +3,7 @@ import { BlogClientContent } from './BlogClientContent';
 
 export const metadata: Metadata = {
     title: 'Engineering Blog & Technical Insights | Kartik Sharma',
-    description: 'Deep-dive technical articles, architecture teardowns, and engineering insights by Kartik Sharma. Covering AI agents, Next.js performance optimization, Web3 UX, full-stack security, and modern state management.',
+    description: 'Deep-dive technical articles, architecture teardowns, and engineering insights by Kartik Sharma covering AI agents, Next.js optimization, and cloud systems.',
     keywords: [
         'Kartik Sharma Blog',
         'Technical Blog Full Stack',
