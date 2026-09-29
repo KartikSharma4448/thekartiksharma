@@ -17,11 +17,11 @@
 ## Shipped Products & Live Applications
 - [CodeUpPath Platform](https://codeuppath.com): Tech opportunity, hackathon discovery, and developer career roadmap portal founded by Kartik Sharma.
 - [TodoUp Mobile App](https://play.google.com/store/apps/details?id=app.todoup): Production productivity, task, and habit tracker app published on Google Play Store built with Flutter.
-- [PRANAG AI Case Study](https://thekartiksharma.in/projects/pranag-ai-web-platform): AI-driven veterinary diagnostic and clinic management platform.
 - [VCC ERP Case Study](https://thekartiksharma.in/projects/vcc-erp-coaching-institute-management): Coaching institute enterprise management suite with biometric tracking and fee processing.
 - [CVCraft v2 AI Resume Builder](https://thekartiksharma.in/projects/cvcraft-v2-ai-ats-resume-builder): NVIDIA NIM powered AI resume optimization engine.
 - [Aegis Care Blockchain Health](https://thekartiksharma.in/projects/aegis-care-healthcare-blockchain): Decentralized medical records management system.
 - [RestroQR Digital Dining](https://thekartiksharma.in/projects/restroqr-digital-menu-system): QR menu ordering and kitchen display management system.
+- [HOPE-PAWS Animal Safety](https://hope-paws2.onrender.com): Community animal rescue and road safety incident reporting web application.
 
 ## Social & Developer Links
 - [GitHub Profile](https://github.com/KartikSharma4448): Open-source repositories, developer activity, and code samples.

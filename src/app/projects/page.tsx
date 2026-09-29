@@ -4,11 +4,9 @@ import { portfolioData } from '@/data/portfolio';
 
 export const metadata: Metadata = {
     title: 'Projects & Case Studies | Kartik Sharma | Full Stack & AI Developer',
-    description: 'Explore production projects and case studies by Kartik Sharma. Featuring PRANAG AI, VCC ERP, CVCraft AI Resume Builder, Aegis Care, and RestroQR platforms.',
+    description: 'Explore production projects and case studies by Kartik Sharma. Featuring VCC ERP, Rajasthali Travel Fleet Management, CVCraft AI Resume Builder, Aegis Care, and RestroQR.',
     keywords: [
         'Kartik Sharma Projects',
-        'PRANAG AI Platform',
-        'AI Livestock Diagnostic App',
         'VCC ERP Coaching Institute Management',
         'Rajasthali Travel Fleet Management System',
         'CVCraft v2 AI Resume Builder',
