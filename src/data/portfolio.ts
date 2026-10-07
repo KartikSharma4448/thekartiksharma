@@ -45,6 +45,59 @@ export const portfolioData: PortfolioData = {
     },
     projects: [
         {
+            id: "my-purse",
+            slug: "my-purse-offline-android-wallet",
+            title: "My Purse - Offline Android Card & Document Vault",
+            seoTitle: "My Purse - Offline Android Wallet | Kartik Sharma",
+            description: "An open-source Android wallet for bank-card references, front/back ID images and PDF documents. Built with Kotlin and Jetpack Compose, with encrypted on-device storage and no account or cloud sync.",
+            seoDescription: "My Purse is an open-source offline Android wallet for cards, ID images and PDFs, built by Kartik Sharma with Kotlin, Jetpack Compose and local encryption.",
+            seoKeywords: ["My Purse Android app", "offline Android wallet", "encrypted document vault", "open-source Kotlin app", "bank card and ID organizer"],
+            applicationCategory: "UtilitiesApplication",
+            operatingSystem: "Android 8.0 and newer",
+            longDescription: "My Purse is a native Android card and document organizer that keeps its vault on the user's device. The Kotlin and Jetpack Compose interface opens with a bundled startup video, then presents Cards and Documents in a minimal two-tab dashboard with floating controls, a lavender ribbon and a vertical swipe carousel. Users can store bank-card reference details, import front/back ID images, flip cards, copy selected fields and import PDFs or images. Room with SQLCipher encrypts the database, Tink encrypts imported files, and Android Keystore protects key material. The app has no account, server, advertising, analytics, cloud sync or Internet permission. The MIT-licensed source is public on GitHub and remains under active development.",
+            image: "/Projects/My-Purse/cover.png",
+            techStack: ["Kotlin", "Jetpack Compose", "Room", "SQLCipher", "Tink", "Android Keystore", "Media3", "Kotlin Coroutines"],
+            tools: ["Android Studio", "Gradle", "GitHub Actions", "Figma", "Git"],
+            status: "ongoing",
+            repoUrl: "https://github.com/KartikSharma4448/My-Purse",
+            startDate: "2026-10-06",
+            customTimeline: "October 2026 - ongoing",
+            category: "Native Android & Offline Storage",
+            role: "Android Developer",
+            team: "Personal Open-Source Project",
+            highlights: ["Native Kotlin / Compose UI", "Encrypted On-Device Vault", "Card Flip & Copy Features", "MIT-Licensed Open Source"],
+            features: [
+                {
+                    title: "Cards and ID Images",
+                    items: ["Bank name, holder, card number, RuPay / Visa / Mastercard, expiry and optional CVV on the reverse", "Front and back ID-image imports with encrypted storage", "Animated card flipping and explicit clipboard copy actions"]
+                },
+                {
+                    title: "Offline Document Library",
+                    items: ["PDF, JPEG, PNG and WebP imports through Android's system file picker", "Content-signature validation, duplicate detection, categories and renaming", "PDF page navigation, image viewing, zoom and user-requested sharing"]
+                },
+                {
+                    title: "Local Storage and Development",
+                    items: ["Room / SQLCipher database encryption and Tink-encrypted files", "Android Keystore key protection, temporary-preview cleanup and release screenshot protection", "No signup, cloud sync, analytics or Internet permission", "Gradle wrapper, database migration tests and GitHub build / unit-test / lint CI"]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: "Card references and imported documents needed to remain private while supporting local previews and explicit sharing.",
+                    solution: "Used an encrypted database and file store, Android Keystore-protected keys, app-private temporary previews and a scoped FileProvider for user-selected sharing."
+                },
+                {
+                    problem: "The card and document browsing experience needed a consistent visual style without adding dashboard clutter.",
+                    solution: "Built a shared Compose carousel with vertical snapping, scale and tilt transitions, connected lavender ribbon paths and a minimal Cards / Documents navigation bar."
+                }
+            ],
+            installation: [
+                { title: "Clone the Open-Source Repository", type: "code", cmd: "git clone https://github.com/KartikSharma4448/My-Purse.git\ncd My-Purse" },
+                { title: "Build on macOS / Linux (JDK 17+ and Android SDK 36)", type: "code", cmd: "chmod +x gradlew\n./gradlew assembleDebug testDebugUnitTest lintDebug" },
+                { title: "Build on Windows PowerShell", type: "code", cmd: ".\\gradlew.bat assembleDebug testDebugUnitTest lintDebug" },
+                { title: "Development Status", type: "text", code: "Active development; not yet published on Google Play. Root / malware detection and portable backup / restore are not implemented. Settings / app-lock components currently have no dashboard entry point. Uninstalling or clearing app data deletes the vault; keep original copies of important documents." }
+            ]
+        },
+        {
             id: "p03-vcc-erp",
             slug: "vcc-erp-coaching-institute-management",
             title: "VCC ERP – Coaching Institute Management",

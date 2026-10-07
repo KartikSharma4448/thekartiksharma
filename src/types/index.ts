@@ -6,6 +6,11 @@ export interface Project {
     title: string;
     description: string;
     longDescription?: string;
+    seoTitle?: string;
+    seoDescription?: string;
+    seoKeywords?: string[];
+    applicationCategory?: string;
+    operatingSystem?: string;
     image?: string;
     techStack: string[];
     tools: string[];

@@ -3,10 +3,12 @@ import { ProjectsClientContent } from './ProjectsClientContent';
 import { portfolioData } from '@/data/portfolio';
 
 export const metadata: Metadata = {
-    title: 'Projects & Case Studies | Kartik Sharma | Full Stack & AI Developer',
-    description: 'Explore production projects and case studies by Kartik Sharma. Featuring VCC ERP, Rajasthali Travel Fleet Management, CVCraft AI Resume Builder, Aegis Care, and RestroQR.',
+    title: { absolute: 'Projects & Case Studies | Kartik Sharma | Full Stack & AI Developer' },
+    description: "Explore Kartik Sharma's projects: My Purse offline Android vault, VCC ERP, Rajasthali Travel, CVCraft, Aegis Care and RestroQR.",
     keywords: [
         'Kartik Sharma Projects',
+        'My Purse Offline Android Wallet',
+        'Kotlin Jetpack Compose Document Vault',
         'VCC ERP Coaching Institute Management',
         'Rajasthali Travel Fleet Management System',
         'CVCraft v2 AI Resume Builder',
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
         locale: 'en_US',
         url: 'https://thekartiksharma.in/projects',
         title: 'Projects & Case Studies | Kartik Sharma | Full Stack & AI Systems',
-        description: 'Explore 15+ production-grade web platforms, Flutter mobile apps, and AI-powered systems engineered by Kartik Sharma.',
+        description: 'Explore web platforms, Kotlin Android and Flutter mobile apps, and AI systems built by Kartik Sharma, including the open-source My Purse offline vault.',
         siteName: 'Kartik Sharma Portfolio',
         images: [
             {
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Projects & Case Studies | Kartik Sharma',
-        description: 'Explore full-stack platforms, Flutter mobile apps, and AI systems built by Kartik Sharma.',
+        description: 'Explore full-stack platforms, Android and Flutter mobile apps, and the open-source My Purse offline vault built by Kartik Sharma.',
         creator: '@itszeromind',
         images: ['/profile.png'],
     },
@@ -80,8 +82,9 @@ const projectsJsonLd = {
         '@type': 'SoftwareApplication',
         name: project.title,
         description: project.description,
-        applicationCategory: 'WebApplication',
-        operatingSystem: 'Cross-platform',
+        applicationCategory: project.applicationCategory || 'WebApplication',
+        operatingSystem: project.operatingSystem || 'Cross-platform',
+        sameAs: project.repoUrl,
         url: `https://thekartiksharma.in/projects/${project.slug}`
     }))
 };

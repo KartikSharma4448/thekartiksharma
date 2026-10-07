@@ -26,21 +26,22 @@ export async function generateMetadata({
     }
 
     const techKeywords = project.techStack || [];
-    const title = `${project.title} | Kartik Sharma Portfolio`;
-    const description = project.longDescription
+    const title = project.seoTitle || `${project.title} | Kartik Sharma Portfolio`;
+    const description = project.seoDescription || (project.longDescription
         ? project.longDescription.slice(0, 160)
-        : project.description.slice(0, 160);
+        : project.description.slice(0, 160));
     const canonicalUrl = `https://thekartiksharma.in/projects/${project.slug}`;
     const ogImage = project.image && project.image !== '/profile.png'
         ? project.image
         : 'https://thekartiksharma.in/profile.png';
 
     return {
-        title,
+        title: { absolute: title },
         description,
         keywords: [
             project.title,
             ...techKeywords,
+            ...(project.seoKeywords || []),
             'Kartik Sharma',
             'Kartik Sharma Projects',
             'Full Stack Case Study',
@@ -115,8 +116,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         '@type': 'SoftwareApplication',
         name: project.title,
         description: project.description,
-        applicationCategory: 'WebApplication',
-        operatingSystem: 'Cross-platform',
+        applicationCategory: project.applicationCategory || 'WebApplication',
+        operatingSystem: project.operatingSystem || 'Cross-platform',
+        sameAs: project.repoUrl,
         author: {
             '@type': 'Person',
             name: 'Kartik Sharma',
