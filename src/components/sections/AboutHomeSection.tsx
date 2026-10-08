@@ -139,7 +139,7 @@ export function AboutHomeSection() {
                 {/* Main Photo */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-950">
                   <Image
-                    src="/profile.png"
+                    src="/kartik-sharma-profile-2026.png"
                     alt="Kartik Sharma - Full Stack & MERN Developer"
                     fill
                     sizes="(max-width: 768px) 100vw, 420px"

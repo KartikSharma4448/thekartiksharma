@@ -110,7 +110,7 @@ export function AboutClientContent() {
           <div className="md:col-span-4 flex justify-center">
             <div className="relative w-full max-w-[280px] aspect-[4/5] rounded-2xl overflow-hidden border border-lime-500/30 shadow-2xl shadow-lime-500/10 bg-neutral-900">
               <img
-                src="/profile.png"
+                src="/kartik-sharma-profile-2026.png"
                 alt="Kartik Sharma - Full Stack & MERN Developer"
                 className="w-full h-full object-cover object-top filter brightness-105"
               />

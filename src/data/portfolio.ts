@@ -6,7 +6,7 @@ export const portfolioData: PortfolioData = {
         title: 'Full Stack & MERN Stack Developer | AI-Driven Systems Builder',
         subtitle: 'Full Stack Developer • Mobile App Architect • MERN Engineer',
         bio: 'Full Stack and MERN Stack Developer with hands-on experience building scalable web applications, cross-platform mobile apps, and production-ready management systems. Proficient in React, Next.js, FastAPI, Node.js, Flutter, and PostgreSQL. Delivered complete end-to-end platforms from scratch across internships and freelance engagements. Strong in REST API design, full-stack architecture, database management, and cross-platform application development. Proven across 4 paid roles and 10+ shipped projects including international freelance clients.',
-        avatar: '/profile.png',
+        avatar: '/kartik-sharma-profile-2026.png',
         location: 'Jaipur, India',
         email: 'kartikuma9261@gmail.com',
         phone: '+91 9261XXXXXX',
