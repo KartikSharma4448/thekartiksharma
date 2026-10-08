@@ -69,7 +69,7 @@ const renderRichText = (text: string) => {
     });
 };
 
-// --- Vertical Gallery Component ---
+// --- Compact Gallery Component ---
 const ProjectGallery = ({
     images,
     onImageClick,
@@ -82,27 +82,28 @@ const ProjectGallery = ({
     viewLessText: string
 }) => {
     const [showAll, setShowAll] = useState(false);
-    const visibleImages = showAll ? images : images.slice(0, 2);
+    const visibleImages = showAll ? images : images.slice(0, 4);
 
     return (
-        <div className="flex flex-col gap-8 pb-12">
-            <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-4 pb-8">
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4">
                 {visibleImages.map((img, idx) => (
-                    <motion.div
+                    <motion.button
                         key={idx}
+                        type="button"
+                        aria-label={`Open gallery image ${idx + 1}`}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-10%" }}
                         transition={{ duration: 0.6, delay: idx * 0.1 }}
-                        className="group relative w-full cursor-zoom-in"
+                        className="group relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-lg border border-border/40 bg-secondary/10 p-2 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                         onClick={() => onImageClick(img)}
                     >
-                        {/* Real Image Tag - Floating with deep shadow */}
                         <img
                             src={img}
                             alt={`Gallery Image ${idx + 1}`}
                             loading="lazy"
-                            className="w-full h-auto object-contain block rounded-lg shadow-2xl shadow-black/20 dark:shadow-black/60 transition-transform duration-500 group-hover:scale-[1.01]"
+                            className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                         />
 
                         {/* Tech UI (Minimal Floating Label) */}
@@ -112,11 +113,11 @@ const ProjectGallery = ({
                                 <Maximize2 className="w-3 h-3" />
                             </div>
                         </div>
-                    </motion.div>
+                    </motion.button>
                 ))}
             </div>
 
-            {images.length > 2 && (
+            {images.length > 4 && (
                 <div className="flex justify-center pt-4">
                     <button
                         onClick={() => setShowAll(!showAll)}

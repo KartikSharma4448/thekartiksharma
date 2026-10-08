@@ -29,12 +29,12 @@ const GITHUB_USER = "KartikSharma4448";
 
 const PINNED_REPOS = [
   {
-    name: "CVCraft",
-    desc: "Full-stack AI-Powered ATS Resume Builder with live editing, real-time ATS scoring, NVIDIA AI content refinement, and instant PDF export.",
-    stars: 24,
-    forks: 8,
+    name: "Veyfolio",
+    desc: "Resume workspace with live preview, browser autosave, project sections, ATS keyword checks and matching PDF export.",
+    stars: 0,
+    forks: 0,
     lang: "Python",
-    url: "https://github.com/KartikSharma4448/CVCraft"
+    url: "https://github.com/KartikSharma4448/Veyfolio"
   },
   {
     name: "Todoup-flutter",

@@ -349,16 +349,15 @@ export const portfolioData: PortfolioData = {
             ]
         },
         {
-            id: "p05-cvcraft",
-            slug: "cvcraft-v2-ai-powered-ats-resume-builder",
-            title: "CVCraft v2 – AI-Powered ATS Resume Builder",
-            description: "Full-stack ATS resume builder with live editing, real-time ATS scoring with keyword optimization, NVIDIA AI content refinement, instant PDF export, and flexible multi-template MongoDB schema.",
-            longDescription: "CVCraft v2 is an advanced AI-powered ATS resume builder engineered to help job seekers bypass Applicant Tracking Systems. It delivers real-time ATS compatibility scoring, automated keyword gap analysis, and one-click bullet point refinement powered by NVIDIA NIM (Gemma-2, nv-embed-v1, and Mistral reranker). Built on React 18 and FastAPI with MongoDB persistence, it features instant client-side PDF export (jsPDF), LaTeX server-side compilation, and 84 property-based tests verifying total system integrity — completely free with no signup required.",
-            image: "/Projects/CVCraft/Screenshot 2026-07-04 010256.png",
+            id: "p05-veyfolio",
+            slug: "veyfolio-ats-resume-builder",
+            title: "Veyfolio – Resume Builder & ATS Keyword Checker",
+            description: "Free resume workspace with live preview, two ATS-friendly templates, browser autosave, project sections and selectable-text PDF export. Built with React and FastAPI, with optional AI wording suggestions.",
+            longDescription: "Veyfolio, previously CVCraft, is a focused resume workspace built with React and FastAPI. Personal details, professional title, experience, education, skills and projects stay connected to a live preview. Users choose ATS Professional or ATS Clean, retain drafts in browser storage and export selectable-text PDFs with matching layouts and page breaks. Job-description keyword checks and optional NVIDIA-powered wording suggestions support editing without requiring signup or a database. Keyword scores are guidance, not a guarantee of passing an employer's ATS.",
+            image: "/Projects/Veyfolio/home-desktop.jpg",
             techStack: [
                 "FastAPI",
                 "React 18",
-                "MongoDB 6.0",
                 "NVIDIA NIM (Gemma-2-2b-it)",
                 "nv-embed-v1",
                 "rerank-qa-mistral-4b",
@@ -372,82 +371,83 @@ export const portfolioData: PortfolioData = {
                 "VS Code",
                 "Postman",
                 "Render",
-                "MongoDB Compass",
                 "Git"
             ],
             status: "completed",
-            demoUrl: "https://cvcraft-2fz1.onrender.com",
-            repoUrl: "https://github.com/KartikSharma4448/CVCraft",
+            demoUrl: "https://veyfolio.thekartiksharma.in",
+            repoUrl: "https://github.com/KartikSharma4448/Veyfolio",
             startDate: "2026-05-31",
             endDate: "2026-06-30",
             customTimeline: "May 2026 - Jun 2026",
             highlights: [
-                "NVIDIA NIM AI Integration",
-                "Real-time ATS Keyword Scoring",
-                "84 Property-Based Tests",
-                "Zero Signup Requirement"
+                "Live Preview & Matching PDF Export",
+                "Job Description Keyword Checks",
+                "Browser Autosave & Project Sections",
+                "No Signup or Database Required"
             ],
             category: "AI & Full Stack Web App",
             role: "Full Stack & AI Engineer",
             team: "Personal Project",
             features: [
                 {
-                    title: "NVIDIA NIM AI Intelligence",
+                    title: "Optional NVIDIA AI Services",
                     items: [
-                        "**Gemma-2-2b-it Refinement:** Context-aware enhancement of resume work experience bullet points and summaries",
-                        "**nv-embed-v1 Semantic Vectors:** High-dimension text embeddings analyzing semantic overlap between resume and target job descriptions",
-                        "**Mistral Reranking:** Precision keyword matching and missing technical terminology suggestions"
+                        "**Wording Suggestions:** Provider-configured refinement for experience bullet points and summaries",
+                        "**Semantic Matching:** Optional embedding-based comparison of resume and job-description content",
+                        "**Keyword Guidance:** Matched and missing terms help users review relevance without guaranteeing ATS results"
                     ]
                 },
                 {
                     title: "Live Builder & PDF Engine",
                     items: [
                         "**Live Split Preview:** Dynamic real-time rendering updating CV output instantly as user types",
-                        "**2 ATS-Optimized Templates:** Jake Ryan Classic Professional and Modern Clean ATS layouts",
-                        "**Multi-Tier PDF Export:** Instant client-side jsPDF downloads and server-side pdflatex compiling",
+                        "**Two Resume Templates:** ATS Professional and ATS Clean layouts with compact skills sections",
+                        "**Matching PDF Export:** Selectable-text PDFs with the same layout and page breaks as the live preview",
+                        "**Complete Resume Sections:** Professional title, summary, experience, education, skills and projects",
+                        "**Local Autosave:** Drafts and template selection persist in the current browser, not a cloud database",
                         "**No Signup Barrier:** Instant access without authentication barriers or paywalls"
                     ]
                 },
                 {
-                    title: "Testing & Quality Assurance",
+                    title: "Keyword Checks & Quality Assurance",
                     items: [
-                        "**84 Property-Based Tests:** 42 backend tests via Hypothesis and 42 frontend tests via fast-check",
-                        "**Invariant Verification:** Score bounds validation, cache deduplication, and fallback behavior when AI tokens deplete",
-                        "**SEO & Analytics:** Google Analytics 4 tracking with structured JSON-LD and OpenGraph cards"
+                        "**Job Description Matching:** Keyword checks use resume content including skills, education and projects",
+                        "**Automated Tests:** Jest, fast-check, pytest and Hypothesis cover frontend and backend behavior",
+                        "**Optional Services:** Provider credentials enable AI features; local editing and browser PDF export do not require them"
                     ]
                 }
             ],
             challengesAndSolutions: [
                 {
                     problem: "ATS scoring algorithms often returned erratic match percentages when comparing disparate terminology across industries.",
-                    solution: "Combined vector cosine similarity (via NVIDIA nv-embed-v1) with a cross-encoder reranking model (rerank-qa-mistral-4b), stabilizing accuracy across technical domains."
+                    solution: "Provided keyword matching with optional semantic embedding and reranking services, while presenting scores as editing guidance rather than hiring guarantees."
                 },
                 {
                     problem: "Third-party AI API outages or rate limits could block users from editing and downloading their resumes.",
-                    solution: "Engineered graceful fallback mechanisms with local regex-based keyword extractors and in-memory Redis caching, keeping the builder fully operational 100% of the time."
+                    solution: "Kept local drafts, preview and browser PDF export independent of external AI services, with fallback keyword extraction and optional Redis caching for backend actions."
                 }
             ],
             installation: [
                 {
                     title: "1. Clone and Install Dependencies",
                     type: "code",
-                    cmd: "git clone https://github.com/KartikSharma4448/CVCraft.git\ncd CVCraft"
+                    cmd: "git clone https://github.com/KartikSharma4448/Veyfolio.git\ncd Veyfolio"
                 },
                 {
                     title: "2. Backend Setup (FastAPI)",
                     type: "code",
-                    cmd: "cd backend\npip install -r requirements.txt\nuvicorn main:app --reload --port 8000"
+                    cmd: "cd backend\npython -m pip install -r requirements.txt\n# Configure backend/.env from .env.example\npython -m uvicorn server:app --reload --port 8000"
                 },
                 {
                     title: "3. Frontend Setup (React)",
                     type: "code",
-                    cmd: "cd frontend\nnpm install\nnpm start"
+                    cmd: "cd frontend\nnpm ci\n# Configure frontend/.env from .env.example\nnpm start"
                 }
             ],
             galleryImages: [
-                "/Projects/CVCraft/Screenshot 2026-07-04 010256.png",
-                "/Projects/CVCraft/Screenshot 2026-07-04 010304.png",
-                "/Projects/CVCraft/Screenshot 2026-07-04 010314.png"
+                "/Projects/Veyfolio/editor-desktop.jpg",
+                "/Projects/Veyfolio/home-desktop.jpg",
+                "/Projects/Veyfolio/editor-mobile.jpg"
             ]
         },
         {
@@ -687,17 +687,19 @@ export const portfolioData: PortfolioData = {
             id: "p09-restroqr",
             slug: "restroqr-free-digital-qr-menu-table-ordering-system",
             title: "RestroQR – Free Digital QR Menu & Table Ordering System",
-            description: "Full-stack restaurant management platform. Owners manage menus, tables & orders via a Flutter Android app. Customers scan a table QR code and place orders directly from their browser — no app download needed. Features multi-table encrypted QR ordering, real-time push notifications, earnings dashboard, and item analytics.",
-            longDescription: "RestroQR is a comprehensive digital dining and restaurant operations platform. Restaurant owners manage their operations via a Flutter Android application, while dine-in customers scan AES-256-GCM encrypted QR codes on their tables to browse menus, customize dishes, and place orders directly in their phone browser without installing any app. Backed by Node.js, Express, Neon PostgreSQL (12 relational tables), Next.js 14, and Firebase Cloud Messaging, it streamlines the entire order lifecycle.",
-            image: "/Projects/RestroQR/banner-1.png",
+            description: "Free restaurant and cafe management platform with a Flutter owner app, digital QR menus, browser table ordering, a privacy-aware live order board, earnings analytics and an admin dashboard.",
+            longDescription: "RestroQR connects a Flutter Android owner app, a Next.js customer website, a React admin dashboard and an Express API backed by PostgreSQL. Owners manage dishes, tables, QR codes, orders and earnings. Customers scan encrypted table QR codes to browse menus and place server-priced orders without installing an app. A restaurant-wide order board refreshes every 15 seconds, showing order references, table labels and customer initials through Pending, Preparing, Ready and Paid states. Firebase notifications are available when configured; public order data excludes phone numbers, totals and dish contents.",
+            image: "/Projects/RestroQR/social-preview.jpg",
             techStack: [
-                "Flutter 3.11+",
+                "Flutter",
                 "Dart",
                 "Node.js",
                 "Express",
                 "TypeScript",
-                "PostgreSQL (Neon)",
-                "Next.js 14",
+                "PostgreSQL",
+                "Next.js 15",
+                "React 19",
+                "Vite",
                 "Firebase FCM",
                 "Cloudinary CDN",
                 "AES-256-GCM",
@@ -711,16 +713,16 @@ export const portfolioData: PortfolioData = {
                 "Git"
             ],
             status: "completed",
-            demoUrl: "https://restro-qr-peach.vercel.app",
-            repoUrl: "https://github.com/KartikSharma4448",
+            demoUrl: "https://restroqr.thekartiksharma.in",
+            repoUrl: "https://github.com/KartikSharma4448/RestroQR",
             startDate: "2026-06-28",
             endDate: "2026-07-04",
             customTimeline: "Jun 2026 - Jul 2026",
             highlights: [
                 "Encrypted Table QR (AES-256-GCM)",
-                "App-Less Browser Ordering (Next.js 14)",
-                "Firebase Instant Order Alerts",
-                "17 Property-Based Invariant Tests"
+                "App-Less Browser Ordering",
+                "Privacy-Aware Live Order Board",
+                "Owner App & Admin Dashboard"
             ],
             category: "Full Stack & SaaS Ecosystem",
             role: "Full Stack Lead Engineer",
@@ -736,19 +738,21 @@ export const portfolioData: PortfolioData = {
                     ]
                 },
                 {
-                    title: "Customer Web Ordering (Next.js 14)",
+                    title: "Customer Web Ordering (Next.js 15)",
                     items: [
                         "**Zero-Install Dining:** Instant menu loading in mobile browser upon scanning table QR code",
                         "**Live Cart & Checkout:** Real-time dish customization, special instructions, and order placement",
-                        "**Unique Reference IDs:** Structured order tracking codes (e.g., ORD-ABC123) with live preparation status"
+                        "**Live Order Board:** Restaurant-wide order references, table labels and customer initials refresh every 15 seconds",
+                        "**Private Customer Details:** Public status responses omit phone numbers, order totals and dish contents"
                     ]
                 },
                 {
                     title: "Security & Backend Architecture",
                     items: [
                         "**AES-256-GCM QR Encryption:** Cryptographically secured table tokens preventing URL tampering or table enumeration",
-                        "**Robust Testing Suite:** 17 property-based invariant tests with fast-check and supertest guaranteeing order integrity",
-                        "**Tenant Isolation:** Strict database isolation ensuring owners access only their proprietary business telemetry"
+                        "**Automated API Tests:** Jest, fast-check and Supertest cover authentication, orders, ownership checks and public endpoints",
+                        "**Tenant Authorization:** Owner and admin role checks restrict access to restaurant operations",
+                        "**Server-Priced Orders:** The API validates menu availability and calculates totals rather than trusting client prices"
                     ]
                 }
             ],
@@ -766,27 +770,26 @@ export const portfolioData: PortfolioData = {
                 {
                     title: "1. Backend API (Express + TypeScript)",
                     type: "code",
-                    cmd: "cd backend\nnpm install\nnpm run migrate\nnpm run dev"
+                    cmd: "cd backend\nnpm ci\n# Configure .env with a dedicated development database\nnpm run migrate:up\nnpm run dev"
                 },
                 {
-                    title: "2. Customer Web App (Next.js 14)",
+                    title: "2. Customer Web App (Next.js 15)",
                     type: "code",
-                    cmd: "cd customer-web\nnpm install\nnpm run dev"
+                    cmd: "cd customer-website\nnpm ci\n# Configure .env.local from .env.example\nnpm run dev"
                 },
                 {
                     title: "3. Owner App (Flutter)",
                     type: "code",
-                    cmd: "cd owner_app\nflutter pub get\nflutter run"
+                    cmd: "cd owner-app-flutter\nflutter pub get\nflutter run --dart-define=API_BASE_URL=http://127.0.0.1:3000/api"
                 }
             ],
             galleryImages: [
-                "/Projects/RestroQR/banner-1.png",
-                "/Projects/RestroQR/banner-2.png",
-                "/Projects/RestroQR/screenshot-1.jpg",
-                "/Projects/RestroQR/screenshot-2.jpg",
-                "/Projects/RestroQR/screenshot-3.jpg",
-                "/Projects/RestroQR/screenshot-4.jpg",
-                "/Projects/RestroQR/screenshot-5.jpg"
+                "/Projects/RestroQR/customer-order-board.jpg",
+                "/Projects/RestroQR/customer-website.jpg",
+                "/Projects/RestroQR/owner-overview.png",
+                "/Projects/RestroQR/owner-orders.png",
+                "/Projects/RestroQR/owner-menu.png",
+                "/Projects/RestroQR/owner-qr.png"
             ]
         },
         {

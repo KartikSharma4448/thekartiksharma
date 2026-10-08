@@ -4,14 +4,14 @@ import { portfolioData } from '@/data/portfolio';
 
 export const metadata: Metadata = {
     title: { absolute: 'Projects & Case Studies | Kartik Sharma | Full Stack & AI Developer' },
-    description: "Explore Kartik Sharma's projects: My Purse offline Android vault, VCC ERP, Rajasthali Travel, CVCraft, Aegis Care and RestroQR.",
+    description: "Explore Kartik Sharma's projects: My Purse offline Android vault, VCC ERP, Rajasthali Travel, Veyfolio resume builder, Aegis Care and RestroQR.",
     keywords: [
         'Kartik Sharma Projects',
         'My Purse Offline Android Wallet',
         'Kotlin Jetpack Compose Document Vault',
         'VCC ERP Coaching Institute Management',
         'Rajasthali Travel Fleet Management System',
-        'CVCraft v2 AI Resume Builder',
+        'Veyfolio Resume Builder',
         'Aegis Care Blockchain Healthcare',
         'KidzGPT AI Assistant',
         'TodoUp Flutter Productivity App',

@@ -6,6 +6,13 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig: NextConfig = {
     reactStrictMode: true,
     transpilePackages: ['three'],
+    async redirects() {
+        return [{
+            source: '/projects/cvcraft-v2-ai-powered-ats-resume-builder',
+            destination: '/projects/veyfolio-ats-resume-builder',
+            permanent: true,
+        }];
+    },
     images: {
         remotePatterns: [
             { protocol: 'https', hostname: 'cdn.jsdelivr.net' },

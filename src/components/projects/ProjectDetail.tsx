@@ -67,7 +67,7 @@ const renderRichText = (text: string) => {
     });
 };
 
-// --- vertical Gallery Component ---
+// --- Compact Gallery Component ---
 const ProjectGallery = ({
     images,
     repoUrl,
@@ -79,22 +79,24 @@ const ProjectGallery = ({
     scrollContainerRef?: React.RefObject<HTMLDivElement | null> // Optional/Unused now
 }) => {
     return (
-        <div className="flex flex-col gap-12 pb-12">
+        <div className="grid grid-cols-2 gap-3 pb-8 lg:grid-cols-3 lg:gap-4">
             {images.map((img, idx) => (
-                <motion.div
+                <motion.button
                     key={idx}
+                    type="button"
+                    aria-label={`Open gallery image ${idx + 1}`}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-10%" }}
                     transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="group relative w-full cursor-zoom-in"
+                    className="group relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-lg border border-border/40 bg-secondary/10 p-2 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                     onClick={() => onImageClick(img)}
                 >
-                    {/* Real Image Tag - Floating with deep shadow */}
                     <img
                         src={img}
                         alt={`Gallery Image ${idx + 1}`}
-                        className="w-full h-auto object-contain block rounded-lg shadow-2xl shadow-black/20 dark:shadow-black/60 transition-transform duration-500 group-hover:scale-[1.01]"
+                        loading="lazy"
+                        className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                     />
 
                     {/* Tech UI (Minimal Floating Label) */}
@@ -104,12 +106,12 @@ const ProjectGallery = ({
                             <Maximize2 className="w-3 h-3" />
                         </div>
                     </div>
-                </motion.div>
+                </motion.button>
             ))}
 
             {/* GitHub Link */}
             {repoUrl && (
-                <div className="flex justify-center pt-8">
+                <div className="col-span-full flex justify-center pt-4">
                     <a
                         href={repoUrl}
                         target="_blank"
