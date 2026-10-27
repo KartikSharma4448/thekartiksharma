@@ -9,6 +9,8 @@ import { portfolioData } from '@/data/portfolio';
 import { Clock, Copy, Linkedin, Github, BookOpen, Link as LinkIcon, ArrowLeft, Check } from 'lucide-react';
 import { notFound, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export function BlogPostClientContent({ slug }: { slug: string }) {
     const t = useTranslations('blog');
@@ -682,7 +684,12 @@ model.save_pretrained_gguf("model_name", tokenizer, quantization_method = "q4_k_
                                 </>
                             )}
 
-                            {!isImplemented && (
+                            {!isImplemented && post.content?.trim() && (
+                                <div className="prose prose-neutral dark:prose-invert max-w-none break-words [&_pre]:max-w-full [&_pre]:overflow-x-auto [&_table]:block [&_table]:overflow-x-auto [&_a]:text-primary [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mt-6 [&_h3]:font-bold [&_p]:mb-5 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5">
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+                                </div>
+                            )}
+                            {!isImplemented && !post.content?.trim() && (
                                 <div className="flex flex-col items-center justify-center py-20 text-center">
                                     <div className="p-4 rounded-full bg-secondary/10 text-muted-foreground mb-4">
                                         <BookOpen className="w-8 h-8" />

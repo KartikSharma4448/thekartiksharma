@@ -2,48 +2,13 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BlogPostClientContent } from './BlogPostClientContent';
 
-const blogTitles: Record<string, { title: string; description: string; category: string }> = {
-    'future-of-ai-agents': {
-        title: 'The Future of Autonomous AI Agents in Production',
-        description: 'Explore the architecture, memory systems, and multi-agent coordination frameworks powering the next generation of autonomous AI systems.',
-        category: 'Artificial Intelligence'
-    },
-    'web3-ux-challenges': {
-        title: 'Solving Web3 UX Challenges for Mainstream Adoption',
-        description: 'Examining account abstraction, gasless transactions, and biometric auth patterns to build user-friendly blockchain applications.',
-        category: 'Web3 & Blockchain'
-    },
-    'mastering-nextjs-performance': {
-        title: 'Mastering Next.js Performance: Optimization & Core Web Vitals',
-        description: 'Comprehensive guide to achieving 100/100 Lighthouse scores: Turbopack, dynamic imports, image optimization, and bundle splitting.',
-        category: 'Web Development'
-    },
-    'ai-driven-security': {
-        title: 'AI-Driven Cybersecurity: Threat Detection & Defense',
-        description: 'How machine learning algorithms and heuristic models identify zero-day vulnerabilities and prevent real-time intrusion attempts.',
-        category: 'Cybersecurity'
-    },
-    'llm-fine-tuning': {
-        title: 'Fine-Tuning Large Language Models for Production Applications',
-        description: 'Step-by-step techniques for LoRA, QLoRA, and RLHF fine-tuning to adapt open-source foundation models for enterprise use.',
-        category: 'Machine Learning'
-    },
-    'smart-contract-security': {
-        title: 'Smart Contract Security: Pitfalls & Auditing Best Practices',
-        description: 'Critical analysis of reentrancy attacks, flash loan exploits, and formal verification methodologies in Solidity smart contracts.',
-        category: 'Web3 & Blockchain'
-    },
-    'modern-state-management': {
-        title: 'Modern State Management: Redux, Zustand, and React Context',
-        description: 'Architectural comparison of state management patterns in modern React and Next.js applications for optimal rendering performance.',
-        category: 'Frontend Engineering'
-    },
-    'iot-edge-computing': {
-        title: 'IoT & Edge Computing: Real-Time Data Streaming & Processing',
-        description: 'Building resilient edge pipelines with MQTT, WebSockets, and low-latency stream processing for connected smart devices.',
-        category: 'IoT & Systems'
-    }
-};
+import { portfolioData } from '@/data/portfolio';
+
+const blogTitles = Object.fromEntries(portfolioData.blogs.map(post => [post.slug, {
+    title: post.title,
+    description: post.excerpt,
+    category: post.category,
+}]));
 
 export async function generateStaticParams() {
     return Object.keys(blogTitles).map((slug) => ({ slug }));

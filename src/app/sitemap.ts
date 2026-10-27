@@ -79,16 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     // Dynamic blog routes
-    const blogSlugs = [
-        'future-of-ai-agents',
-        'web3-ux-challenges',
-        'mastering-nextjs-performance',
-        'ai-driven-security',
-        'llm-fine-tuning',
-        'smart-contract-security',
-        'modern-state-management',
-        'iot-edge-computing'
-    ];
+    const blogSlugs = portfolioData.blogs.map(post => post.slug);
 
     const blogRoutes: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
         url: `${baseUrl}/blog/${slug}`,
