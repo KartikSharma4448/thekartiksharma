@@ -121,7 +121,7 @@ export function Footer() {
                             <Linkedin className="w-5 h-5" />
                         </a>
                         <a 
-                            href="https://twitter.com/itszeromind" 
+                            href="https://x.com/KartikS34404452"
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="w-11 h-11 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 rounded-xl flex items-center justify-center hover:scale-110 hover:-translate-y-0.5 transition-all shadow-md" 

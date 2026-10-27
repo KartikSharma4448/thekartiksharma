@@ -140,14 +140,14 @@ export function SkillCertificateHero() {
         <div
             ref={containerRef}
             onMouseMove={handleMouseMove}
-            className="min-h-screen bg-background relative selection:bg-primary/20"
+            className="lg:min-h-screen bg-background relative selection:bg-primary/20"
         >
             <TechSchematic />
 
-            <section className="relative h-screen flex items-end justify-center overflow-hidden pb-16">
+            <section className="relative flex items-end justify-center overflow-hidden pt-28 pb-8 lg:h-screen lg:pt-0 lg:pb-16">
 
                 {/* 3D Robot — skip on low power / mobile */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 hidden lg:block">
                     {!isLowPowerMode ? (
                         <DeferredMount fallback={<div className="w-full h-full opacity-10 bg-zinc-800 animate-pulse" />}>
                             <SplineScene
@@ -222,7 +222,7 @@ export function SkillCertificateHero() {
                     whileInView={{ opacity: 0.05 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 1 }}
-                    className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
                 >
                     <motion.div
                         animate={{ y: [0, 8, 0] }}
@@ -233,7 +233,7 @@ export function SkillCertificateHero() {
             </section>
 
             {/* Vapor transition into next section */}
-            <div className="relative h-64 -mt-32 z-20 pointer-events-none">
+            <div className="relative hidden lg:block h-64 -mt-32 z-20 pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background" />
                 <VaporFog className="opacity-30" />
             </div>

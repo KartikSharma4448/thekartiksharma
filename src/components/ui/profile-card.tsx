@@ -25,7 +25,7 @@ export function ProfileCard(props: ProfileCardProps) {
     description = "Full Stack and MERN Stack Developer with hands-on experience building scalable web applications, cross-platform mobile apps with Flutter, and production-ready AI systems.",
     imageUrl = "/profile.png",
     githubUrl = "https://github.com/KartikSharma4448",
-    twitterUrl = "https://twitter.com/itszeromind",
+    twitterUrl = "https://x.com/KartikS34404452",
     youtubeUrl = "#",
     linkedinUrl = "https://linkedin.com/in/kartik-sharma06",
     instagramUrl = "https://www.instagram.com/itszeromind",

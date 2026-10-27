@@ -205,29 +205,30 @@ export function SkillCertificateTabsSection() {
   }, [allCertificates, certFilter, certSearch]);
 
   return (
-    <section className="relative w-full py-16 md:py-24 px-6 sm:px-10 md:px-16 lg:px-24 bg-background text-foreground">
+    <section className="relative w-full py-8 lg:py-24 px-6 sm:px-10 md:px-16 lg:px-24 bg-background text-foreground">
       
       {/* Centered Segmented Tabs Switcher */}
-      <div className="max-w-7xl mx-auto flex flex-col items-center mb-14 md:mb-20">
-        <div className="inline-flex p-1.5 bg-neutral-200/70 dark:bg-white/5 rounded-full border border-neutral-300 dark:border-white/10 backdrop-blur-xl shadow-lg relative">
+      <div className="max-w-7xl mx-auto flex flex-col items-center mb-8 sm:mb-12 lg:mb-20">
+        <div role="group" aria-label="Skills and certifications" className="grid grid-cols-2 w-full max-w-xl gap-1 p-1 sm:p-1.5 bg-neutral-200/70 dark:bg-white/5 rounded-2xl sm:rounded-full border border-neutral-300 dark:border-white/10 relative">
           
           {/* Tab 1: Skills */}
           <button
             type="button"
             onClick={() => setActiveTab('skills')}
+            aria-pressed={activeTab === 'skills'}
             className={cn(
-              "relative z-10 px-8 sm:px-10 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 flex items-center gap-2.5 select-none cursor-pointer",
+              "relative isolate min-w-0 min-h-12 px-2 sm:px-5 py-3 rounded-xl sm:rounded-full text-sm sm:text-base font-semibold transition-colors duration-200 flex items-center justify-center gap-1.5 sm:gap-2.5 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
               activeTab === 'skills'
                 ? "text-white dark:text-neutral-950"
                 : "text-neutral-700 dark:text-neutral-400 hover:text-black dark:hover:text-white"
             )}
           >
-            <Code2 className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span>Skills & Tech Stack</span>
+            <Code2 className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+            <span className="whitespace-nowrap"><span className="sm:hidden">Skills</span><span className="hidden sm:inline">Skills &amp; Tech Stack</span></span>
             {activeTab === 'skills' && (
               <motion.div
                 layoutId="activeSkillCertTab"
-                className="absolute inset-0 bg-neutral-950 dark:bg-white rounded-full -z-10 shadow-md"
+                className="absolute inset-0 bg-neutral-950 dark:bg-white rounded-xl sm:rounded-full -z-10 shadow-sm"
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
               />
             )}
@@ -237,19 +238,20 @@ export function SkillCertificateTabsSection() {
           <button
             type="button"
             onClick={() => setActiveTab('certificates')}
+            aria-pressed={activeTab === 'certificates'}
             className={cn(
-              "relative z-10 px-8 sm:px-10 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 flex items-center gap-2.5 select-none cursor-pointer",
+              "relative isolate min-w-0 min-h-12 px-2 sm:px-5 py-3 rounded-xl sm:rounded-full text-sm sm:text-base font-semibold transition-colors duration-200 flex items-center justify-center gap-1.5 sm:gap-2.5 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
               activeTab === 'certificates'
                 ? "text-white dark:text-neutral-950"
                 : "text-neutral-700 dark:text-neutral-400 hover:text-black dark:hover:text-white"
             )}
           >
-            <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span>Certifications ({allCertificates.length})</span>
+            <Award className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+            <span className="whitespace-nowrap"><span className="sm:hidden">Certificates</span><span className="hidden sm:inline">Certifications</span></span><span className="rounded-full bg-current/10 px-1.5 py-0.5 text-[10px] sm:text-xs tabular-nums leading-none">{allCertificates.length}</span>
             {activeTab === 'certificates' && (
               <motion.div
                 layoutId="activeSkillCertTab"
-                className="absolute inset-0 bg-neutral-950 dark:bg-white rounded-full -z-10 shadow-md"
+                className="absolute inset-0 bg-neutral-950 dark:bg-white rounded-xl sm:rounded-full -z-10 shadow-sm"
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
               />
             )}

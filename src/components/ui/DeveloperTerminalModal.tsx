@@ -269,7 +269,7 @@ export function DeveloperTerminalModal() {
               </div>
               <div>
                 <span className="text-neutral-400">Twitter / X:</span>{' '}
-                <a href="https://twitter.com/itszeromind" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline">@itszeromind</a>
+                <a href="https://x.com/KartikS34404452" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline">@KartikS34404452</a>
               </div>
             </div>
           </div>

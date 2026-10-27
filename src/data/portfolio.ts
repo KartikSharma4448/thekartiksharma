@@ -36,6 +36,18 @@ export const portfolioData: PortfolioData = {
                 username: 'itszeromind'
             },
             {
+                platform: 'Twitter',
+                url: 'https://x.com/KartikS34404452',
+                icon: 'twitter',
+                username: 'KartikS34404452'
+            },
+            {
+                platform: 'Discord',
+                url: 'https://discord.com/users/1243505304621158473',
+                icon: 'discord',
+                username: 'kartik0902547'
+            },
+            {
                 platform: 'Email',
                 url: 'mailto:kartikuma9261@gmail.com',
                 icon: 'mail',

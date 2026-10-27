@@ -25,6 +25,16 @@
 
 ## Executive Summary
 
+### Contact form setup
+
+The contact form submits directly to Web3Forms. Create an access key for
+`kartikuma9261@gmail.com` at https://web3forms.com, then set
+`NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in `.env.local` (see `.env.example`).
+Restart the development server after adding it. For the live site, add the same
+variable in your hosting settings and rebuild/redeploy. This key is intentionally
+included in the browser build; do not use a Gmail password here.
+Submit a test enquiry and confirm receipt in Gmail before considering delivery verified.
+
 A production-grade, highly interactive portfolio application engineered to showcase technical expertise across Artificial Intelligence, Modern Software Engineering, and Full-Stack Development. Moving beyond traditional static documentation, this platform delivers an immersive, high-performance user experience powered by WebGL physics simulations, real-time GitHub & Kaggle telemetry, and dynamic project showcases.
 
 ---

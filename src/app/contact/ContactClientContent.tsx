@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Send, CheckCircle, AlertCircle, Loader2, Disc, Music, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Github, Linkedin, Twitter, Instagram, ChevronDown } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, Disc, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Github, Linkedin, Twitter, Instagram, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { portfolioData } from '@/data/portfolio';
 import dynamic from 'next/dynamic';
@@ -55,8 +55,7 @@ const socialIconsMap: Record<string, React.ElementType> = {
     linkedin: Linkedin,
     twitter: Twitter,
     instagram: Instagram,
-    discord: Disc,
-    spotify: Music
+    discord: Disc
 };
 
 function SocialCard({ item }: { item: any }) {
@@ -127,31 +126,48 @@ function ContactForm() {
     const t = useTranslations('contact');
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (status === 'loading') return;
+        setErrorMessage('');
         setStatus('loading');
 
         try {
-            const response = await fetch('/api/contact', {
+            const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+            if (!accessKey) {
+                setErrorMessage('Contact form is temporarily unavailable. Please email kartikuma9261@gmail.com directly.');
+                setStatus('error');
+                return;
+            }
+            const form = new FormData(e.currentTarget);
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    access_key: accessKey,
+                    from_name: 'Kartik Sharma Portfolio',
+                    subject: `Portfolio enquiry: ${formData.subject}`,
+                    botcheck: Boolean(form.get('botcheck')),
+                }),
             });
 
-            if (response.ok) {
+            const result = await response.json().catch(() => ({}));
+            if (response.ok && result.success === true) {
                 setStatus('success');
                 setFormData({ name: '', email: '', subject: '', message: '' });
             } else {
+                setErrorMessage('Unable to send your message. Please try again or email kartikuma9261@gmail.com directly.');
                 setStatus('error');
             }
         } catch (error) {
             console.error('Error submitting form:', error);
+            setErrorMessage('Unable to send your message. Please check your connection and try again.');
             setStatus('error');
-        } finally {
-            setTimeout(() => setStatus('idle'), 3000);
         }
     };
 
@@ -172,6 +188,7 @@ function ContactForm() {
             </div>
 
             <form onSubmit={handleSubmit} className="w-full relative z-10">
+                <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} aria-hidden="true" autoComplete="off" />
                 <InputGroup label={t('form.name')} name="name" value={formData.name} onChange={handleChange} required />
                 <InputGroup label={t('form.email')} name="email" type="email" value={formData.email} onChange={handleChange} required />
                 <InputGroup label={t('form.subject')} name="subject" value={formData.subject} onChange={handleChange} required />
@@ -202,6 +219,12 @@ function ContactForm() {
                         }
                     </div>
                 </motion.button>
+                {status === 'error' && (
+                    <p role="alert" className="mt-4 text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
+                )}
+                {status === 'success' && (
+                    <p role="status" className="mt-4 text-sm text-muted-foreground">Your message has been sent. Thank you for reaching out!</p>
+                )}
             </form>
         </div>
     );
@@ -292,15 +315,12 @@ const socialDescriptions: Record<string, string> = {
     LinkedIn: "Professional",
     Twitter: "Thoughts",
     Instagram: "Lifestyle",
-    Discord: "Community",
-    Spotify: "Music"
+    Discord: "Community"
 };
-
-import { usePerformance } from '@/hooks/usePerformance';
 
 export function ContactClientContent() {
     const t = useTranslations('contact');
-    const { isLowPowerMode } = usePerformance();
+    const isLowPowerMode = false;
 
     const getSocialItem = (platform: string) => {
         const link = portfolioData.personal.socialLinks.find(l => l.platform.toLowerCase() === platform);
@@ -314,7 +334,7 @@ export function ContactClientContent() {
     };
 
     const row1Real = ['linkedin', 'github', 'instagram'].map(getSocialItem);
-    const row2Real = ['twitter', 'discord', 'spotify'].map(getSocialItem);
+    const row2Real = ['twitter', 'discord'].map(getSocialItem);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
