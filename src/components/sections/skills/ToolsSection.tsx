@@ -46,7 +46,7 @@ export const ToolsSection = () => {
     return (
         <section
             id="tools"
-            className="py-32 relative bg-background min-h-[80vh] flex flex-col items-center justify-center overflow-hidden"
+            className="py-14 sm:py-20 lg:py-32 relative bg-background lg:min-h-[80vh] flex flex-col items-center justify-center overflow-hidden"
         >
             {/* BACKGROUND AMBIENCE */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--background)_0%,_#050505_100%)] z-0" />
@@ -87,7 +87,7 @@ export const ToolsSection = () => {
                 </div>
             </div>
 
-            <div className="absolute bottom-12 text-center w-full pointer-events-none opacity-30 text-white/50">
+            <div className="absolute bottom-4 lg:bottom-12 text-center w-full pointer-events-none opacity-30 text-white/50">
             </div>
 
             {/* CSS Mask optimized for performance */}

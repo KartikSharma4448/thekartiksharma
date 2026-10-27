@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, Twitter, Youtube, Linkedin, Instagram, X } from "lucide-react";
+import { Github, Twitter, Youtube, Linkedin, Instagram, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface ProfileCardProps {
@@ -44,6 +44,8 @@ export function ProfileCard(props: ProfileCardProps) {
       {/* Close Button */}
       {onClose && (
         <button
+          type="button"
+          aria-label="Close profile"
           onClick={onClose}
           className="absolute -top-12 right-4 md:-top-4 md:-right-4 z-50 p-2 bg-white dark:bg-zinc-900 rounded-full shadow-xl border border-border hover:scale-110 transition-transform"
         >
@@ -100,6 +102,13 @@ export function ProfileCard(props: ProfileCardProps) {
               </Link>
             ))}
           </div>
+          <Link
+            href="/about"
+            onClick={onClose}
+            className="button-fill mt-6 inline-flex min-h-12 items-center justify-center rounded-full border border-zinc-300 dark:border-white/20 px-6 py-3 text-sm font-semibold text-zinc-900 dark:text-white hover:bg-zinc-100 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
+            About Me →
+          </Link>
         </motion.div>
       </div>
 
@@ -108,7 +117,7 @@ export function ProfileCard(props: ProfileCardProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className='md:hidden max-w-sm mx-auto text-center bg-white dark:bg-zinc-900 p-6 rounded-[2.5rem] shadow-2xl border border-white/5'
+        className='md:hidden max-w-sm mx-auto text-center bg-white dark:bg-zinc-900 p-4 sm:p-6 rounded-[2.5rem] shadow-2xl border border-white/5'
       >
         {/* Square Mobile Image */}
         <div className='w-full aspect-square bg-gray-200 dark:bg-gray-700 rounded-3xl overflow-hidden mb-6 flex items-center justify-center'>
@@ -123,7 +132,7 @@ export function ProfileCard(props: ProfileCardProps) {
           />
         </div>
 
-        <div className='px-4'>
+        <div className='px-0 sm:px-4'>
           <h2 className='text-2xl font-black text-gray-900 dark:text-white mb-2 tracking-tighter'>
             {name}
           </h2>
@@ -132,24 +141,35 @@ export function ProfileCard(props: ProfileCardProps) {
             {title}
           </p>
 
-          <p className='text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6'>
-            {description}
-          </p>
-
-          <div className='flex justify-center space-x-4'>
+          <div className="mb-5 grid grid-cols-[minmax(0,1fr)_repeat(3,2.75rem)] items-center gap-1.5">
+            <Link
+              href="/about"
+              onClick={onClose}
+              className="button-fill group flex h-11 min-w-0 items-center justify-center gap-1 overflow-hidden rounded-full bg-zinc-900 px-1 text-[11px] font-semibold tracking-tight text-white shadow-sm transition-colors hover:bg-zinc-700 active:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <span className="whitespace-nowrap">About me</span>
+              <ArrowUpRight aria-hidden="true" className="size-3.5 shrink-0" />
+            </Link>
             {socialIcons.map(({ icon: Icon, url, label }) => (
               <Link
                 key={label}
                 href={url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='w-12 h-12 bg-gray-900 dark:bg-white rounded-full flex items-center justify-center transition-all hover:scale-110'
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
+                title={label}
+                className="flex size-11 shrink-0 items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 text-zinc-800 transition-colors hover:bg-zinc-200 dark:border-white/10 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                <Icon className='w-5 h-5 text-white dark:text-black' />
+                <Icon aria-hidden="true" className="size-5" />
               </Link>
             ))}
           </div>
+
+          <p className='text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6'>
+            {description}
+          </p>
+
+
         </div>
       </motion.div>
     </div>

@@ -7,6 +7,7 @@ import { Send, CheckCircle, AlertCircle, Loader2, Disc, ArrowUpRight, Sparkles, 
 import { cn } from '@/lib/utils';
 import { portfolioData } from '@/data/portfolio';
 import dynamic from 'next/dynamic';
+import { usePerformance } from '@/hooks/usePerformance';
 
 const Lanyard = dynamic<{ position?: [number, number, number], gravity?: [number, number, number], isLowPowerMode?: boolean }>(() => import('@/components/three/Lanyard').then(mod => mod.Lanyard), {
     ssr: false,
@@ -58,26 +59,26 @@ const socialIconsMap: Record<string, React.ElementType> = {
     discord: Disc
 };
 
-function SocialCard({ item }: { item: any }) {
+function SocialCard({ item, compact = false }: { item: any; compact?: boolean }) {
     const Icon = item.image || ArrowUpRight;
     return (
         <a
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex h-[140px] w-[280px] flex-col justify-between rounded-3xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-white/[0.02] p-6 shadow-sm dark:shadow-2xl transition-all hover:bg-neutral-50 dark:hover:bg-white/5 hover:border-neutral-300 hover:scale-[1.02] hover:-translate-y-1 backdrop-blur-md overflow-hidden flex-shrink-0"
+            className={cn("group relative flex flex-col justify-between rounded-2xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-white/[0.02] shadow-sm transition-colors hover:bg-neutral-50 dark:hover:bg-white/5 overflow-hidden", compact ? 'min-w-0 h-32 w-full p-3' : 'h-[140px] w-[280px] p-6 shrink-0')}
         >
             <div className="absolute -top-6 -right-6 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity transform group-hover:scale-125 duration-700">
                 <Icon className="w-40 h-40" />
             </div>
 
-            <div className="relative z-10 flex items-center gap-4">
-                <div className="relative h-12 w-12 flex items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-inner ring-1 ring-white/5">
-                    <Icon className="w-6 h-6" />
+            <div className={cn("relative z-10 flex", compact ? 'flex-col items-start gap-1.5' : 'items-center gap-4')}>
+                <div className={cn("relative shrink-0 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors", compact ? 'size-7' : 'size-12')}>
+                    <Icon className={compact ? 'size-4' : 'size-6'} />
                 </div>
-                <div className="flex flex-col">
-                    <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">{item.name}</span>
-                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground/80">@{item.username}</span>
+                <div className="flex min-w-0 max-w-full flex-col">
+                    <span className={cn("font-bold text-foreground group-hover:text-primary transition-colors tracking-tight", compact ? 'text-sm' : 'text-lg')}>{item.name}</span>
+                    <span title={`@${item.username}`} className="truncate text-[10px] sm:text-xs font-medium text-muted-foreground group-hover:text-foreground/80">@{item.username}</span>
                 </div>
             </div>
 
@@ -93,9 +94,10 @@ function SocialCard({ item }: { item: any }) {
 
 const InputGroup = ({ label, name, type = "text", value, onChange, required = false }: any) => {
     return (
-        <div className="group relative z-0 w-full mb-10">
+        <div className="group relative z-0 w-full mb-8 sm:mb-10">
             {type === 'textarea' ? (
                 <textarea
+                    id={`contact-${name}`}
                     name={name}
                     value={value}
                     onChange={onChange}
@@ -106,6 +108,7 @@ const InputGroup = ({ label, name, type = "text", value, onChange, required = fa
                 />
             ) : (
                 <input
+                    id={`contact-${name}`}
                     type={type}
                     name={name}
                     value={value}
@@ -115,7 +118,7 @@ const InputGroup = ({ label, name, type = "text", value, onChange, required = fa
                     placeholder=" "
                 />
             )}
-            <label className="absolute top-3 -z-10 origin-[0] -translate-y-8 scale-75 transform text-sm font-bold tracking-widest text-muted-foreground duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-foreground">
+            <label htmlFor={`contact-${name}`} className="absolute top-3 -z-10 origin-[0] -translate-y-8 scale-75 transform text-sm font-bold tracking-widest text-muted-foreground duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-foreground">
                 {label.toUpperCase()}
             </label>
         </div>
@@ -178,8 +181,8 @@ function ContactForm() {
     return (
         <div className="w-full relative z-20">
             {/* Typography Header - Creative & Big */}
-            <div className="mb-16">
-                <h2 className="text-5xl md:text-7xl font-black tracking-tight text-foreground relative z-10">
+            <div className="mb-10 sm:mb-16">
+                <h2 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground relative z-10">
                     {t('hero.title')}
                 </h2>
                 <p className="text-lg text-muted-foreground mt-4 font-light max-w-md">
@@ -205,14 +208,14 @@ function ContactForm() {
                 <motion.button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="group relative w-full flex items-center justify-between border-b-2 border-foreground py-8 text-left hover:bg-foreground/5 transition-colors disabled:opacity-50"
+                    className="group relative w-full flex items-center justify-between gap-3 border-b-2 border-foreground py-5 sm:py-8 text-left hover:bg-foreground/5 transition-colors disabled:opacity-50"
                     whileTap={{ scale: 0.98 }}
                 >
-                    <span className="text-3xl md:text-4xl font-bold tracking-tight text-foreground group-hover:pl-4 transition-all duration-300">
+                    <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground sm:group-hover:pl-4 transition-all duration-300">
                         {status === 'loading' ? t('form.sending') : status === 'success' ? t('form.sent') : t('form.submit')}
                     </span>
 
-                    <div className="relative overflow-hidden w-12 h-12 flex items-center justify-center rounded-full bg-foreground text-background group-hover:scale-110 transition-transform duration-500">
+                    <div className="relative shrink-0 overflow-hidden w-12 h-12 flex items-center justify-center rounded-full bg-foreground text-background group-hover:scale-110 transition-transform duration-500">
                         {status === 'loading' ? <Loader2 className="w-6 h-6 animate-spin" /> :
                             status === 'success' ? <CheckCircle className="w-6 h-6" /> :
                                 <ArrowUpRight className="w-6 h-6 group-hover:rotate-45 transition-transform duration-300" />
@@ -321,6 +324,7 @@ const socialDescriptions: Record<string, string> = {
 export function ContactClientContent() {
     const t = useTranslations('contact');
     const isLowPowerMode = false;
+    const { isLowPowerMode: compactLayout } = usePerformance();
 
     const getSocialItem = (platform: string) => {
         const link = portfolioData.personal.socialLinks.find(l => l.platform.toLowerCase() === platform);
@@ -351,16 +355,17 @@ export function ContactClientContent() {
     const headerOpacity = useTransform(showFAQ, [0, 0.4], [1, 0.6]);
     const headerScale = useTransform(showFAQ, [0, 0.4], [1, 0.98]);
     const headerFilter = useTransform(showFAQ, [0, 0.4], ["blur(0px)", "blur(2px)"]);
+    const faqY = useTransform(showFAQ, [0, 1], ['100vh', '0vh']);
 
 
     return (
-        <div ref={containerRef} className="relative bg-background selection:bg-primary/20">
+        <div ref={containerRef} className="relative bg-background selection:bg-primary/20 overflow-x-clip">
             {/* 2. HEADER & BACKGROUNDS */}
             <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] pointer-events-none z-0" />
             <div className="fixed inset-0 bg-background/60 backdrop-blur-[2px] pointer-events-none z-0" />
             <DeferredMount>
                 <div className="fixed inset-0 pointer-events-none z-[5] overflow-hidden">
-                    {!isLowPowerMode && <Meteors number={50} />}
+                    {!compactLayout && <Meteors number={50} />}
                 </div>
             </DeferredMount>
 
@@ -368,31 +373,31 @@ export function ContactClientContent() {
             <motion.div
                 className="relative z-10"
                 style={{
-                    opacity: headerOpacity,
-                    scale: isLowPowerMode ? 1 : headerScale,
-                    filter: isLowPowerMode ? "none" : headerFilter,
+                    opacity: compactLayout ? 1 : headerOpacity,
+                    scale: compactLayout ? 1 : headerScale,
+                    filter: compactLayout ? "none" : headerFilter,
                 }}
             >
 
                 {/* Header Section (Flows normally) */}
-                <div className="relative w-full pt-48 pb-20">
+                <div className="relative w-full pt-24 pb-6 sm:pt-28 lg:pt-48 lg:pb-20">
                     <div className="w-full flex items-center justify-center opacity-20 select-none pointer-events-none">
                         <DynamicScrollVelocity
                             texts={[t('hero.ticker.build'), t('hero.ticker.freelance')]}
                             velocity={20}
-                            className="text-7xl md:text-[9rem] font-black tracking-tight uppercase whitespace-nowrap"
-                            isLowPowerMode={isLowPowerMode}
+                            className="text-4xl sm:text-6xl lg:text-[9rem] font-black tracking-tight uppercase whitespace-nowrap"
+                            isLowPowerMode={compactLayout}
                         />
                     </div>
                 </div>
 
                 {/* Interaction Section (Lanyard + Social + Form) */}
                 {/* We keep this relative and stable. No shrinking or fading here. */}
-                <div className="container-creative px-4 md:px-8 max-w-[1800px] mx-auto pb-40">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                <div className="container-creative px-4 md:px-8 max-w-[1800px] mx-auto pb-12 lg:pb-40">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-20 items-start">
 
                         {/* LEFT COLUMN: Lanyard */}
-                        <div className="col-span-1 lg:col-span-4 relative lg:sticky top-0 h-[400px] md:h-[500px] lg:h-[90vh] pointer-events-none z-20">
+                        <div className="col-span-1 lg:col-span-4 relative lg:sticky top-0 h-[340px] sm:h-[420px] lg:h-[90vh] pointer-events-none z-20">
                             {/* Anchor Slot/Bar for Lanyard */}
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 md:w-64 lg:w-96 h-2 bg-gradient-to-r from-transparent via-foreground/20 to-transparent blur-[2px] rounded-full z-30 mt-[-1px]" />
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 md:w-32 lg:w-48 h-[3px] bg-gradient-to-r from-transparent via-foreground/40 to-transparent rounded-full z-30" />
@@ -417,7 +422,7 @@ export function ContactClientContent() {
                         </div>
 
                         {/* RIGHT COLUMN: Content Stack */}
-                        <div className="col-span-1 lg:col-span-8 flex flex-col gap-16 relative z-10 pt-10 lg:pt-0">
+                        <div className="col-span-1 lg:col-span-8 min-w-0 flex flex-col gap-10 lg:gap-16 relative z-10 pt-0">
 
                             {/* Social Connect */}
                             <motion.div
@@ -426,7 +431,10 @@ export function ContactClientContent() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="flex flex-col gap-1">
+                                <div className="grid grid-cols-2 gap-2 lg:hidden">
+                                    {[...row1Real, ...row2Real].map(item => <SocialCard key={item.name} item={item} compact />)}
+                                </div>
+                                <div className="hidden lg:flex flex-col gap-1">
                                     <SocialTicker items={row1Real} direction="right" speed={50} isLowPowerMode={isLowPowerMode} />
                                     <SocialTicker items={row2Real} direction="left" speed={50} isLowPowerMode={isLowPowerMode} />
                                 </div>
@@ -448,28 +456,28 @@ export function ContactClientContent() {
 
                 {/* FAQ TRIGGER ZONE: Positioned after the form to initiate the cover */}
                 {/* Massive 100vh runway for the most natural transition trip possible */}
-                <div ref={faqTriggerRef} className="h-[100vh] w-full pointer-events-none" />
+                <div ref={faqTriggerRef} className="h-0 lg:h-[100vh] w-full pointer-events-none" />
             </motion.div >
 
             {/* 4. FAQ SECTION: The "Full Viewport Cover" Layer */}
             < motion.section
                 className="relative z-50 bg-background overflow-hidden"
                 style={{
-                    y: useTransform(showFAQ, [0, 1], ["100vh", "0vh"]),
-                    marginTop: "-100vh",
+                    y: compactLayout ? 0 : faqY,
+                    marginTop: compactLayout ? 0 : "-100vh",
                 }
                 }
             >
                 {/* Dedicated Meteors for FAQ Section - Reduced count */}
                 <div className="absolute inset-0 pointer-events-none z-0 opacity-40">
-                    {!isLowPowerMode && <Meteors number={30} />}
+                    {!compactLayout && <Meteors number={30} />}
                 </div>
 
                 {/* Ultra-Smooth Sheet Edge: Tallest gradient for deep cinematic transition */}
-                < div className="absolute top-0 left-0 right-0 h-[40rem] bg-gradient-to-t from-background via-background/95 to-transparent -translate-y-full pointer-events-none" />
+                < div className="hidden lg:block absolute top-0 left-0 right-0 h-[40rem] bg-gradient-to-t from-background via-background/95 to-transparent -translate-y-full pointer-events-none" />
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-                <div className="container-creative px-4 md:px-8 max-w-[1700px] mx-auto py-32 pb-32 relative z-10">
+                <div className="container-creative px-4 md:px-8 max-w-[1700px] mx-auto py-4 lg:py-32 relative z-10">
                     <FAQSection />
                 </div>
             </motion.section >

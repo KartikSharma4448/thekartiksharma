@@ -33,8 +33,8 @@ export default function ManifestoHero({ isLowPowerMode }: { isLowPowerMode?: boo
     const yPrompt = isLowPowerMode ? 0 : yPromptTransform;
 
     return (
-        <section ref={containerRef} className="relative h-[150vh] text-foreground">
-            <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center">
+        <section ref={containerRef} className="relative pt-28 pb-10 lg:pt-0 lg:pb-0 lg:h-[150vh] text-foreground">
+            <div className="relative lg:sticky top-0 lg:h-screen overflow-hidden flex flex-col items-center justify-center">
 
                 {/* Background Noise/Grain for Cinema Feel - Hidden in Dark Mode for Pitch Black & Low Power Mode */}
                 {!isLowPowerMode && (
@@ -109,7 +109,7 @@ export default function ManifestoHero({ isLowPowerMode }: { isLowPowerMode?: boo
                 {/* Scroll Prompt */}
                 <motion.div
                     style={{ opacity: opacityPrompt, y: yPrompt }}
-                    className="absolute bottom-12 flex flex-col items-center gap-4 z-10"
+                    className="absolute bottom-12 hidden lg:flex flex-col items-center gap-4 z-10"
                 >
                     <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">See More</span>
                     <ArrowDown className="w-5 h-5 text-foreground animate-bounce" />

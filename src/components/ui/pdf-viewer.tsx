@@ -61,6 +61,7 @@ function Component({ url }: { url: string }) {
   const [zoom, setZoom] = useState(1);
   const [rotation, setRotation] = useState(0);
   const viewportRef = useRef<HTMLDivElement>(null);
+  const [pageWidth, setPageWidth] = useState(600);
   const [searchQuery, setSearchQuery] = useState("");
 
   const textRenderer = useCallback(
@@ -72,6 +73,16 @@ function Component({ url }: { url: string }) {
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
   }
+
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    const updateWidth = () => setPageWidth(Math.max(120, Math.min(800, viewport.clientWidth - 24)));
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(viewport);
+    return () => observer.disconnect();
+  }, [numPages]);
 
   useEffect(() => {
     if (!viewportRef.current) return;
@@ -120,7 +131,7 @@ function Component({ url }: { url: string }) {
   }, [numPages]);
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false} className="min-h-0">
       <Document
         file={url}
         onLoadSuccess={onDocumentLoadSuccess}
@@ -163,14 +174,14 @@ function Component({ url }: { url: string }) {
           </SidebarContent>
         </Sidebar>
         <div className="flex flex-col w-full flex-1 min-w-0 min-h-0 bg-muted/10 h-full overflow-hidden">
-            <div className="flex p-3 border-b border-border bg-background/50 backdrop-blur-md justify-between items-center z-10 shrink-0">
+            <div className="flex flex-wrap gap-2 p-2 sm:p-3 border-b border-border bg-background/50 backdrop-blur-md justify-between items-center z-10 shrink-0">
               <div className="flex flex-row gap-3 items-center">
                 <SidebarTrigger className="hover:bg-muted" />
-                <div className="text-sm font-medium text-foreground bg-muted px-3 py-1.5 rounded-md">
+                <div className="text-xs sm:text-sm whitespace-nowrap font-medium text-foreground bg-muted px-3 py-1.5 rounded-md">
                   {numPages ? `Page ${currentPage} of ${numPages}` : "Loading..."}
                 </div>
               </div>
-              <div className="flex flex-row gap-2 items-center">
+              <div className="flex max-w-full flex-row gap-1 sm:gap-2 items-center overflow-x-auto">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -260,7 +271,7 @@ function Component({ url }: { url: string }) {
               ref={viewportRef}
               data-lenis-prevent
             >
-              <div className="items-center flex p-8 flex-col min-h-max w-full">
+              <div className="items-center flex p-3 flex-col min-h-max min-w-full w-max">
                 {Array.from(new Array(numPages || 0), (el, index) => (
                   <Page
                     key={`page_${index + 1}`}
@@ -270,6 +281,7 @@ function Component({ url }: { url: string }) {
                     renderAnnotationLayer={false}
                     renderTextLayer={true}
                     scale={zoom}
+                    width={pageWidth}
                     rotate={rotation}
                     loading={<div className="h-[800px] w-[600px] bg-white animate-pulse rounded-sm" />}
                     customTextRenderer={textRenderer}

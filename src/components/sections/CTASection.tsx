@@ -50,7 +50,7 @@ export default function CTASection() {
     return (
         <section ref={sectionRef} className="relative py-12 lg:py-16 overflow-hidden bg-background">
             {/* Infinite Ribbons - Moved from Stats Section */}
-            <div className="relative flex h-[300px] w-full items-center justify-center pointer-events-none mb-10">
+            <div className="relative flex h-[160px] sm:h-[240px] lg:h-[300px] w-full items-center justify-center pointer-events-none mb-6 lg:mb-10">
                 <InfiniteRibbon rotation={6} baseVelocity={1} className="z-10 py-5 border-y border-blue-200 dark:border-white/5 shadow-xl" background="bg-white dark:bg-zinc-900" textColor="text-blue-700 dark:text-zinc-400 font-mono tracking-tighter">
                     {t('ribbon1')}
                 </InfiniteRibbon>
@@ -61,8 +61,8 @@ export default function CTASection() {
 
 
 
-            <div className="max-w-[1600px] mx-auto relative z-10 px-6 md:px-12 lg:px-24 text-center cta-content mt-16">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-0">
+            <div className="max-w-[1600px] mx-auto relative z-10 px-6 md:px-12 lg:px-24 text-center cta-content mt-6 lg:mt-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-0">
                     {t('title')}
                     <br />
                     <span className="inline-grid place-items-center pb-4">
@@ -86,7 +86,7 @@ export default function CTASection() {
                     <span className="whitespace-nowrap">{t('together')}</span>
                 </h2>
 
-                <p className="text-xl text-muted-foreground max-w-4xl mx-auto mt-4 mb-10 text-center">
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mt-4 mb-10 text-center">
                     {t('subtitle').split('. ').map((sentence, i, arr) => (
                         <span key={i}>
                             {sentence}{i < arr.length - 1 ? '.' : ''}
@@ -96,12 +96,12 @@ export default function CTASection() {
                     ))}
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <MagneticButton href="/contact" variant="primary" className="text-lg px-10 py-5">
+                <div className="mx-auto flex max-w-sm sm:max-w-none flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                    <MagneticButton href="/contact" variant="primary" className="w-full sm:w-60 min-h-14 text-base px-6 py-4">
                         <Mail className="w-5 h-5" />
                         <span>{t('start')}</span>
                     </MagneticButton>
-                    <MagneticButton href="/resume" variant="outline" className="text-lg px-10 py-5">
+                    <MagneticButton href="/resume" variant="outline" className="w-full sm:w-60 min-h-14 text-base px-6 py-4">
                         <Layers className="w-5 h-5" />
                         <span>{t('work')}</span>
                     </MagneticButton>

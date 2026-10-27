@@ -12,6 +12,35 @@ import { Spotlight } from "@/components/ui/spotlight-new";
 export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
   const { personal } = portfolioData;
   const [showProfile, setShowProfile] = useState(false);
+  useEffect(() => {
+    if (!showProfile || !window.matchMedia('(max-width: 767px)').matches) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const panel = document.getElementById('mobile-profile-panel');
+    const focusable = () => Array.from(panel?.querySelectorAll<HTMLElement>('button, a[href]') || []).filter(element => element.getClientRects().length > 0);
+    focusable()[0]?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setShowProfile(false);
+      if (event.key !== 'Tab') return;
+      const elements = focusable();
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKey);
+      previousFocus?.focus();
+    };
+  }, [showProfile]);
   const [tooltip, setTooltip] = useState<{ show: boolean; text: string; x: number; y: number; icon: 'zap' | 'terminal' | null }>({
     show: false,
     text: '',
@@ -125,7 +154,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative min-h-screen w-full flex flex-col bg-background text-foreground overflow-hidden selection:bg-primary/20"
+      className="relative md:min-h-screen w-full flex flex-col bg-background text-foreground overflow-hidden selection:bg-primary/20"
     >
       {/* Background Pattern */}
       <div className="w-full absolute h-full z-0 bg-[radial-gradient(circle,_#888_0.5px,_transparent_0.5px)] dark:bg-[radial-gradient(circle,_#444_0.5px,_transparent_0.5px)] opacity-20 [background-size:24px_24px] [contain:strict]" />
@@ -142,8 +171,8 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
         />
       </div>
 
-      <main className="relative flex-1 flex flex-col justify-center pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-20 z-10 max-w-[105rem] w-full mx-auto">
-        <div className="flex relative gap-2 sm:gap-4 px-3 sm:px-6 md:items-center w-full flex-col justify-center">
+      <main className="relative flex-1 flex flex-col justify-center pt-24 sm:pt-28 md:pt-40 pb-8 sm:pb-12 md:pb-20 z-10 max-w-[105rem] w-full mx-auto">
+        <div className="flex relative gap-3 sm:gap-4 pl-10 pr-4 sm:px-6 md:items-center w-full flex-col justify-center">
 
           {/* Follow-Cursor Tooltip */}
           <AnimatePresence>
@@ -174,7 +203,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground text-start md:text-right leading-relaxed max-w-[260px] md:max-w-[220px] font-medium uppercase tracking-[0.18em] px-2 sm:px-4 md:px-0"
+              className="text-xs sm:text-[10px] md:text-xs text-muted-foreground text-start md:text-right leading-relaxed max-w-[260px] md:max-w-[220px] font-medium uppercase tracking-[0.18em] px-2 sm:px-4 md:px-0"
             >
               Hi, I'm {personal.name}. I build scalable systems powered by intelligence.
             </motion.p>
@@ -192,7 +221,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[clamp(2.4rem,8.4vw,12rem)] font-black leading-[0.88] tracking-tighter text-shiny will-change-transform px-2 sm:px-4"
+                className="text-[clamp(2rem,10vw,4rem)] md:text-[clamp(2.4rem,8.4vw,12rem)] font-black leading-[0.88] tracking-tighter text-shiny will-change-transform px-2 sm:px-4"
               >
                 KARTIK
               </motion.h1>
@@ -200,7 +229,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
           </div>
 
           {/* Line 2: FULL [ICON] STACK */}
-          <div className="flex gap-4 md:gap-8 items-center relative">
+          <div className="flex justify-center md:justify-start gap-4 md:gap-8 items-center relative">
             <div className="relative">
               <div ref={linkedinRef} className="hidden md:block absolute -top-8 left-4 text-primary/60 hover:text-primary z-20 opacity-0">
                 <a
@@ -224,7 +253,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[clamp(2.4rem,8.4vw,12rem)] flex items-center font-black leading-[0.88] tracking-tighter text-shiny will-change-transform px-2 sm:px-4 whitespace-nowrap"
+                className="text-[clamp(2rem,10vw,4rem)] md:text-[clamp(2.4rem,8.4vw,12rem)] flex items-center font-black leading-[0.88] tracking-tighter text-shiny will-change-transform px-2 sm:px-4 whitespace-nowrap"
               >
                 <span>FULL</span>
                 <div
@@ -258,7 +287,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
               initial={{ opacity: 0, y: 30 }}
               animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[clamp(2.4rem,8.4vw,12rem)] flex items-center font-black leading-[0.88] tracking-tighter text-shiny will-change-transform px-2 sm:px-4 whitespace-nowrap"
+              className="self-end md:self-auto text-[clamp(2rem,10vw,4rem)] md:text-[clamp(2.4rem,8.4vw,12rem)] flex items-center font-black leading-[0.88] tracking-tighter text-shiny will-change-transform px-2 sm:px-4 whitespace-nowrap"
             >
               <span>DEVE</span>
               <div
@@ -280,7 +309,7 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground pt-1 md:pt-8 leading-relaxed max-w-[280px] md:max-w-[200px] font-medium uppercase tracking-widest px-2 sm:px-4 md:px-0"
+              className="self-end text-right md:self-auto md:text-left text-xs sm:text-[10px] md:text-xs text-muted-foreground pt-1 md:pt-8 leading-relaxed max-w-[280px] md:max-w-[200px] font-medium uppercase tracking-widest px-2 sm:px-4 md:px-0"
             >
               Open to all forms of collaboration, regardless of location and language.
             </motion.p>
@@ -288,10 +317,10 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
         </div>
 
         {/* Separator Section */}
-        <div className="mx-auto max-w-[105rem] w-full px-8 md:px-20 mt-12 md:mt-24">
-          <div className="flex items-center gap-6">
+        <div className="mx-auto max-w-[105rem] w-full px-6 md:px-20 mt-8 md:mt-24">
+          <div className="flex flex-wrap items-center justify-between gap-3 md:gap-6">
             <Separator className="flex-1 h-[1px] bg-foreground/10 hidden md:block" />
-            <div className="text-[10px] md:text-xs whitespace-nowrap font-bold tracking-[0.3em] text-muted-foreground uppercase">
+            <div className="text-[9px] sm:text-[10px] md:text-xs whitespace-nowrap font-bold tracking-[0.15em] sm:tracking-[0.3em] text-muted-foreground uppercase">
               PORTFOLIO — 2026
             </div>
             <Link
@@ -299,9 +328,9 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
               className="group flex items-center"
             >
               <motion.div
-                className="relative flex items-center bg-zinc-100 dark:bg-white h-12 w-12 group-hover:w-44 rounded-full transition-all duration-500 ease-[0.23,1,0.32,1] overflow-hidden shadow-xl"
+                className="button-fill relative flex items-center bg-zinc-100 dark:bg-white h-12 w-36 shrink-0 md:w-12 md:group-hover:w-44 rounded-full transition-all duration-500 ease-[0.23,1,0.32,1] overflow-hidden shadow-xl"
               >
-                <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 group-hover:delay-150 text-[10px] font-black uppercase tracking-widest text-zinc-900 dark:text-black pl-6 pr-12">
+                <span className="whitespace-nowrap opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 group-hover:delay-150 text-[10px] font-black uppercase tracking-widest text-zinc-900 dark:text-black pl-6 pr-12">
                   View Resume
                 </span>
                 <div className="absolute right-0 flex items-center justify-center size-12 text-zinc-900 dark:text-black group-hover:rotate-45 transition-transform duration-500">
@@ -312,6 +341,54 @@ export function HeroVisual({ isExiting = true }: { isExiting?: boolean }) {
           </div>
         </div>
       </main>
+
+      {/* Mobile profile drawer, matching the desktop side entry. */}
+      <button
+        type="button"
+        aria-expanded={showProfile}
+        aria-controls="mobile-profile-panel"
+        onClick={() => setShowProfile(true)}
+        className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-30 rounded-r-xl border border-zinc-200 bg-white text-black px-2 py-5 text-[8px] font-bold uppercase tracking-[0.2em] shadow-lg [writing-mode:vertical-rl] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      >
+        View my profile
+      </button>
+      <AnimatePresence>
+        {showProfile && (
+          <div className="md:hidden fixed inset-0 z-[100]">
+            <motion.button
+              type="button"
+              aria-label="Close profile backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowProfile(false)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+            <motion.div
+              id="mobile-profile-panel"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Kartik Sharma profile"
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 32, stiffness: 320 }}
+              className="absolute inset-y-0 left-0 w-[calc(100%-2rem)] max-w-sm overflow-y-auto overscroll-contain bg-background px-3 pt-16 pb-6 shadow-2xl"
+            >
+              <ProfileCard
+                name={personal.name}
+                title="Full Stack & MERN Stack Developer"
+                imageUrl={personal.avatar}
+                githubUrl={personal.socialLinks.find(s => s.platform === 'GitHub')?.url}
+                linkedinUrl={personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url}
+                instagramUrl={personal.socialLinks.find(s => s.platform === 'Instagram')?.url}
+                onClose={() => setShowProfile(false)}
+                className="!px-0"
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* Award/Badge Vertical - MOVED TO LEFT */}
       <div

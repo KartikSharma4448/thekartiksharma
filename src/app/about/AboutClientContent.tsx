@@ -137,20 +137,21 @@ export function AboutClientContent() {
               Passionate about engineering seamless digital experiences, high-performance backends, and responsive user interfaces that solve real-world problems.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-3">
+            <div className="pt-2 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
               <Link
                 href="/resume"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 font-bold text-sm hover:opacity-90 transition-opacity"
+                className="button-fill inline-flex min-h-11 items-center justify-center gap-1.5 px-2 sm:px-5 py-2.5 rounded-xl bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 font-bold text-xs sm:text-sm hover:opacity-90 transition-opacity"
               >
-                <FileText className="w-4 h-4" />
-                <span>View Full Resume</span>
+                <FileText className="w-4 h-4 shrink-0" />
+                <span className="sm:hidden">Resume</span>
+                <span className="hidden sm:inline">View Full Resume</span>
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-bold text-sm hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                className="button-fill inline-flex min-h-11 items-center justify-center gap-1.5 px-2 sm:px-5 py-2.5 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white font-bold text-xs sm:text-sm hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
               >
                 <span>Explore Projects</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </Link>
             </div>
           </div>

@@ -96,7 +96,7 @@ export function ExpertiseSection() {
           >
             <Link
               href="/projects"
-              className="group inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 font-semibold text-xs sm:text-base hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all duration-200 shadow-sm hover:scale-[1.03] active:scale-[0.98]"
+              className="button-fill group inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 font-semibold text-xs sm:text-base hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all duration-200 shadow-sm hover:scale-[1.03] active:scale-[0.98]"
             >
               <span>View All Services</span>
               <span className="inline-block text-sm sm:text-lg transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">

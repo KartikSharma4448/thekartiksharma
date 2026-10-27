@@ -7,8 +7,11 @@ import Image from "next/image";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import Link from "next/link";
 import { portfolioData } from "@/data/portfolio";
+import { usePerformance } from "@/hooks/usePerformance";
+import { MobileBlogDeck } from '@/components/sections/gallery/MobileBlogDeck';
 
 export default function ImpactSection() {
+  const { isLowPowerMode } = usePerformance();
   const [openCard, setOpenCard] = useState(0);
   const containerRef = useRef<HTMLElement>(null);
 
@@ -46,27 +49,28 @@ export default function ImpactSection() {
   }));
 
   return (
-    <section ref={containerRef} className="relative w-full py-12 sm:py-24 md:py-32 overflow-hidden">
+    <section ref={containerRef} className="relative w-full py-8 sm:py-16 lg:py-32 overflow-x-clip">
       {/* Smooth transition from the solid background of the gallery above to the transparent background of this section */}
       <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-background to-transparent pointer-events-none z-0" />
 
       <div className="relative z-10 w-full max-w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
-        <div className="flex items-start justify-between gap-6 mb-12 sm:mb-20">
+        <div className="flex items-start justify-between gap-6 mb-8 lg:mb-20">
           <div className="max-w-[720px]">
-            <motion.p style={{ y: yLabel }} className="text-[11px] tracking-[3px] uppercase font-mono font-bold text-cyan-400 mb-6">
+            <motion.p style={{ y: isLowPowerMode ? 0 : yLabel }} className="text-[11px] tracking-[3px] uppercase font-mono font-bold text-cyan-400 mb-6">
               Knowledge Base
             </motion.p>
-            <motion.h2 style={{ y: yTitle }} className="text-5xl md:text-7xl lg:text-[80px] leading-[1.05] font-black tracking-tighter uppercase mb-8">
+            <motion.h2 style={{ y: isLowPowerMode ? 0 : yTitle }} className="text-5xl md:text-7xl lg:text-[80px] leading-[1.05] font-black tracking-tighter uppercase mb-8">
               The Engineering <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D1FF4D] via-cyan-300 to-amber-300">Process.</span>
             </motion.h2>
-            <motion.p style={{ y: yDesc }} className="text-[15px] sm:text-[16px] text-muted-foreground/80 leading-[1.7] max-w-[560px] font-medium">
+            <motion.p style={{ y: isLowPowerMode ? 0 : yDesc }} className="text-[15px] sm:text-[16px] text-muted-foreground/80 leading-[1.7] max-w-[560px] font-medium">
               Documenting the journey from concept to deployment. Read the latest thoughts on AI, engineering, and digital architecture.
             </motion.p>
           </div>
         </div>
 
-        <motion.div style={{ y: yCards }} className="p-4 sm:p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-white/5 dark:bg-black/20 backdrop-blur-md border border-white/10 dark:border-white/5 shadow-2xl w-full mx-auto">
+        <MobileBlogDeck cards={impactCards} />
+        <motion.div style={{ y: isLowPowerMode ? 0 : yCards }} className="hidden md:block p-4 sm:p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-white/5 dark:bg-black/20 backdrop-blur-md border border-white/10 dark:border-white/5 shadow-2xl w-full mx-auto">
           <div className="flex flex-col md:flex-row md:items-end gap-3 md:gap-0 justify-center">
             {impactCards.map((card, idx) => {
             const isOpen = openCard === idx;
@@ -156,7 +160,7 @@ export default function ImpactSection() {
           </div>
         </motion.div>
 
-        <div className="mt-16 flex items-center justify-center">
+        <div className="mt-8 lg:mt-16 flex items-center justify-center">
           <MagneticButton 
             href="/blog" 
             variant="outline"

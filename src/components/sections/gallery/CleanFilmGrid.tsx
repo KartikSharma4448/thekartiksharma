@@ -146,7 +146,7 @@ export default function CleanFilmGrid({ isLowPowerMode }: { isLowPowerMode?: boo
     }
 
     return (
-        <section className="relative py-24 px-6 md:px-16 lg:px-24 min-h-screen">
+        <section className="relative py-8 sm:py-12 lg:py-24 px-4 sm:px-6 md:px-16 lg:px-24 lg:min-h-screen">
             {/* Smooth transition from the transparent hills background to solid background */}
             <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-transparent to-background pointer-events-none z-0" />
             <div className="absolute top-96 bottom-0 left-0 right-0 bg-background pointer-events-none z-0" />

@@ -389,7 +389,7 @@ export function PixelPet({ isInline = true, className }: PixelPetProps) {
       <div className="absolute bottom-0 left-6 right-6 md:left-12 md:right-12 lg:left-24 lg:right-24 h-[1px] bg-gradient-to-r from-transparent via-foreground/20 to-transparent pointer-events-none group-hover:via-amber-500/40 transition-colors" />
 
       {/* Floating Walkway hint text */}
-      <div className="absolute top-2 left-1/2 -translate-x-1/2 text-[9px] font-mono uppercase tracking-[0.3em] text-muted-foreground/40 pointer-events-none select-none">
+      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-full px-6 text-center text-[8px] sm:text-[9px] font-mono uppercase tracking-[0.1em] sm:tracking-[0.3em] text-muted-foreground/40 pointer-events-none select-none">
         🐾 Click anywhere along the track to guide the pet
       </div>
 

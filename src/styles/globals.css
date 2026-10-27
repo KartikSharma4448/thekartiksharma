@@ -629,3 +629,31 @@ html, body, * {
 .bg-book-gradient { background-image: var(--ds-book-gradient); }
 .book-rotate { transition: transform 0.5s ease-out; transform: rotateY(0deg); transform-style: preserve-3d; }
 .book-rotate:hover { transform: rotateY(-25deg); }
+
+/* Shared directional fill for primary action links. */
+.button-fill {
+  background-color: hsl(var(--foreground)) !important;
+  background-image: linear-gradient(hsl(var(--background)), hsl(var(--background)));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  color: hsl(var(--background)) !important;
+  border: 1px solid hsl(var(--foreground));
+  transition: background-size 400ms cubic-bezier(0.22, 1, 0.36, 1), color 250ms, transform 150ms;
+}
+.button-fill :where(span, svg, div) { color: inherit !important; }
+.button-fill:focus-visible,
+.button-fill:active {
+  background-size: 100% 100%;
+  color: hsl(var(--foreground)) !important;
+}
+.button-fill:active { transform: scale(0.98); }
+@media (hover: hover) {
+  .button-fill:hover {
+    background-size: 100% 100%;
+    color: hsl(var(--foreground)) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button-fill { transition: none; }
+}

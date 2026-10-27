@@ -16,7 +16,7 @@ export function GalleryClientContent() {
     const { isLowPowerMode } = usePerformance();
 
     return (
-        <main className="bg-background min-h-screen selection:bg-cyan-500/30 selection:text-cyan-500 overflow-x-hidden relative">
+        <main className="bg-background min-h-screen selection:bg-cyan-500/30 selection:text-cyan-500 overflow-x-clip relative">
             {!isLowPowerMode && (
                 <div className="fixed inset-0 z-0 pointer-events-none opacity-50 dark:opacity-50 mix-blend-multiply dark:mix-blend-screen">
                     <DeferredMount>

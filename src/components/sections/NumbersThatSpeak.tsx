@@ -32,11 +32,11 @@ const stats = [
 
 export function NumbersThatSpeak() {
   return (
-    <section className="relative w-full py-20 md:py-32 px-6 sm:px-10 md:px-16 lg:px-24 bg-background text-foreground overflow-hidden">
+    <section className="relative w-full py-14 sm:py-20 md:py-32 px-4 sm:px-6 sm:px-10 md:px-16 lg:px-24 bg-background text-foreground overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-lime-500/5 dark:bg-lime-400/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center relative z-10">
         
         {/* Left Headline & Intro */}
         <motion.div 

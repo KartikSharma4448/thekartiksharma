@@ -45,7 +45,7 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
             className="group relative"
         >
             <motion.div
-                className="relative h-full p-6 sm:p-8 flex flex-col items-center justify-center text-center"
+                className="relative h-full px-2 py-5 sm:p-8 flex flex-col items-center justify-center text-center"
                 whileHover={isLowPowerMode ? {} : { scale: 1.05, y: -8 }}
                 transition={{ duration: 0.3 }}
             >
@@ -75,7 +75,7 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
                     </motion.div>
 
                     {/* Label */}
-                    <p className="text-sm sm:text-base font-medium text-muted-foreground uppercase tracking-wider">
+                    <p className="text-[10px] sm:text-base font-medium text-muted-foreground uppercase tracking-wide sm:tracking-wider leading-relaxed">
                         {label}
                     </p>
                 </div>
@@ -153,7 +153,7 @@ export function ProjectStats({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
                 </motion.div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                     {stats.map((stat, index) => (
                         <StatCard
                             key={stat.label}
